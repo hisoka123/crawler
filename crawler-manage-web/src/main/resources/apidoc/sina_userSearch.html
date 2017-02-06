@@ -1,0 +1,179 @@
+<h2>搜索用户</h2><hr/>
+	<h3 class="page-header">说明</h3>
+		<p>用户搜索接口是通过微博昵称来查询微博用户的接口。</p>
+	<h3 class="page-header">URL</h3>
+		<p>http://&lt;Project&gt;/api/user?q=</p>
+	<h3 class="page-header">格式</h3>
+		<p>JSON</p>
+	<h3 class="page-header">HTTP请求方式</h3>
+		<p>GET</p>
+	<h3 class="page-header">请求参数</h3>
+		<div style="padding-right: 30%;">
+		<table class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>必选</th>
+					<th>类型及范围</th>
+					<th>说明</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>q</td>
+					<td>true</td>
+					<td>string</td>
+					<td>查询条件(需要对查询条件进行一次utf8编码)</td>
+				</tr>
+                <tr>
+					<td>isDebug</td>
+					<td>false</td>
+					<td>boolean</td>
+					<td>是否启用调试模式</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+<h3 class="page-header">注意事项</h3>
+<p>无</p>
+<h3 class="page-header">例子</h3>
+<p>说明：非调试模式下，查询微博昵称为“唐沐thomas”的用户</p>
+<p>请求：http://&lt;Project&gt;/api/weibo/user?q=%E5%94%90%E6%B2%90thomas</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+{
+    "data": [
+        {
+            "uid": "1656627870",
+            "nickname": "唐沐thomas",
+            "follow": "426",
+            "follow_url": "http://weibo.com/1656627870/follow",
+            "fans": "8万",
+            "fans_url": "http://weibo.com/1656627870/fans",
+            "statuses": "1292",
+            "statuses_url": "http://weibo.com/1656627870/profile",
+            "profile": "http://weibo.com/thomastang",
+            "person_info": "简介： 小米路由器产品负责人。2001年入行设计，2003组建腾讯用户研究与体验设计中心（CDC），2013加入小米。",
+            "person_card": "小米路由器 总经理",
+            "profile_image": "http://tp3.sinaimg.cn/1656627870/180/5726047174/1",
+            "location": "北京，海淀区",
+            "v": "微博个人认证 ",
+            "gender": "男",
+            "person_label": [
+                "电影",
+                "万宝路",
+                "摄影",
+                "用户体验",
+                "智能硬件",
+                "智能家居",
+                "路由器",
+                "设计"
+            ],
+            "person_job": [
+                "腾讯",
+                "金山",
+                "小米科技"
+            ],
+            "person_edu": [
+                "华南理工大学"
+            ]
+        }
+    ]
+}
+		</pre>
+	<h3 class="page-header">返回字段说明</h3>
+		<div style="padding-right: 30%;">
+		<table class="table table-bordered table-hover">
+			<caption>返回正确data结果的字段说明对照表：</caption>
+			<thead>
+				<tr>
+					<th>返回值字段</th>
+					<th>字段类型</th>
+					<th>字段说明</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>uid</td>
+					<td>string</td>
+					<td>用户的ID</td>
+				</tr>
+				<tr>
+					<td>nickname</td>
+					<td>string</td>
+					<td>用户的昵称</td>
+				</tr>
+				<tr>
+					<td>follow</td>
+					<td>string</td>
+					<td>用户关注的人数</td>
+				</tr>
+				<tr>
+					<td>follow_url</td>
+					<td>string</td>
+					<td>用户关注的人的列表页面</td>
+				</tr>
+                <tr>
+                    <td>fans</td>
+                    <td>string</td>
+                    <td>粉丝数量</td>
+                </tr>
+                <tr>
+                    <td>fans_url</td>
+                    <td>string</td>
+                    <td>粉丝列表页面</td>
+                </tr>
+				<tr>
+					<td>statuses</td>
+					<td>string</td>
+					<td>用户发帖总数</td>
+				</tr>
+				<tr>
+					<td>statuses_url</td>
+					<td>string</td>
+					<td>用户发帖的列表页</td>
+				</tr>
+				<tr>
+					<td>profile</td>
+					<td>string</td>
+					<td>用户首页</td>
+				</tr>
+				<tr>
+					<td>person_info</td>
+					<td>string</td>
+					<td>用户简介</td>
+				</tr>
+				<tr>
+					<td>profile_image</td>
+					<td>string</td>
+					<td>用户头像图片链接</td>
+				</tr>
+				<tr>
+					<td>location</td>
+					<td>string</td>
+					<td>用户所在地</td>
+				</tr>
+				<tr>
+					<td>gender</td>
+					<td>string</td>
+					<td>性别</td>
+				</tr>
+				<tr>
+					<td>person_label</td>
+					<td>string[]</td>
+					<td>用户标签</td>
+				</tr>
+				<tr>
+					<td>person_job</td>
+					<td>string[]</td>
+					<td>用户的工作经历标签</td>
+				</tr>
+				<tr>
+					<td>person_edu</td>
+					<td>string[]</td>
+					<td>用户的教育经历标签</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>

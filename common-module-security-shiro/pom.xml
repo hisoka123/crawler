@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sr.storm</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../parent</relativePath>
+	</parent>
+	<artifactId>common-module-security-shiro</artifactId>
+	<dependencies>
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+		</dependency>
+		<dependency> 
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+		</dependency>
+		<!-- shiro -->
+		<dependency>
+			<groupId>com.sr.storm</groupId>
+			<artifactId>common-module-service</artifactId>
+			<version>${project.version}</version>
+		</dependency> 
+		<!-- shiro -->
+		<dependency>
+			<groupId>com.sr.storm</groupId>
+			<artifactId>common-module-unit</artifactId>
+			<version>${project.version}</version>
+		</dependency> 
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+		  	<artifactId>guava</artifactId>
+		  	<version>r09</version>
+		</dependency>
+	</dependencies>
+</project>

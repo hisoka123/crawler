@@ -1,0 +1,416 @@
+<h2>查询微博话题</h2><hr/>
+<h3 class="page-header">说明</h3>
+<p>查询微博话题接口是通过微博搜索页面来查询相关话题搜索结果的接口。</p>
+<h3 class="page-header">URL</h3>
+<p>http://&lt;Project&gt;/api/weibo/topic?url=</p>
+<h3 class="page-header">格式</h3>
+<p>JSON</p>
+<h3 class="page-header">HTTP请求方式</h3>
+<p>GET</p>
+<h3 class="page-header">请求参数</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>必选</th>
+            <th>类型及范围</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>url</td>
+            <td>true</td>
+            <td>string</td>
+            <td>用户搜索页的URL</td>
+        </tr>
+        <tr>
+            <td>isDebug</td>
+            <td>false</td>
+            <td>boolean</td>
+            <td>是否启用调试模式</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-header">注意事项</h3>
+<p>无</p>
+<h3 class="page-header">例子</h3>
+<p>说明：搜索与“唐沐thomas”相关的微博。用户需要传递参数“http://s.weibo.com/weibo/%25E5%2594%2590%25E6%25B2%2590thomas&Refer=STopic_box”。</p>
+<p>请求：http://&lt;Project&gt;/api/weibo/topic?url=http://s.weibo.com/weibo/%25E5%2594%2590%25E6%25B2%2590thomas&Refer=STopic_box</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+{
+    "data": [
+        {
+            "tid": "3896499416606748",
+            "content_text": "昨天中午风非常大，我和两个同事@唐沐thomas 走路经过一个大厦，上面一块巨大的外墙被吹下来了。在我们不到十米的前方掉下来。五秒之差。当时我们都傻了，竟然忘记在现场拍照。",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"小米KKWong\"&gt;昨天中午风非常大，我和两个同事&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 走路经过一个大厦，上面一块巨大的外墙被吹下来了。在我们不到十米的前方掉下来。五秒之差。当时我们都傻了，竟然忘记在现场拍照。&lt;/p&gt;",
+            "reposts_count": "12",
+            "comments_count": "29",
+            "attitudes_count": "71",
+            "created_at": "2015-10-10 20:48",
+            "source": "小米Note 顶配版",
+            "pic_urls": [
+                "http://ww1.sinaimg.cn/square/6a145fb1jw1ewwbue3meaj22eo37ke83.jpg",
+                "http://ww1.sinaimg.cn/square/6a145fb1jw1ewwbv7ogk3j22eo37kx6s.jpg",
+                "http://ww4.sinaimg.cn/square/6a145fb1jw1ewwbvz277vj237k2eoqv7.jpg"
+            ],
+            "uid": "1779720113",
+            "nickname": "小米KKWong",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3882711834209410",
+            "content_text": "【#一分上手# 拆机教程 打造黑色1TB 版】#小米路由器硬盘版#内部结构精致，用料扎实布局紧凑。想看看里面高大上的显卡级散热系统吗？老板@唐沐thomas 手把手教你如何拆解小米路由器，并把白色路由器变成酷黑色想要亲自动手试试吗？转发本条送一套黑色外壳|小米路由器...",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"小米路由器\"&gt;【&lt;a class=\"a_topic W_linkb\" href=\"http://huati.weibo.com/k/%E4%B8%80%E5%88%86%E4%B8%8A%E6%89%8B?from=526\" suda-data=\"key=tblog_search_weibo&value=weibo_nologin_topic\" target=\"_blank\"&gt;#一分上手#&lt;/a&gt; 拆机教程 打造黑色1TB 版】&lt;a class=\"a_topic W_linkb\" href=\"http://huati.weibo.com/k/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E7%A1%AC%E7%9B%98%E7%89%88?from=526\" suda-data=\"key=tblog_search_weibo&value=weibo_nologin_topic\" target=\"_blank\"&gt;#小米路由器硬盘版#&lt;/a&gt;内部结构精致，用料扎实布局紧凑。想看看里面高大上的显卡级散热系统吗？老板&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 手把手教你如何拆解小米路由器，并把白色路由器变成酷黑色&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/cool_org.gif\" title=\"[酷]\" alt=\"[酷]\" type=\"face\"&gt;想要亲自动手试试吗？转发本条送一套黑色外壳&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c4/liwu_org.gif\" title=\"[礼物]\" alt=\"[礼物]\" type=\"face\"&gt;&lt;a class=\"W_btn_c6\" href=\"javascript:void(0);\" action-data=\"object_id=2003338005:5c398d3a67fa10595b56a841a090d8fa&short_url=http://t.cn/RyAG7EG&title=%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E3%80%8A%E4%B8%80%E5%88%86%E4%B8%8A%E6%89%8B%E3%80%8B--%E8%80%81%E6%9D%BF%E7%9A%84%E6%8B%86%E6%9C%BA%E6%95%99%E7%A8%8B\" action-type=\"feed_list_third_video\" suda-data=\"key=tblog_search_weibo&value=weibo_nologin_url\"&gt;&lt;span class=\"W_btn_tag\"&gt;&lt;em class=\"W_btn_icon\"&gt;&lt;i class=\"W_ico12 icon_cd_video \"&gt;&lt;/i&gt;&lt;i class=\"W_vline S_line1_c\"&gt;|&lt;/i&gt;&lt;/em&gt;&lt;em class=\"W_autocut W_linkb\"&gt;小米路由器...&lt;/em&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "62",
+            "comments_count": "31",
+            "attitudes_count": "57",
+            "created_at": "2015-09-02 19:41",
+            "source": "微博 weibo.com",
+            "uid": "3911265615",
+            "nickname": "小米路由器",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3888889783575792",
+            "content_text": "今晚7点开始长城宽带出现了大面积服务中断的情况。根据我们的在线情况统计，中断服务主要集中在北京地区、河北部分地区以及东北少数几个城市。看了一下贴吧，目前北京部分地区的长城宽带服务已经恢复，没有恢复的用户请耐心等待，我们也在积极的联系长宽官方。@小米路由器 @唐沐thomas @小米Sharaaton",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"彭川_小米\"&gt;今晚7点开始长城宽带出现了大面积服务中断的情况。根据我们的在线情况统计，中断服务主要集中在北京地区、河北部分地区以及东北少数几个城市。看了一下贴吧，目前北京部分地区的长城宽带服务已经恢复，没有恢复的用户请耐心等待，我们也在积极的联系长宽官方。&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3Sharaaton\" disable_usercard=\"name=小米Sharaaton\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米Sharaaton&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "13",
+            "comments_count": "17",
+            "attitudes_count": "26",
+            "created_at": "2015-09-19 20:50",
+            "source": "小米Note",
+            "uid": "5343404089",
+            "nickname": "彭川_小米",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3899977342042924",
+            "content_text": "小米什么时候出 跑步机？ @雷军 @唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"张谢----博笑\"&gt;小米什么时候出 跑步机？ &lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-20 11:08",
+            "source": "360安全浏览器",
+            "uid": "2619029707",
+            "nickname": "张谢----博笑",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3899641756452092",
+            "content_text": "要是@360运营专员 @小米路由器 的无线路由器跟打卡机合二为一就好了，也不用指纹签到，直接单一手机号对应个人，@周鸿祎 @雷军 @唐沐thomas 这样是不是就颠覆了打卡机的命了，还解放了双手，更是对路由器这一平时看上去有点固定资产的东西更酷更好玩了呢~~么么哒",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"家有萌狗叫北斗\"&gt;要是&lt;a href=\"http://weibo.com/n/360%E8%BF%90%E8%90%A5%E4%B8%93%E5%91%98\" disable_usercard=\"name=360运营专员\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@360运营专员&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; 的无线路由器跟打卡机合二为一就好了，也不用指纹签到，直接单一手机号对应个人，&lt;a href=\"http://weibo.com/n/%E5%91%A8%E9%B8%BF%E7%A5%8E\" disable_usercard=\"name=周鸿祎\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@周鸿祎&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 这样是不是就颠覆了打卡机的命了，还解放了双手，更是对路由器这一平时看上去有点固定资产的东西更酷更好玩了呢~~么么哒&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6a/laugh.gif\" title=\"[哈哈]\" alt=\"[哈哈]\" type=\"face\"&gt;&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6a/laugh.gif\" title=\"[哈哈]\" alt=\"[哈哈]\" type=\"face\"&gt;&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6a/laugh.gif\" title=\"[哈哈]\" alt=\"[哈哈]\" type=\"face\"&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-19 12:55",
+            "source": "微博桌面",
+            "uid": "1271862311",
+            "nickname": "家有萌狗叫北斗",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3899635715912209",
+            "content_text": "38元大龙虾，隔壁宿舍好任性@小米路由器 @唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"LK煮雨\"&gt;38元大龙虾，隔壁宿舍好任性&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "8",
+            "attitudes_count": "1",
+            "created_at": "2015-10-19 12:31",
+            "source": "小米手机4c",
+            "pic_urls": [
+                "http://ww1.sinaimg.cn/square/83e40b7djw1ex6c28l5urj20u01hcqac.jpg",
+                "http://ww2.sinaimg.cn/square/83e40b7djw1ex6c295gtvj20u01hcwin.jpg"
+            ],
+            "uid": "2212760445",
+            "nickname": "LK煮雨",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3899273693412664",
+            "content_text": "@小米路由器 @唐沐thomas 升级新版固件后到97%就长时间停住了，最后无奈重启路由器，然后就找不到硬盘内容了，软硬重启都试过无用！",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"缘飞日月\"&gt;&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 升级新版固件后到97%就长时间停住了，最后无奈重启路由器，然后就找不到硬盘内容了，软硬重启都试过无用！&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-18 12:32",
+            "source": "iPhone 6",
+            "pic_urls": [
+                "http://ww4.sinaimg.cn/square/6147c036gw1ex56geohddj20ku112wff.jpg",
+                "http://ww4.sinaimg.cn/square/6147c036gw1ex56gera0ej20ku112754.jpg"
+            ],
+            "uid": "1632092214",
+            "nickname": "缘飞日月",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3899030197347275",
+            "content_text": "@唐沐thomas 小米路由mini，非青春版。家里有两小米手机，一魅族手机，一ipad，一电脑，一小米摄像头，一小米智能插座，一小米空气净化器，一小米智能家庭套装，一小米盒子。在小米路由的app（装在其中一小米手机上）里查看连接设备，只要一刷新，手机就会掉线，过一会儿又自动连上，是怎么回事？",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"barney_02\"&gt;&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 小米路由mini，非青春版。家里有两小米手机，一魅族手机，一ipad，一电脑，一小米摄像头，一小米智能插座，一小米空气净化器，一小米智能家庭套装，一小米盒子。在小米路由的app（装在其中一小米手机上）里查看连接设备，只要一刷新，手机就会掉线，过一会儿又自动连上，是怎么回事？&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-17 20:25",
+            "source": "红米2",
+            "uid": "2622995233",
+            "nickname": "barney_02",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3898925452503587",
+            "content_text": "这是有货还是没货，拿到要排好几天队@唐沐thomas |保定·保百...",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"直隶幻想\"&gt;这是有货还是没货，拿到要排好几天队&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a class=\"W_btn_c6\" href=\"http://t.cn/R2W6Y72\" target=\"_blank\"&gt;&lt;span class=\"W_btn_tag\" title=\"保定·保百购物广场\"&gt;&lt;em class=\"W_btn_icon\"&gt;&lt;i class=\"W_ico12 icon_cd_place\"&gt;&lt;/i&gt;&lt;i class=\"W_vline S_line1_c\"&gt;|&lt;/i&gt;&lt;/em&gt;&lt;em class=\"W_autocut W_linkb\"&gt;保定·保百...&lt;/em&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-17 13:28",
+            "source": "小米Note",
+            "uid": "2923542315",
+            "nickname": "直隶幻想",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3898341320552534",
+            "content_text": "信号棒设置的时候死在这一步怎么弄？扬州移动12M@小米路由器 @唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"司風邺\"&gt;信号棒设置的时候死在这一步怎么弄？扬州移动12M&lt;img src=\"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b6/doge_org.gif\" title=\"[doge]\" alt=\"[doge]\" type=\"face\"&gt;&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-15 22:47",
+            "source": "LG D802",
+            "uid": "2336685725",
+            "nickname": "司風邺",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3898286337053126",
+            "content_text": "@唐沐thomas 搞what？？？？？？？？？？",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"蒙蒙蒙蒙蒙蒙介_日本代购\"&gt;&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 搞what？？？？？？？？？？&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-15 19:09",
+            "source": "微博 weibo.com",
+            "pic_urls": [
+                "http://ww1.sinaimg.cn/square/8cd966fajw1ex213wl3o3j20yh0entb2.jpg",
+                "http://ww4.sinaimg.cn/square/8cd966fajw1ex213y3s3xj20yz0d3dim.jpg"
+            ],
+            "uid": "2363057914",
+            "nickname": "蒙蒙蒙蒙蒙蒙介_日本代购",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3898129407779110",
+            "content_text": "小米4C支持AC频段的5G上网@神得强Steven @雷军 @林斌_Bin @小米公司 @小米路由器 @唐沐thomas |梅州·丰良...",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"Miui豹子\"&gt;小米4C支持AC频段的5G上网&lt;a href=\"http://weibo.com/n/%E7%A5%9E%E5%BE%97%E5%BC%BASteven\" disable_usercard=\"name=神得强Steven\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@神得强Steven&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E6%9E%97%E6%96%8C_Bin\" disable_usercard=\"name=林斌_Bin\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@林斌_Bin&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E5%85%AC%E5%8F%B8\" disable_usercard=\"name=小米公司\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米公司&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a class=\"W_btn_c6\" href=\"http://t.cn/R2dU1ur\" target=\"_blank\"&gt;&lt;span class=\"W_btn_tag\" title=\"梅州·丰良镇\"&gt;&lt;em class=\"W_btn_icon\"&gt;&lt;i class=\"W_ico12 icon_cd_place\"&gt;&lt;/i&gt;&lt;i class=\"W_vline S_line1_c\"&gt;|&lt;/i&gt;&lt;/em&gt;&lt;em class=\"W_autocut W_linkb\"&gt;梅州·丰良...&lt;/em&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "1",
+            "created_at": "2015-10-15 08:45",
+            "source": "小米手机4c",
+            "pic_urls": [
+                "http://ww3.sinaimg.cn/square/7f93aa8cgw1ex1izxyeijj20p018g78x.jpg",
+                "http://ww1.sinaimg.cn/square/7f93aa8cgw1ex1izycctgj20p018gn2m.jpg"
+            ],
+            "uid": "2140383884",
+            "nickname": "Miui豹子",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3897770157452043",
+            "content_text": "@雷军 @唐沐thomas 小米路由器mini是缺货了还是下架了？还会开卖么？",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"Phoenix1201\"&gt;&lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; 小米路由器mini是缺货了还是下架了？还会开卖么？&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "1",
+            "attitudes_count": "",
+            "created_at": "2015-10-14 08:58",
+            "source": "微博 weibo.com",
+            "uid": "1906600121",
+            "nickname": "Phoenix1201",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3897234900756543",
+            "content_text": "@PCPOP-宋宋宋 我的天天都有人想蹭网，可惜没那么容易！@唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"linxzz\"&gt;&lt;a href=\"http://weibo.com/n/PCPOP-%E5%AE%8B%E5%AE%8B%E5%AE%8B\" disable_usercard=\"name=PCPOP-宋宋宋\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@PCPOP-宋宋宋&lt;/a&gt; 我的天天都有人想蹭网，可惜没那么容易！&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "2",
+            "comments_count": "9",
+            "attitudes_count": "5",
+            "created_at": "2015-10-12 21:31",
+            "source": "iPhone客户端",
+            "pic_urls": [
+                "http://ww1.sinaimg.cn/square/72a3eb69gw1ewyobnuhzoj20hs0vk7a1.jpg",
+                "http://ww3.sinaimg.cn/square/72a3eb69gw1ewyobvp4fej20hs0vkq6w.jpg"
+            ],
+            "uid": "1923345257",
+            "nickname": "linxzz",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3896527153733892",
+            "content_text": "路由器刚刚过保修期，就坏了！之前还返厂维修过一次，插电源没有无线信号插有线也没！尝试过长按Reset没用，用U盘恢复没用！699的路由器才搞一年就坏了？有办法救活不？？@小米路由器 @唐沐thomas |武汉·广埠...",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"AIaylm\"&gt;路由器刚刚过保修期，就坏了！之前还返厂维修过一次，插电源没有无线信号插有线也没！尝试过长按Reset没用，用U盘恢复没用！699的路由器才搞一年就坏了？有办法救活不？？&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a class=\"W_btn_c6\" href=\"http://t.cn/R2WJ2FG\" target=\"_blank\"&gt;&lt;span class=\"W_btn_tag\" title=\"武汉·广埠屯\"&gt;&lt;em class=\"W_btn_icon\"&gt;&lt;i class=\"W_ico12 icon_cd_place\"&gt;&lt;/i&gt;&lt;i class=\"W_vline S_line1_c\"&gt;|&lt;/i&gt;&lt;/em&gt;&lt;em class=\"W_autocut W_linkb\"&gt;武汉·广埠...&lt;/em&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "3",
+            "attitudes_count": "",
+            "created_at": "2015-10-10 22:38",
+            "source": "Android客户端",
+            "pic_urls": [
+                "http://ww3.sinaimg.cn/square/8c1278eagw1ewwf18p9zdj21t037kb29.jpg",
+                "http://ww1.sinaimg.cn/square/8c1278eagw1ewwf2n9a0vj21t037ke81.jpg"
+            ],
+            "uid": "2350020842",
+            "nickname": "AIaylm",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3896511190846362",
+            "content_text": "最新固件运行不到六个小时就没办法再连上外网 这个时候想查看上网方式都没办法 重启后恢复 做个插件开发文档的sdk不更新 网页调用插件报错根本找不到原因 发邮件询问万年没回复 请给我个继续支持小米的理由@雷军 @小米路由器 @唐沐thomas |上海·汶水...",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"小华-等生活稳定再回圈\"&gt;最新固件运行不到六个小时就没办法再连上外网 这个时候想查看上网方式都没办法 重启后恢复 做个插件开发文档的sdk不更新 网页调用插件报错根本找不到原因 发邮件询问万年没回复 请给我个继续支持小米的理由&lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a class=\"W_btn_c6\" href=\"http://t.cn/R2W6C9Y\" target=\"_blank\"&gt;&lt;span class=\"W_btn_tag\" title=\"上海·汶水路\"&gt;&lt;em class=\"W_btn_icon\"&gt;&lt;i class=\"W_ico12 icon_cd_place\"&gt;&lt;/i&gt;&lt;i class=\"W_vline S_line1_c\"&gt;|&lt;/i&gt;&lt;/em&gt;&lt;em class=\"W_autocut W_linkb\"&gt;上海·汶水...&lt;/em&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "attitudes_count": "",
+            "created_at": "2015-10-10 21:35",
+            "source": "小米手机4",
+            "uid": "2516312255",
+            "nickname": "小华-等生活稳定再回圈",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3896376980889751",
+            "content_text": "小米路由器青春版和插線板買了好久，一直放在身邊，國慶回家終於用上了！！！@雷军 @小米手机 @红米手机 @林斌@唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"MC_LUCKY\"&gt;小米路由器青春版和插線板買了好久，一直放在身邊，國慶回家終於用上了！！！&lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E6%89%8B%E6%9C%BA\" disable_usercard=\"name=小米手机\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米手机&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E7%BA%A2%E7%B1%B3%E6%89%8B%E6%9C%BA\" disable_usercard=\"name=红米手机\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@红米手机&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E6%9E%97%E6%96%8C\" disable_usercard=\"name=林斌\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@林斌&lt;/a&gt;&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "3",
+            "attitudes_count": "",
+            "created_at": "2015-10-10 12:42",
+            "source": "微博 weibo.com",
+            "pic_urls": [
+                "http://ww3.sinaimg.cn/square/005yQ8RQgw1ewvxpu5gu6j30hs0nojrp.jpg",
+                "http://ww1.sinaimg.cn/square/005yQ8RQgw1ewvxpuse2yj30hs0noaa6.jpg",
+                "http://ww2.sinaimg.cn/square/005yQ8RQgw1ewvxpviz2mj30hs0nojs0.jpg"
+            ],
+            "uid": "5095486730",
+            "nickname": "MC_LUCKY",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3896164959643126",
+            "content_text": "@小米路由器 稳定版固件好久没更新了吧。看看我连接的设备还算合格米粉吧。@唐沐thomas",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"云龙湖人\"&gt;&lt;a href=\"http://weibo.com/n/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8\" disable_usercard=\"name=小米路由器\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@小米路由器&lt;/a&gt; 稳定版固件好久没更新了吧。看看我连接的设备还算合格米粉吧。&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "2",
+            "attitudes_count": "",
+            "created_at": "2015-10-09 22:39",
+            "source": "iPad客户端",
+            "uid": "1834243080",
+            "nickname": "云龙湖人",
+            "isTop": false,
+            "isHot": false
+        },
+        {
+            "tid": "3896140972072775",
+            "content_text": "如何回退路由器旧的版本? 吹牛帝@唐沐thomas @雷军",
+            "content_html": "&lt;p class=\"comment_txt\" node-type=\"feed_list_content\" nick-name=\"坚持奔跑吧兄弟\"&gt;如何回退路由器旧的版本? 吹牛帝&lt;a href=\"http://weibo.com/n/%E5%94%90%E6%B2%90thomas\" disable_usercard=\"name=唐沐thomas\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@&lt;em class=\"red\"&gt;唐沐thomas&lt;/em&gt;&lt;/a&gt; &lt;a href=\"http://weibo.com/n/%E9%9B%B7%E5%86%9B\" disable_usercard=\"name=雷军\" suda-data=\"key=tblog_search_weibo&value=weibo_feed_at\" target=\"_blank\" class=\"W_linkb\"&gt;@雷军&lt;/a&gt;&lt;/p&gt;",
+            "reposts_count": "",
+            "comments_count": "2",
+            "attitudes_count": "",
+            "created_at": "2015-10-09 21:04",
+            "source": "华为Ascend Mate7",
+            "uid": "3919631302",
+            "nickname": "坚持奔跑吧兄弟",
+            "isTop": false,
+            "isHot": false
+        }
+    ]
+}
+
+		</pre>
+<h3 class="page-header">返回字段说明</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <caption>返回正确data结果的字段说明对照表：</caption>
+        <thead>
+        <tr>
+            <th>返回值字段</th>
+            <th>字段类型</th>
+            <th>字段说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>tid</td>
+            <td>string</td>
+            <td>微博ID</td>
+        </tr>
+        <tr>
+            <td>content_text</td>
+            <td>string</td>
+            <td>微博内容（文本）</td>
+        </tr>
+        <tr>
+            <td>content_html</td>
+            <td>string</td>
+            <td>微博内容（html）</td>
+        </tr>
+        <tr>
+            <td>reposts_count</td>
+            <td>string</td>
+            <td>微博被转发数</td>
+        </tr>
+        <tr>
+            <td>comments_count</td>
+            <td>string</td>
+            <td>微博被评论数</td>
+        </tr>
+        <tr>
+            <td>attitudes_count</td>
+            <td>string</td>
+            <td>微博被点赞数</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string</td>
+            <td>发帖时间</td>
+        </tr>
+        <tr>
+            <td>source</td>
+            <td>string</td>
+            <td>微博来源</td>
+        </tr>
+        <tr>
+            <td>uid</td>
+            <td>string</td>
+            <td>微博用户ID</td>
+        </tr>
+        <tr>
+            <td>nickname</td>
+            <td>string</td>
+            <td>微博昵称</td>
+        </tr>
+        <tr>
+            <td>isTop</td>
+            <td>string</td>
+            <td>微博是否是置顶</td>
+        </tr>
+        <tr>
+            <td>isHot</td>
+            <td>string[]</td>
+            <td>微博是否是热门</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

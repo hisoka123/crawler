@@ -1,0 +1,3 @@
+注意：
+OCR模块的底层实现是tesseser-OCR 3.02，所以系统（目前只支持windows和linux）需要事先安装tesseser-OCR
+并为OCR模块指定tesseser-OCR的安装根目录（AbstractOCRHandler.TESSERACT_ROOT）才可以正常应用此模块。

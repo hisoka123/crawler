@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:websocket="http://www.springframework.org/schema/websocket" 
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+
+	<!-- 自动扫描且只扫描@Controller -->
+	<context:component-scan base-package="com.crawlermanage.controller"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+
+	<!-- 以下配置需要防止在spring-mvc.xml文件，不能放置在applicationContext.xml文件，因为：
+	工程使用spring-mvc传统的方式配置，即使用ContextLoaderListener来加载root的Spring-contextConfigLocation(除Controller外的其他Component),
+	使用DispatcherServlet来加载Controller。而处理websocket的业务逻辑写在Controller中，加上了@MessageMapping的注解，结果请求根本到不了Controller里面去。
+	后来发现AbstractMethodMessageHandler负责扫描@MessageMapping，但是在该类的子类实例化时，把Spring的Root Context扔进去了，这里面是没有Controller的类的，
+	所以后面websocket的请求就到不了Controller。将websocket的相关配置文件放到DispatcherServlet里去加载
+	 -->
+	<bean id="websocket" class="com.crawlermanage.controller.WebsocketEndPoint"/>  
+  
+	<websocket:handlers>  
+	    <websocket:mapping path="/websocket" handler="websocket"/>  
+	    <websocket:handshake-interceptors>  
+	    <bean class="com.crawlermanage.controller.HandshakeInterceptor"/>  
+	    </websocket:handshake-interceptors>  
+	</websocket:handlers>  
+
+    <!-- log websocket -->
+    <context:component-scan base-package="com.log.datapush.websocket" />
+
+
+	<!-- 定义JSP文件的位置 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
+	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL -->
+	<mvc:default-servlet-handler />
+
+	<!-- 定义无需Controller的url<->view直接映射 -->
+	<mvc:view-controller path="/" view-name="redirect:/home" />
+
+	<!-- 将Controller抛出的异常转到特定View, 保持SiteMesh的装饰效果 -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Throwable">error/500</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

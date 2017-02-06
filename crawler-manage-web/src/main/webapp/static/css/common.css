@@ -1,0 +1,291 @@
+/*定义两种颜色*/
+.sr-h-tint{
+	background-color:#f5f5f5;
+}
+.sr-h-unTint{
+	background-color:#185F7D;
+}
+.sr-h-optionTint{
+	background:#f5f5f5;
+}
+.sr-h-optionUnTint{
+	background:#185F7D;
+}
+.sr-h-fontColor{
+	color:#337ab7;
+}
+.sr-h-fontColor-white{
+	color:#ffffff;
+}
+
+/*定义菜单有效选项li*/
+.sr-h-menuOption{}
+
+/*<a>标签*/
+a:link{
+  text-decoration:none;
+}
+
+/*性别图符*/
+.sr-h-gender{
+	   background:url(../imgs/modules/img-sprit-1.png) no-repeat;
+}
+.sr-h-gender-male{
+	  height:15px;
+	  width:16px;
+}
+.sr-h-gender-female{
+	  background-position:0px -20px;
+	  height:17px;
+	  width:16px;
+}
+
+/*定义综合搜索页      更多信息*/
+.sr-h-more{
+	color:#337ab7;
+	cursor:pointer;
+	font-weight:bold;
+	text-align:center
+}
+
+/*定义右侧页面字体*/
+.sr-h-font{
+	 font-family:微软雅黑;
+}
+
+/*定义人物头像*/
+.sr-h-personImg{
+	width:80px;
+	height:80px
+}
+.sr-h-personImg100{
+	 width:95px;
+	 height:100px;
+}
+
+
+/*定义最右侧logo图标div样式*/
+.sr-h-rightIconDiv{
+	height:55px;
+	width:55px;
+	padding-top:5px;
+	padding-left:5px;
+	border:2px solid #eee;
+	text-align:center;
+	background-color:#f5f5f5;
+	
+}
+/*定义最右侧logo图标样式*/
+.sr-h-rightIconStyle{
+	padding-top:5px;
+	cursor:pointer
+}
+/*定义最右侧search图标样式*/
+.sr-h-rightSearchStyle{
+	margin-top:30%;
+	color:rgb(72, 126, 176);
+	cursor:pointer
+}
+/*搜索人物结果为空，显示样式*/
+.sr-h-nullPerson{
+	font-size:16px;
+	color:#FF3366
+}
+
+/*修改common02中sr-zql-totop*/
+.sr-h-totop{
+	right:50px;
+}
+
+/*定义logo的大小*/
+.sr-h-logo18{
+	width:18px;
+	height:18px;
+}
+.sr-h-logo28{
+	width:28px;
+	height:32px;
+}
+
+
+
+/*定义checkbox*/
+.sr-h-checkboxDiv{
+	
+	width:12px;
+	height:12px;
+	margin-top:-2px;
+	margin-left:30px;
+	background-color:#fff;
+	border-top:1px solid #000;
+	border-left:1px solid #000
+	
+}
+/*定义checkbox选中颜色*/
+.sr-h-checkboxCheckedColor{
+	color:#00EE00;
+}
+
+
+/*微信二维码*/
+.sr-h-qrcode{
+	width:100px;
+	height:100px
+}
+/*微信二维码中的头像*/
+.sr-h-qrcodeImg{
+	width:40px;
+	height:40px;
+	position:absolute;
+	left:40px;
+	top:40px
+}
+/*微信二维码所在的div*/
+.sr-h-qrcodeDiv{
+	position:absolute;
+	left:40px;
+	z-index:2;
+	background-color:#f5f5f5;
+	padding:10px 10px 30px;
+	display:none;
+}
+
+/*”综合查阅详情“ ul >li*/
+#read_detail >ul >li{
+	text-align:center;
+	padding:0px 0px 5px
+}
+
+/*footer*/
+.footer{
+	  z-index:-1
+}
+
+#personSearchResults hr{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#personSearchResults .media{
+	 padding-top:20px;
+	 padding-bottom:20px;
+}
+.sr-h-joinDetailsCard{
+	position:absolute;
+	float:left;
+	z-index:1;
+	margin-left:15%;
+	width:430px;
+	min-height:180px;
+	background-color:#ffffff;
+	border:2px solid #eeeeee;
+	padding-bottom:5px
+}
+.sr-h-contrastLi{
+	text-align:center;
+	padding:0px;
+}
+div[id$='ContrastDetail'] >table>thead>tr>th,div[id$='ContrastDetail'] >table>tbody>tr>td{
+	text-align:center;
+	vertical-align:middle;
+}
+div[id$='ContrastDetail'] >table>tbody>tr>th{
+	text-align:right;
+	padding-right:3%;
+	vertical-align:middle;
+}
+.scrollColThead {  
+     position: relative;   
+     top: expression(this.parentElement.parentElement.parentElement.scrollTop);  
+     z-index:2;  
+}  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+/*旧*/
+body{
+    margin:0px;
+ }
+
+
+
+
+.scm-head{
+	 height:60px;   
+     margin-bottom:2px;
+}
+
+.scm-text{
+	
+	width: 55%;
+    height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*��div��λ��ҳ���м�  */
+  .scm-center-1{
+     position: absolute;
+     top: 30%;
+     left:30%;
+    
+ } 
+ 
+
+ .scm-center-2{
+     position: absolute;
+     top: 19%;
+     left:30%;
+    
+ }
+ 
+ 
+ //�����������ҳ�����������б�
+  .scm-searchResult-1{
+         /* background-color:blue; */
+         width:75%;
+         margin-right:5%;
+         float:right;
+  }
+
+
+#mask {
+	display: none;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: #777;
+	z-index: 1001;
+	-moz-opacity: 0.7;
+	opacity: .70;
+	filter: alpha(opacity=70);
+}
+
+.has-error{
+	border-color: red;
+}

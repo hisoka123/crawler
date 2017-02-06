@@ -1,0 +1,156 @@
+<h2>搜索用户</h2><hr/>
+<h3 class="page-header">说明</h3>
+<p>搜索用户接口是通过领英昵称来查询领英用户的基本信息的接口。</p>
+<h3 class="page-header">URL</h3>
+<p>http://&lt;Project&gt;/api/linkedin/user?q=</p>
+<h3 class="page-header">格式</h3>
+<p>JSON</p>
+<h3 class="page-header">HTTP请求方式</h3>
+<p>GET</p>
+<h3 class="page-header">请求参数</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>必选</th>
+            <th>类型及范围</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>q</td>
+            <td>true</td>
+            <td>string</td>
+            <td>查询条件(需要对查询条件进行一次utf8编码)</td>
+        </tr>
+        <tr>
+            <td>isDebug</td>
+            <td>false</td>
+            <td>boolean</td>
+            <td>是否启用调试模式</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-header">注意事项</h3>
+<p>
+   <br>1.Linkedin数据抓取需要事先有一个账号登录，通过这个登录的账号进行数据的抓取。而Linkedin平台对于普通用户查询有所限制，这可能导致查询结果中部分用户没有uid和profile等关键字段，这些用户的详细信息是抓取不到的。
+   <br>2.用不同账户登录Linkedin抓取到的用户及用户数据的排列顺序可能不同。
+</p>
+<h3 class="page-header">例子</h3>
+<p>说明：非调试模式下，搜索与“jason inch”相关的领英用户概要信息。</p>
+<p>请求：http://&lt;Project&gt;/api/linkedin/user?q=jason+inch</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+{
+    "data": [
+        {
+            "authToken": "Zk0e",
+            "name": "敬棠 殷",
+            "headline": "乐豪斯的创始人 | 中国超级经济的作者 | 殷华培训的培训总监",
+            "location": "中国 上海市区",
+            "industry": "管理咨询",
+            "profile": "https://www.linkedin.com/profile/view?id=ADEAAAAIbKYB53sjH4WQh4MHfXckjdsFfGPEwlI&authType=NAME_SEARCH&authToken=Zk0e&locale=zh_CN&srchid=4496973011445411853054&srchindex=1&srchtotal=4&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A4496973011445411853054%2CVSRPtargetId%3A552102%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH",
+            "profile_img": "https://media.licdn.com/mpr/mpr/shrink_100_100/p/7/005/06a/352/01c540b.jpg"
+        },
+        {
+            "authToken": "QOY9",
+            "name": "Jason Inch",
+            "headline": "Lyoness Canada Member",
+            "location": "加拿大 安大略",
+            "industry": "市场营销与广告",
+            "profile": "https://www.linkedin.com/profile/view?id=ADEAAAybByoB1t0sG7J8KyY_0tse7d095CmdwlQ&authType=NAME_SEARCH&authToken=QOY9&locale=en_US&srchid=4496973011445411853054&srchindex=2&srchtotal=4&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A4496973011445411853054%2CVSRPtargetId%3A211486506%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH",
+            "profile_img": "https://media.licdn.com/mpr/mpr/shrink_100_100/p/1/000/1b8/110/10c1745.jpg"
+        },
+        {
+            "authToken": "c8rk",
+            "name": "Jason Inch",
+            "headline": "Freelance Web Developer / Graphic Designer",
+            "location": "美国 大波士顿地区",
+            "industry": "平面设计",
+            "profile": "https://www.linkedin.com/profile/view?id=ADEAAAAgukcBEaGAjgSJh-e_cipIFpRv102-Qqs&authType=NAME_SEARCH&authToken=c8rk&locale=en_US&srchid=4496973011445411853054&srchindex=3&srchtotal=4&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A4496973011445411853054%2CVSRPtargetId%3A2144839%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH",
+            "cur_positions": [
+                "<B>Inch</B> Designs - Freelance Designer & Owner"
+            ],
+            "pre_positions": [ ]
+        },
+        {
+            "authToken": "5ROh",
+            "name": "Jason Inch",
+            "headline": "Sales at L/B Water Service, Inc.",
+            "location": "Harrisburg, Pennsylvania Area",
+            "industry": "批发",
+            "profile": "https://www.linkedin.com/profile/view?id=ADEAABhFLRcBrzYeNG3HKbnXZYJmIagF8xLsCCs&authType=NAME_SEARCH&authToken=5ROh&locale=en_US&srchid=4496973011445411853054&srchindex=4&srchtotal=4&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A4496973011445411853054%2CVSRPtargetId%3A407186711%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH"
+        }
+    ]
+}
+
+		</pre>
+<h3 class="page-header">返回字段说明</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <caption>返回正确data结果的字段说明对照表：</caption>
+        <thead>
+        <tr>
+            <th>返回值字段</th>
+            <th>字段类型</th>
+            <th>字段说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>uid</td>
+            <td>string</td>
+            <td>用户的ID</td>
+        </tr>
+        <tr>
+            <td>authToken</td>
+            <td>string</td>
+            <td>查看用户识别码</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>用户名</td>
+        </tr>
+        <tr>
+            <td>headline</td>
+            <td>string</td>
+            <td>用户一句话介绍</td>
+        </tr>
+        <tr>
+            <td>location</td>
+            <td>string</td>
+            <td>用户所在地</td>
+        </tr>
+        <tr>
+            <td>industry</td>
+            <td>string</td>
+            <td>用户从事行业</td>
+        </tr>
+        <tr>
+            <td>profile</td>
+            <td>string</td>
+            <td>用户查询主页链接</td>
+        </tr>
+        <tr>
+            <td>person_imng</td>
+            <td>string</td>
+            <td>用户头像</td>
+        </tr>
+        <tr>
+            <td>profile_positions</td>
+            <td>string[]</td>
+            <td>用户当前职位</td>
+        </tr>
+        <tr>
+            <td>profile_positions</td>
+            <td>string[]</td>
+            <td>用户曾经就职</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

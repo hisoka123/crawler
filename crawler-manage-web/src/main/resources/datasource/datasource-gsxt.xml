@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:cache="http://www.springframework.org/schema/cache"  
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/cache  http://www.springframework.org/schema/cache/spring-cache-4.0.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd"
+	default-lazy-init="true">
+
+	<description>gsxt 库数据源配置</description>
+
+	<!-- Jpa Entity Manager 配置 -->
+	<bean id="gsxtEntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="gsxtDataSource" />
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+		<property name="packagesToScan" value="com.module.dao.entity.gsxt,com.module.dao.entity.cnca,com.module.dao.entity.customs,com.module.dao.entity.creditchinatwo,com.module.dao.entity.dailianmeng,com.module.dao.entity.renfawang,com.module.dao.entity.iecms,com.module.dao.entity.crqp,com.module.dao.entity.shixin,com.module.dao.entity.qiyezhengxin,com.module.dao.entity.zjsfgkw,com.module.dao.entity.iautos,com.module.dao.entity.sipo,com.module.dao.entity.fahaicc,com.module.dao.entity.ownerTask" />
+		<property name="jpaProperties">
+			<props> 
+				<!-- <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				<prop key="net.sf.ehcache.configurationResourceName">cache/ehcache-hibernate-local.xml</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop> -->
+				 <prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			    <prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean> 
+
+
+	<!-- Spring Data Jpa配置, 扫描base-package下所有继承于Repository<T,ID>的接口 -->
+	<jpa:repositories base-package="com.module.dao.repository.gsxt,com.module.dao.repository.cnca,com.module.dao.repository.customs,com.module.dao.repository.creditchinatwo,com.module.dao.repository.dailianmeng,com.module.dao.repository.renfawang,com.module.dao.repository.iecms,com.module.dao.repository.crqp,com.module.dao.repository.shixin,com.module.dao.repository.qiyezhengxin,com.module.dao.repository.zjsfgkw,com.module.dao.repository.iautos,com.module.dao.repository.sipo,com.module.dao.repository.fahaicc,com.module.dao.repository.ownerTask"
+		transaction-manager-ref="gsxtTransactionManager"
+		entity-manager-factory-ref="gsxtEntityManagerFactory" />
+
+	<!-- 事务管理器配置, Jpa单数据源事务 -->
+	<bean id="gsxtTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="gsxtEntityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="gsxtTransactionManager" proxy-target-class="true" />
+	
+	<bean id="gsxtDataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
+		<!-- Connection Info -->
+		<property name="driverClassName" value="${gsxt.jdbc.driver}" />
+		<property name="url" value="${gsxt.jdbc.url}" />
+		<property name="username" value="${gsxt.jdbc.username}" />
+		<property name="password" value="${gsxt.jdbc.password}" />
+		<property name="maxActive" value="${gsxt.jdbc.pool.maxActive}" />
+		<property name="maxIdle" value="${gsxt.jdbc.pool.maxIdle}" />
+		<property name="minIdle" value="0" />
+		<!-- <property name="defaultAutoCommit" value="false" />  -->
+		<!-- 连接Idle10分钟后超时，每1分钟检查一次 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="600000" />
+	</bean>
+
+</beans>

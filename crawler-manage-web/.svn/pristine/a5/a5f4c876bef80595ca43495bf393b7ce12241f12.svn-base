@@ -1,0 +1,60 @@
+ /*only 浙法网zjsfgkw */
+ input {
+border-radius:10px;
+border:1px solid #cfcdc5;
+}
+select {
+border-radius:5px;
+border:1px solid #cfcdc5;
+}
+#zf_all #zf_top ul {
+	font-family: "新宋体";
+	font-size: 14px;
+	font-weight: bold;
+	width: 100%;
+}
+#zf_all #zf_top {
+	height: 30px;
+}
+#zf_all #zf_top li {
+	float: left;
+	width:180px;
+	text-align:center;
+	list-style:outside none none;
+	padding:7px 0;
+	cursor:pointer;
+	color:#fff;
+	background-color:#2e9fbf;
+}
+#zf_all #zf_slect {
+margin-left:120px;
+margin-top:50px;
+padding:0 10px;
+}
+#zf_all #zf_result {
+margin-left:40px;
+margin-top:50px;
+padding:0 10px;
+}
+#zf_all #zf_slect #tab_1 td {
+	font-size: 13px;
+}
+#zf_all #zf_slect #tab_2 td {
+	font-size: 13px;
+}
+#zf_all #zf_result #tab_3 td {
+	font-size: 13px;
+}
+#zf_all #zf_result #tab_4 td {
+	font-size: 13px;
+}
+#tips{
+	margin-left:200px;
+	padding-bottom: 20px;
+	font-size: 14px;
+	font-family: "新宋体";
+	font-weight: bold;
+	color: #0066CC;
+}
+
+#shclDefault{width:100px; height:100px; margin:10px auto;}

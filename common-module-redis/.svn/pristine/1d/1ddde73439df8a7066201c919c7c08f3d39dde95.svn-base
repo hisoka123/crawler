@@ -1,0 +1,24 @@
+redis.host=${redis.host}
+redis.port=${redis.port}
+
+#default db
+redis.default.db=0
+#the timeout 
+redis.timeout=60000
+
+#the max idle num
+redis.maxIdle=100
+redis.minIdle=30
+#the max connection num
+redis.maxActive=600
+#the max building connection waiting time 
+redis.maxWait=60000
+#test before borrow connection
+redis.testOnBorrow=true
+redis.testOnReturn=true
+redis.testWhileIdle=true
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=30000
+redis.encode=utf-8
+
+

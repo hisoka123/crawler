@@ -1,0 +1,24 @@
+.sr-loading {
+	margin: 10em auto;
+    z-index:10000;
+    border: solid 0.5em #9b59b6;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    padding: 0.5em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: #3498db;
+    background-clip: content-box;
+    animation: spinDisc 1.5s linear infinite;
+}
+@keyframes spinDisc {
+    50% {
+        border-top-color: #3498db;
+        border-bottom-color: #3498db;
+        background-color: #2ecc71;
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}

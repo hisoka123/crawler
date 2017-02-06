@@ -1,0 +1,72 @@
+<h2>关注用户</h2><hr/>
+<h3 class="page-header">说明</h3>
+<p>关注用户接口是通过用户id来关注或者取消关注用户微博的接口。</p>
+<h3 class="page-header">URL</h3>
+<p>http://&lt;Project&gt;/api/weibo/useraction?action= &uid= </p>
+<h3 class="page-header">格式</h3>
+<p>JSON</p>
+<h3 class="page-header">HTTP请求方式</h3>
+<p>GET</p>
+<h3 class="page-header">接口请求参数</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>必选</th>
+            <th>类型及范围</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>action</td>
+            <td>true</td>
+            <td>string</td>
+            <td>user_attention（代表关注）或者 user_delattention（代表取消关注）</td>
+        </tr>
+        <tr>
+            <td>uid</td>
+            <td>true</td>
+            <td>string</td>
+            <td>用户微博ID</td>
+        </tr>
+        <tr>
+            <td>isDebug</td>
+            <td>false</td>
+            <td>boolean</td>
+            <td>是否启用调试模式</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-header">注意事项</h3>
+<p>无</p>
+<h3 class="page-header">接口例子</h3>
+<p>说明：非调试模式下，关注id为“1656627870”的微博用户。此次处理成功。</p>
+<p>请求：http://&lt;Project&gt;/api/weibo/useraction?action=user_attention&uid=1656627870</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+    {"data":{"ok":"1"}}
+</pre>
+<h3 class="page-header">接口返回字段说明</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <caption>返回正确data结果的字段说明对照表：</caption>
+        <thead>
+        <tr>
+            <th>返回值字段</th>
+            <th>字段类型</th>
+            <th>字段说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ok</td>
+            <td>string</td>
+            <td>处理状态：1代表关注成功，2代表关注失败。</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,582 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.3.RELEASE</version>
+	</parent>
+
+	<groupId>com.sr.storm</groupId>
+	<artifactId>parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<!-- 文件拷贝时的编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- 编译时的编码 -->
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<!-- 编译时的版本 -->
+		<java.version>1.7</java.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies> 
+			<dependency>
+				<groupId>org.scribe</groupId>
+				<artifactId>scribe</artifactId>
+				<version>1.3.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.storm</groupId>
+				<artifactId>storm-core</artifactId>
+				<version>0.9.4</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sourceforge.htmlunit</groupId>
+				<artifactId>htmlunit</artifactId>
+				<version>2.15</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>1.8.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.belerweb</groupId>
+				<artifactId>weibo4j-oauth2</artifactId>
+				<version>2.1.1-beta2-3</version>
+			</dependency> 
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.5.3</version>
+			</dependency>
+			<dependency>
+	           <groupId>com.fasterxml.jackson.core</groupId>
+	           <artifactId>jackson-annotations</artifactId>
+	           <version>2.5.3</version>
+            </dependency>
+               <dependency>
+	           <groupId>com.fasterxml.jackson.core</groupId>
+	           <artifactId>jackson-databind</artifactId>
+	           <version>2.5.3</version>
+             </dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-jaxb-annotations</artifactId>
+				<version>2.5.3</version>
+			</dependency> 
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency> 
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+
+			<!-- ehcache -->
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>2.6.9</version>
+			</dependency>
+			<!-- ehcache -->
+
+			<!-- hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.0.3.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-ehcache</artifactId>
+				<version>4.3.6.Final</version>
+			</dependency>
+			<!-- hibernate --> 
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>2.1.3</version>
+			</dependency> 
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>4.1.6.RELEASE</version>
+			</dependency> 
+			<dependency>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+				<version>1.4.01</version>
+			</dependency> 
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.0</version>
+			</dependency> 
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>1.6.1</version>
+			</dependency>
+			<!-- email -->
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4.7</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<!-- email -->
+			<!-- shiro -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-web</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-ehcache</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<!-- shiro -->
+			<!-- apache cli -->
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+			<!-- apache commons-io -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			
+			<!-- itext -->
+			<dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itextpdf</artifactId>
+                <version>5.5.8</version>
+            </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itext-pdfa</artifactId>
+                <version>5.5.8</version>
+           </dependency>
+           <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itext-xtra</artifactId>
+                <version>5.5.8</version>
+           </dependency>
+           <dependency>
+                <groupId>com.itextpdf.tool</groupId>
+                <artifactId>xmlworker</artifactId>
+                <version>5.5.8</version>
+           </dependency>
+           <dependency>
+	            <groupId>com.itextpdf</groupId>
+	            <artifactId>itext-asian</artifactId>
+	           <version>5.2.0</version>
+           </dependency>
+			<dependency>
+				<groupId>org.upbase.srdb</groupId>
+				<artifactId>srdb</artifactId>
+				<version>10.0</version>
+			</dependency>  
+			
+			<!-- spring websocket -->
+			<dependency>
+	           <groupId>org.springframework</groupId>
+	           <artifactId>spring-websocket</artifactId>
+	           <version>4.1.6.RELEASE</version>
+            </dependency>
+            <dependency>
+	           <groupId>org.springframework</groupId>
+	           <artifactId>spring-messaging</artifactId>
+	           <version>4.1.6.RELEASE</version>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.tomcat.embed</groupId>
+               <artifactId>tomcat-embed-websocket</artifactId>
+               <version>7.0.57</version>
+			   <scope>provided</scope>
+            </dependency>
+			         
+		</dependencies>
+	</dependencyManagement>
+
+	<modules> 
+		<module>../common-storm</module>
+		<module>../common-module-htmlunit</module>
+		<module>../common-module-dao</module>
+		<module>../common-module-timetask</module>
+		<module>../common-module-drpc</module>
+		<module>../common-module-rss</module>
+		<module>../common-module-service</module>
+		<module>../common-module-mail</module>
+		<module>../common-module-redis</module>
+		<module>../common-module-aws</module>
+		<module>../common-module-log</module>
+		<module>../common-crawler-weibo</module>
+		<module>../common-crawler-zhihu</module>
+		<module>../common-crawler-linkedin</module>
+		<module>../common-crawler-pbccrc</module>
+		<module>../common-crawler-baidu</module>
+		<module>../common-crawler-se-baidu</module>
+		<module>../common-crawler-se-bing</module>
+		<module>../common-crawler-se-haosou</module>
+		<module>../common-crawler-se-sougou</module>
+		<module>../common-crawler-se-yahoo</module>
+		<module>../common-crawler-fahaicc</module>
+		<module>../common-crawler-dailianmeng</module>
+		<module>../common-crawler</module>
+		<module>../common-sns-weibo</module>
+		<module>../common-sns-oauth</module>
+		<module>../crawler-manage-web</module>
+		<module>../common-crawler-weixin</module>
+		<module>../common-module-security-shiro</module>
+		<module>../common-module-unit</module>
+		<module>../common-module-ocr</module>
+		<module>../ocr-service-web</module>
+		<module>../common-crawler-zjsfgkw</module>
+		<module>../common-crawler-creditchina</module>
+		<module>../common-crawler-iecms</module>
+		<module>../common-crawler-gsxt</module>
+		<module>../common-crawler-customs</module>
+		<module>../common-crawler-sxjlcxpt</module>
+		<module>../common-crawler-renfawang</module>
+        <module>../common-crawler-iautos</module>
+        <module>../common-crawler-shixin</module>
+        <module>../common-crawler-qiyezhengxin</module>
+        <module>../common-crawler-sipo</module>
+        <module>../common-crawler-cnca</module>
+	</modules>
+
+	<profiles>
+	
+		<profile>
+			<!-- 本机开发环境 -->
+			<id>dev</id>
+			<properties> 
+				<jdbc.url>jdbc:srdbsql://10.166.205.103:1975/crawler</jdbc.url> 
+				<jdbc.username>srdb</jdbc.username>
+				<jdbc.password>12qwaszx</jdbc.password>
+				<jdbc.pool.maxIdle>2</jdbc.pool.maxIdle>
+				<jdbc.pool.maxActive>3</jdbc.pool.maxActive>
+				<auth.jdbc.url>jdbc:srdbsql://10.166.205.103:1975/authorization</auth.jdbc.url> 
+				<auth.jdbc.username>srdb</auth.jdbc.username>
+				<auth.jdbc.password>12qwaszx</auth.jdbc.password>
+				<auth.jdbc.pool.maxIdle>2</auth.jdbc.pool.maxIdle>
+				<auth.jdbc.pool.maxActive>3</auth.jdbc.pool.maxActive>
+				
+				<redis.host>10.166.205.101</redis.host>
+				<!-- <redis.host>10.168.250.60</redis.host> -->
+				<redis.port>6379</redis.port>
+				<mail.host>smtp.163.com</mail.host>
+				<mail.username>13120448817@163.com</mail.username>
+				<mail.password>865681</mail.password>
+				
+				<!-- <storm.drpc.host>10.168.250.21</storm.drpc.host>
+				<storm.drpc.port>3772</storm.drpc.port>
+				<storm.topology.workernum>3</storm.topology.workernum>
+				<storm.topology.crawlerbolt_parallelismnum>3</storm.topology.crawlerbolt_parallelismnum>
+				<storm.topology.crawlerenginetopology>CrawlerEngineTopology</storm.topology.crawlerenginetopology> -->
+				
+				<storm.drpc.host>54.222.138.137</storm.drpc.host>
+				<storm.drpc.port>3772</storm.drpc.port>
+				<storm.topology.workernum>5</storm.topology.workernum>
+				<storm.topology.crawlerbolt_parallelismnum>5</storm.topology.crawlerbolt_parallelismnum>
+				<storm.topology.crawlerenginetopology>localtest-CrawlerEngineTopology</storm.topology.crawlerenginetopology>
+				
+				<!-- <nfs.nginx.server>10.168.250.25</nfs.nginx.server> -->
+				<!-- <nfs.filepath>/home/ubuntu/nfs-images</nfs.filepath> -->
+				<!-- <ocr.server>10.168.250.60:8080</ocr.server> -->
+				<!-- <ocr.server>10.168.240.34:8081</ocr.server> -->
+				<nfs.nginx.server>54.222.138.137</nfs.nginx.server>
+				<nfs.filepath>/home/ubuntu/nfs-images</nfs.filepath>
+				<ocr.server>54.223.194.5</ocr.server>
+				
+				<doc.jdbc.url>jdbc:srdbsql://10.166.205.103:1975/doc</doc.jdbc.url> 
+				<doc.jdbc.username>srdb</doc.jdbc.username>
+				<doc.jdbc.password>12qwaszx</doc.jdbc.password>
+				<doc.jdbc.pool.maxIdle>2</doc.jdbc.pool.maxIdle>
+				<doc.jdbc.pool.maxActive>3</doc.jdbc.pool.maxActive>
+				<task.jdbc.url>jdbc:srdbsql://10.166.205.103:1975/timeTask</task.jdbc.url> 
+				<task.jdbc.username>srdb</task.jdbc.username>
+				<task.jdbc.password>12qwaszx</task.jdbc.password>
+				<task.jdbc.pool.maxIdle>2</task.jdbc.pool.maxIdle>
+				<task.jdbc.pool.maxActive>3</task.jdbc.pool.maxActive>
+				<task.startSchedulerEnable>false</task.startSchedulerEnable>
+				
+				<gsxt.jdbc.url>jdbc:srdbsql://10.166.205.103:1975/gsxt</gsxt.jdbc.url> 
+				<gsxt.jdbc.username>srdb</gsxt.jdbc.username>
+				<gsxt.jdbc.password>12qwaszx</gsxt.jdbc.password>
+				<gsxt.jdbc.pool.maxIdle>2</gsxt.jdbc.pool.maxIdle>
+				<gsxt.jdbc.pool.maxActive>3</gsxt.jdbc.pool.maxActive>
+				
+				<pbccrc.jdbc.url>jdbc:srdbsql://10.166.205.103:1975/pbccrc</pbccrc.jdbc.url>
+				<pbccrc.jdbc.username>srdb</pbccrc.jdbc.username>
+				<pbccrc.jdbc.password>12qwaszx</pbccrc.jdbc.password>
+				<pbccrc.jdbc.pool.maxIdle>2</pbccrc.jdbc.pool.maxIdle>
+				<pbccrc.jdbc.pool.maxActive>3</pbccrc.jdbc.pool.maxActive>
+				
+				<aws.endpoint>ec2.cn-north-1.amazonaws.com.cn</aws.endpoint>
+				<aws.accessKey>AKIAOLE75G26VWQOUB2Q</aws.accessKey>
+				<aws.secretKey>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</aws.secretKey>
+				<aws.eipalloc>eipalloc-fd930fc7</aws.eipalloc><!-- 54.222.195.80 -->
+				<!-- i-b54eee8d supervisor1 -->
+				<!-- i-bc93b784 supervisor2 -->
+				<!-- i-dc5df5e4 supervisor3 -->
+				<!-- i-d65df5ee supervisor4 -->
+				<!-- i-57cf9c6f supervisor5 -->
+				<!-- i-55cf9c6d supervisor6 -->
+				<!-- i-54cf9c6c supervisor7 -->
+				<!-- i-53cf9c6b supervisor8 -->
+				<!-- i-52cf9c6a supervisor9 -->
+				<!-- i-c890c8f0 supervisor10 -->
+				<!-- i-c990c8f1 supervisor11 -->
+				<!-- i-ca90c8f2 supervisor12 -->
+				<!-- i-cb90c8f3 supervisor13 -->
+				<!-- i-ce90c8f6 supervisor14 -->
+				<!-- i-cf90c8f7 supervisor15 --> 
+				<!-- i-7fb49047 supervisor16 --> 
+				<!-- i-7eb49046 supervisor17 --> 
+				<!-- i-7db49045 supervisor18 --> 
+				<!-- i-7cb49044 supervisor19 --> 
+				<!-- i-7bb49043 supervisor20 --> 
+				<!-- i-7ab49042 supervisor21 --> 
+				<!-- i-79b49041 supervisor22 --> 
+				<!-- i-78b49040 supervisor23 --> 
+				<!-- i-71b49049 supervisor24 --> 
+				<!-- i-47aa8e7f supervisor25 -->
+				<!-- i-7fb69247 supervisor26 -->
+				<!-- i-7eb69246 supervisor27 -->  
+				<aws.crawlers>i-52cf9c6a,i-53cf9c6b,i-54cf9c6c,i-55cf9c6d,i-57cf9c6f,i-d65df5ee,i-dc5df5e4,i-bc93b784,i-b54eee8d,i-c890c8f0,i-c990c8f1,i-ca90c8f2,i-cb90c8f3,i-ce90c8f6,i-cf90c8f7,i-7fb49047,i-7eb49046,i-7db49045,i-7cb49044,i-7bb49043,i-7ab49042,i-79b49041,i-78b49040,i-71b49049,i-47aa8e7f,i-7fb69247,i-7eb69246</aws.crawlers>
+				<aws.securityGroup.name>JavaSecurityGroup</aws.securityGroup.name>
+				<!-- <projectName>data</projectName> -->
+				<env.type>dev</env.type>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		
+		
+		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<properties> 
+				<jdbc.url>jdbc:srdbsql://172.31.13.187:1975/crawler</jdbc.url> 
+				<jdbc.username>srdb</jdbc.username>
+				<jdbc.password>12qwaszx</jdbc.password>
+				<jdbc.pool.maxIdle>2</jdbc.pool.maxIdle>
+				<jdbc.pool.maxActive>3</jdbc.pool.maxActive>
+				<auth.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/authorization</auth.jdbc.url> 
+				<auth.jdbc.username>srdb</auth.jdbc.username>
+				<auth.jdbc.password>12qwaszx</auth.jdbc.password> 
+				<auth.jdbc.pool.maxIdle>10</auth.jdbc.pool.maxIdle>
+				<auth.jdbc.pool.maxActive>30</auth.jdbc.pool.maxActive>
+				
+				<redis.host>172.31.5.9</redis.host>
+				<redis.port>6379</redis.port>
+				<mail.host>smtp.163.com</mail.host>
+				<mail.username>13120448817@163.com</mail.username>
+				<mail.password>865681</mail.password>
+				
+				<storm.drpc.host>172.31.14.69</storm.drpc.host>
+				<storm.drpc.port>3772</storm.drpc.port>
+				<storm.topology.workernum>5</storm.topology.workernum>
+				<storm.topology.crawlerbolt_parallelismnum>5</storm.topology.crawlerbolt_parallelismnum>
+				<storm.topology.crawlerenginetopology>localtest-CrawlerEngineTopology</storm.topology.crawlerenginetopology>
+				
+				<nfs.nginx.server>54.222.138.137</nfs.nginx.server>
+				<nfs.filepath>/home/ubuntu/nfs-images</nfs.filepath>
+				<ocr.server>172.31.5.9:8080</ocr.server>
+				
+				<doc.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/doc-test</doc.jdbc.url> 
+				<doc.jdbc.username>srdb</doc.jdbc.username>
+				<doc.jdbc.password>12qwaszx</doc.jdbc.password>
+				<doc.jdbc.pool.maxIdle>2</doc.jdbc.pool.maxIdle>
+				<doc.jdbc.pool.maxActive>3</doc.jdbc.pool.maxActive>
+				<task.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/timeTask</task.jdbc.url> 
+				<task.jdbc.username>srdb</task.jdbc.username>
+				<task.jdbc.password>12qwaszx</task.jdbc.password>
+				<task.jdbc.pool.maxIdle>20</task.jdbc.pool.maxIdle>
+				<task.jdbc.pool.maxActive>30</task.jdbc.pool.maxActive>
+				<task.startSchedulerEnable>true</task.startSchedulerEnable>
+				
+				<gsxt.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/gsxt-test</gsxt.jdbc.url> 
+				<gsxt.jdbc.username>srdb</gsxt.jdbc.username>
+				<gsxt.jdbc.password>12qwaszx</gsxt.jdbc.password>
+				<gsxt.jdbc.pool.maxIdle>20</gsxt.jdbc.pool.maxIdle>
+				<gsxt.jdbc.pool.maxActive>30</gsxt.jdbc.pool.maxActive>
+
+				<pbccrc.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/pbccrc</pbccrc.jdbc.url>
+				<pbccrc.jdbc.username>srdb</pbccrc.jdbc.username>
+				<pbccrc.jdbc.password>12qwaszx</pbccrc.jdbc.password>
+				<pbccrc.jdbc.pool.maxIdle>20</pbccrc.jdbc.pool.maxIdle>
+				<pbccrc.jdbc.pool.maxActive>30</pbccrc.jdbc.pool.maxActive>
+
+				<aws.endpoint>ec2.cn-north-1.amazonaws.com.cn</aws.endpoint>
+				<aws.accessKey>AKIAOLE75G26VWQOUB2Q</aws.accessKey>
+				<aws.secretKey>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</aws.secretKey>
+				<aws.eipalloc>eipalloc-fd930fc7</aws.eipalloc><!-- 54.222.195.80 -->
+				<aws.crawlers>i-52cf9c6a,i-53cf9c6b,i-54cf9c6c,i-55cf9c6d,i-57cf9c6f,i-d65df5ee,i-dc5df5e4,i-bc93b784,i-b54eee8d,i-c890c8f0,i-c990c8f1,i-ca90c8f2,i-cb90c8f3,i-ce90c8f6,i-cf90c8f7,i-7fb49047,i-7eb49046,i-7db49045,i-7cb49044,i-7bb49043,i-7ab49042,i-79b49041,i-78b49040,i-71b49049,i-47aa8e7f,i-7fb69247,i-7eb69246</aws.crawlers>
+				<aws.securityGroup.name>JavaSecurityGroup</aws.securityGroup.name>
+				<!-- <projectName>crawler</projectName> -->
+				<env.type>test</env.type>
+			</properties>
+		</profile> 
+
+		<profile>
+			<!-- 生产环境 -->
+			<id>prod</id>
+			<properties> 
+				<!-- <jdbc.url>jdbc:srdbsql://172.31.13.187:1975/crawler</jdbc.url> -->
+				<jdbc.url>jdbc:srdbsql://172.31.14.177:1975/crawler</jdbc.url>
+				<jdbc.username>srdb</jdbc.username>
+				<jdbc.password>12qwaszx</jdbc.password>
+				<jdbc.pool.maxIdle>2</jdbc.pool.maxIdle>
+				<jdbc.pool.maxActive>3</jdbc.pool.maxActive> 
+				<!-- <auth.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/authorization</auth.jdbc.url> -->
+				<auth.jdbc.url>jdbc:srdbsql://172.31.14.177:1975/authorization</auth.jdbc.url>
+				<auth.jdbc.username>srdb</auth.jdbc.username>
+				<auth.jdbc.password>12qwaszx</auth.jdbc.password>
+				<auth.jdbc.pool.maxIdle>30</auth.jdbc.pool.maxIdle>
+				<auth.jdbc.pool.maxActive>50</auth.jdbc.pool.maxActive>
+				<redis.host>172.31.12.68</redis.host>
+				<redis.port>6379</redis.port>
+				<mail.host>smtp.126.com</mail.host>
+				<mail.username>loganliu_2010@126.com</mail.username>
+				<mail.password>12qwaszx</mail.password> 
+				
+				<storm.drpc.host>172.31.14.69</storm.drpc.host>
+				<storm.drpc.port>3772</storm.drpc.port>
+				<storm.topology.workernum>21</storm.topology.workernum>
+				<storm.topology.crawlerbolt_parallelismnum>21</storm.topology.crawlerbolt_parallelismnum>
+				<storm.topology.crawlerenginetopology>CrawlerEngineTopology</storm.topology.crawlerenginetopology>
+				
+				<!-- <nfs.nginx.server>172.31.14.69</nfs.nginx.server> -->
+				<nfs.nginx.server>54.222.138.137</nfs.nginx.server>
+				<nfs.filepath>/home/ubuntu/nfs-images</nfs.filepath>
+				<ocr.server>172.31.12.68</ocr.server> 
+				<!-- <doc.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/doc</doc.jdbc.url> -->
+				<doc.jdbc.url>jdbc:srdbsql://172.31.14.177:1975/doc</doc.jdbc.url>
+				<doc.jdbc.username>srdb</doc.jdbc.username>
+				<doc.jdbc.password>12qwaszx</doc.jdbc.password>
+				<doc.jdbc.pool.maxIdle>10</doc.jdbc.pool.maxIdle>
+				<doc.jdbc.pool.maxActive>20</doc.jdbc.pool.maxActive> 
+				<!-- <task.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/timeTask</task.jdbc.url> -->
+				<task.jdbc.url>jdbc:srdbsql://172.31.14.177:1975/timeTask</task.jdbc.url>
+				<task.jdbc.username>srdb</task.jdbc.username>
+				<task.jdbc.password>12qwaszx</task.jdbc.password>
+				<task.jdbc.pool.maxIdle>30</task.jdbc.pool.maxIdle>
+				<task.jdbc.pool.maxActive>50</task.jdbc.pool.maxActive> 
+				<task.startSchedulerEnable>true</task.startSchedulerEnable>
+				<!-- <gsxt.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/gsxt</gsxt.jdbc.url> -->
+				<gsxt.jdbc.url>jdbc:srdbsql://172.31.14.177:1975/gsxt</gsxt.jdbc.url>
+				<gsxt.jdbc.username>srdb</gsxt.jdbc.username>
+				<gsxt.jdbc.password>12qwaszx</gsxt.jdbc.password>
+				<gsxt.jdbc.pool.maxIdle>30</gsxt.jdbc.pool.maxIdle>
+				<gsxt.jdbc.pool.maxActive>50</gsxt.jdbc.pool.maxActive>
+				<pbccrc.jdbc.url>jdbc:srdbsql://172.31.14.177:1975/pbccrc</pbccrc.jdbc.url>
+				<pbccrc.jdbc.username>srdb</pbccrc.jdbc.username> 
+				<pbccrc.jdbc.password>12qwaszx</pbccrc.jdbc.password>
+				<pbccrc.jdbc.pool.maxIdle>20</pbccrc.jdbc.pool.maxIdle>
+				<pbccrc.jdbc.pool.maxActive>30</pbccrc.jdbc.pool.maxActive>
+				<aws.endpoint>ec2.cn-north-1.amazonaws.com.cn</aws.endpoint>
+				<aws.accessKey>AKIAOLE75G26VWQOUB2Q</aws.accessKey>
+				<aws.secretKey>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</aws.secretKey>
+				<aws.eipalloc>eipalloc-fd930fc7</aws.eipalloc><!-- 54.222.195.80 -->
+				<aws.crawlers>i-52cf9c6a,i-53cf9c6b,i-54cf9c6c,i-55cf9c6d,i-57cf9c6f,i-d65df5ee,i-dc5df5e4,i-bc93b784,i-b54eee8d,i-c890c8f0,i-c990c8f1,i-ca90c8f2,i-cb90c8f3,i-ce90c8f6,i-cf90c8f7,i-7fb49047,i-7eb49046,i-7db49045,i-7cb49044,i-7bb49043,i-7ab49042,i-79b49041,i-78b49040,i-71b49049,i-47aa8e7f,i-7fb69247,i-7eb69246</aws.crawlers>
+				<aws.securityGroup.name>huicheng-data-ip-white-list</aws.securityGroup.name>
+				<!-- <projectName>data</projectName> -->
+				<env.type>prod</env.type>
+			</properties>
+		</profile>
+		
+		<profile>
+			<!-- 汇诚 生产环境 -->
+			<id>hcprod</id>
+			<properties> 
+				<!-- <jdbc.url>jdbc:srdbsql://172.31.13.187:1975/crawler</jdbc.url> -->
+				<jdbc.url>jdbc:srdbsql://172.31.22.41:1975/crawler</jdbc.url>
+				<jdbc.username>srdb</jdbc.username>
+				<jdbc.password>12qwaszx</jdbc.password>
+				<jdbc.pool.maxIdle>2</jdbc.pool.maxIdle>
+				<jdbc.pool.maxActive>3</jdbc.pool.maxActive> 
+				<!-- <auth.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/authorization</auth.jdbc.url> -->
+				<auth.jdbc.url>jdbc:srdbsql://172.31.22.41:1975/authorization</auth.jdbc.url>
+				<auth.jdbc.username>srdb</auth.jdbc.username>
+				<auth.jdbc.password>12qwaszx</auth.jdbc.password>
+				<auth.jdbc.pool.maxIdle>30</auth.jdbc.pool.maxIdle>
+				<auth.jdbc.pool.maxActive>50</auth.jdbc.pool.maxActive>
+				<redis.host>172.31.27.160</redis.host>
+				<redis.port>6379</redis.port>
+				<mail.host>smtp.126.com</mail.host>
+				<mail.username>loganliu_2010@126.com</mail.username>
+				<mail.password>12qwaszx</mail.password> 
+				
+				<storm.drpc.host>172.31.24.87</storm.drpc.host>
+				<storm.drpc.port>3772</storm.drpc.port>
+				<storm.topology.workernum>49</storm.topology.workernum>
+				<storm.topology.crawlerbolt_parallelismnum>49</storm.topology.crawlerbolt_parallelismnum>
+				<storm.topology.crawlerenginetopology>CrawlerEngineTopology</storm.topology.crawlerenginetopology>
+				
+				<!-- <nfs.nginx.server>172.31.14.69</nfs.nginx.server> -->
+				<nfs.nginx.server>54.222.245.77</nfs.nginx.server>
+				<nfs.filepath>/home/ubuntu/nfs-images</nfs.filepath>
+				<ocr.server>172.31.27.160</ocr.server> 
+				<!-- <doc.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/doc</doc.jdbc.url> -->
+				<doc.jdbc.url>jdbc:srdbsql://172.31.22.41:1975/doc</doc.jdbc.url>
+				<doc.jdbc.username>srdb</doc.jdbc.username>
+				<doc.jdbc.password>12qwaszx</doc.jdbc.password>
+				<doc.jdbc.pool.maxIdle>10</doc.jdbc.pool.maxIdle>
+				<doc.jdbc.pool.maxActive>20</doc.jdbc.pool.maxActive> 
+				<!-- <task.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/timeTask</task.jdbc.url> -->
+				<task.jdbc.url>jdbc:srdbsql://172.31.22.41:1975/timetask</task.jdbc.url>
+				<task.jdbc.username>srdb</task.jdbc.username>
+				<task.jdbc.password>12qwaszx</task.jdbc.password>
+				<task.jdbc.pool.maxIdle>30</task.jdbc.pool.maxIdle>
+				<task.jdbc.pool.maxActive>50</task.jdbc.pool.maxActive> 
+				<task.startSchedulerEnable>true</task.startSchedulerEnable>
+				<!-- <gsxt.jdbc.url>jdbc:srdbsql://172.31.13.187:1975/gsxt</gsxt.jdbc.url> -->
+				<gsxt.jdbc.url>jdbc:srdbsql://172.31.22.41:1975/gsxt</gsxt.jdbc.url>
+				<gsxt.jdbc.username>srdb</gsxt.jdbc.username>
+				<gsxt.jdbc.password>12qwaszx</gsxt.jdbc.password>
+				<gsxt.jdbc.pool.maxIdle>30</gsxt.jdbc.pool.maxIdle>
+				<gsxt.jdbc.pool.maxActive>50</gsxt.jdbc.pool.maxActive>
+				<pbccrc.jdbc.url>jdbc:srdbsql://172.31.22.41:1975/pbccrc</pbccrc.jdbc.url>
+				<pbccrc.jdbc.username>srdb</pbccrc.jdbc.username> 
+				<pbccrc.jdbc.password>12qwaszx</pbccrc.jdbc.password>
+				<pbccrc.jdbc.pool.maxIdle>20</pbccrc.jdbc.pool.maxIdle>
+				<pbccrc.jdbc.pool.maxActive>30</pbccrc.jdbc.pool.maxActive>
+				<aws.endpoint>ec2.cn-north-1.amazonaws.com.cn</aws.endpoint>
+				<aws.accessKey>AKIAPJKUZJ6RM5WWISAA</aws.accessKey>
+				<aws.secretKey>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</aws.secretKey>
+				<aws.eipalloc>eipalloc-c8bddaf2</aws.eipalloc><!-- 54.222.195.80 -->
+				<aws.crawlers>i-8dbf94b5,i-0084af38,i-d1371de9,i-a650619e,i-2c546514,i-ea5465d2,i-eb5465d3,i-3354650b,i-0c546534,i-0d546535,i-911120a9,i-fc1021c4,i-d61223ee,i-3512230d,i-3e152406,i-4d152475,i-d41524ec,i-ea1425d2,i-6d172655,i-e01726d8,i-ff1425c7,i-fe1425c6,i-fd1425c5,i-fc1425c4,i-f81425c0,i-b413228c,i-b513228d,i-b613228e,i-2f132217,i-1410212c,i-9e1425a6,i-92f0c0aa,i-45f0c07d,i-93f0c0ab,i-b3f2c28b,i-b2f2c28a,i-8df2c2b5,i-55f1c16d,i-54f1c16c,i-57f1c16f,i-bff1c187,i-bef1c186,i-bbf1c183,i-baf1c182,i-b9f1c181,i-b8f1c180,i-b7f1c18f,i-b5f1c18d,i-b4f1c18c</aws.crawlers>
+				<aws.securityGroup.name>huicheng-data-ip-white-list</aws.securityGroup.name>
+				<!-- <projectName>data</projectName> -->
+				<env.type>prod</env.type>
+			</properties>
+		</profile>
+		
+	</profiles>
+</project>

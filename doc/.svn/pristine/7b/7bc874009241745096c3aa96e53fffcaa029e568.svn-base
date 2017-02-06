@@ -1,0 +1,53 @@
+-- table:customs_company
+comment on table public.customs_company is '海关网公司信息表';
+comment on column public.customs_company.id is '主键';
+comment on column public.customs_company.name is '公司或组织机构名称';
+comment on column public.customs_company.num is '数据爬取次数';
+comment on column public.customs_company.priority is '数据爬取优先级别（数字越大，优先级别越高，目前支持的级别为0和1）';
+comment on column public.customs_company.state is '数据爬取状态代码';
+
+-- table:h_result_json
+comment on table public.h_result_json is '返回结果表（json）';
+comment on column public.h_result_json.id is '主键';
+comment on column public.h_result_json.cname is '公司或组织机构名称';
+comment on column public.h_result_json.result is '返回结果json串';
+comment on column public.h_result_json.executetime is '版本时间';
+comment on column public.h_result_json.customs_company_id is '对应的公司或组织机构主键';
+
+-- table:h_reg_information
+comment on table public.h_reg_information is '企业基本信息表';
+comment on column public.h_reg_information.id is '主键';
+comment on column public.h_reg_information.customsRegNo is '海关注册编码';
+comment on column public.h_reg_information.socialCreditNo is '社会信用代码';
+comment on column public.h_reg_information.regDate is '注册日期';
+comment on column public.h_reg_information.barCode is '组织机构代码';
+comment on column public.h_reg_information.chineseCompanyName is '企业中文名称';
+comment on column public.h_reg_information.regCustoms is '注册海关';
+comment on column public.h_reg_information.regAddress is '工商注册地址';
+comment on column public.h_reg_information.admDivision is '行政区划';
+comment on column public.h_reg_information.enconomicDivision is '经济区划';
+comment on column public.h_reg_information.enconomicType is '经济类型';
+comment on column public.h_reg_information.businessType is '经营类别';
+comment on column public.h_reg_information.businessLine is '行业种类';
+comment on column public.h_reg_information.customsValidity is '报关有效期';
+comment on column public.h_reg_information.customsCancelMarks is '海关注销标志';
+comment on column public.h_reg_information.annualReport is '年报情况';
+comment on column public.h_reg_information.executetime is '数据录入时间';
+comment on column public.h_reg_information.customs_company_id is '对应的公司或组织机构主键';
+
+-- table:h_credit_level
+comment on table public.h_credit_level is '信用等级表';
+comment on column public.h_credit_level.id is '主键';
+comment on column public.h_credit_level.identifyDate is '认定时间';
+comment on column public.h_credit_level.legalNo is '法律文书编号';
+comment on column public.h_credit_level.creditLevel is '信用等级';
+comment on column public.h_credit_level.reginformation_id is '基本信息表主键';
+
+-- table:h_punish_information
+comment on table public.h_punish_information is '处罚信息表';
+comment on column public.h_punish_information.id is '主键';
+comment on column public.h_punish_information.party is '当事人';
+comment on column public.h_punish_information.caseQuality is '案件性质';
+comment on column public.h_punish_information.punishDate is '处罚日期';
+comment on column public.h_punish_information.punishNo is '行政处罚决定书编号';
+comment on column public.h_punish_information.reginformation_id is '基本信息表主键';

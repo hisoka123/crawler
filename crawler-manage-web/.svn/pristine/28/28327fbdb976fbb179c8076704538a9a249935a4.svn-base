@@ -1,0 +1,173 @@
+ /*only sinaweibo */
+  
+  
+  .sina-left{
+     float:left;
+     margin:0px;
+     width:17%;
+    
+    
+  }
+
+  .sina-content{
+      float:right;
+      width:80%;
+      margin:0px;
+      position:absolute;
+      right:5% 
+  }
+  .sina-content-20{
+      float:left;
+      width:20%;
+      
+  
+  }
+  .sina-content-30{
+      float:left;
+      width:29%;
+      
+      }
+  .sina-content-30r{
+      float:right;
+      width:30%;
+  
+  }
+  .sina-content-70{
+      float:right;
+      width:69%;
+      position:relative;
+       
+  }
+  .sina-content-80{
+      float:right;
+      width:79%;
+      position:relative;
+      left:2%; 
+  }
+  .sina-content-60{
+      float:right;
+      width:60%;
+      position:relative;
+      left:2%; 
+  }
+  .sina-td-10px{
+      width:10px;
+  }
+  .sina-td-40px{
+      width:40px;
+  }
+  
+  .sina-td-50px{
+       width:50px;
+       
+  }
+  .sina-td-60px{
+      width:60px;
+  }
+  .sina-td-80px{
+        width:80px;
+  }
+  .sina-td-85px{
+        width:85px;
+  }
+  .sina-td-100px{
+       width:100px;
+  }
+  .sina-td-110px{
+       width:110px;
+  }
+  .sina-td-130px{
+       width:130px;
+  }
+  .sina-td-150px{
+       width:150px;
+  }
+  .sina-td-200px{
+       width:200px;
+  }
+  .sina-td-250px{
+       width:250px;
+  }
+   .sina-td-300px{
+        width:300px;
+  }
+  .sina-img-50px{
+       width:50px;
+       height:50px;
+  }
+  .sina-td-center{
+       align: center;
+       
+  }
+ .sina-button{
+       width:80px;
+       height:30px;
+       position:relative;      
+  }
+  
+  .sina-margin-top{
+       margin-top:5%; 
+  }
+  .sina-margin-top-1{
+      margin-top:1%;  
+  }
+  .sina-margin-top-5{
+      margin-top:5%;  
+  }
+  .sina-margin-bottom-5{
+      margin-bottom:5%;
+  }
+  
+  .sina-background{
+       background:#FFFFFF;
+  }
+  .sina-background-orange{
+       background-color:#FFB90F;
+   }
+  .sina-button-yellow{
+       background:#FFFF00;
+  }
+  .sina-fixed-top{
+       position:fixed;      
+  }
+  .sina-fixed-bottom{
+       position:fixed;
+       bottom:0%;
+       left:97%;
+  }
+  .sina-zIndex{
+       z-index:-1;  
+  }
+  
+  .sina-retweet-position{
+       position:relative;
+       margin-left:2%;
+       margin-right:2%;
+       margin-top:3%;
+       background:#CCCCFF;
+       border-radius: 10px; 
+  }
+  .sina-hr{
+        width:100%;
+        hight:1px;
+        background:#FF99CC;
+  }
+  .sina-margin-top-4{
+        margin-top:4%;
+  }
+  .sina-margin-left-1{
+        position:relative;
+        margin-left:1%;
+  }
+  .sina-bubble-1{      
+		font-size: 40px;
+		position: relative;
+		margin-left:5%;
+		line-height: 5px;
+		top: -1px;
+		color: #CCCCFF;
+  }
+  .sina-text-center{
+         text-align:center;
+  }
+ 

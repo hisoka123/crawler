@@ -1,0 +1,543 @@
+<h2>查询用户信息</h2><hr/>
+<h3 class="page-header">说明</h3>
+<p>用户详细信息接口通过知乎用户主页来查询其相应的详细信息的接口。</p>
+<h3 class="page-header">URL</h3>
+<p>http://&lt;Project&gt;/api/zhihu/profile?url=</p>
+<h3 class="page-header">格式</h3>
+<p>JSON</p>
+<h3 class="page-header">HTTP请求方式</h3>
+<p>GET</p>
+<h3 class="page-header">请求参数</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>必选</th>
+            <th>类型及范围</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>url</td>
+            <td>true</td>
+            <td>string</td>
+            <td>用户主页的URL，即用户查询接口返回的profile</td>
+        </tr>
+        <tr>
+            <td>isDebug</td>
+            <td>false</td>
+            <td>boolean</td>
+            <td>是否启用调试模式</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-header">注意事项</h3>
+<p>无</p>
+<h3 class="page-header">例子</h3>
+<p>请求：http://&lt;Project&gt;/api/zhihu/profile?url=http://www.zhihu.com/people/xiepanda</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+{
+    "data": {
+        "name": "谢熊猫君",
+        "bio": "搬到深圳啦，希望认识些当地朋友，请私信。",
+        "person_info": "&lt;span class=\"content\"&gt; 四位知友共同翻译的《和孩子谈谈癌症》，关于「确诊肝癌晚期，怎样将病情告知孩子并减少伤害？」的详细解答 和下载：&lt;a href=\"http://zhuanlan.zhihu.com/gongyi/19920822\" class=\"internal\"&gt;&lt;span class=\"invisible\"&gt;http://&lt;/span&gt;&lt;span class=\"visible\"&gt;zhuanlan.zhihu.com/gong&lt;/span&gt;&lt;span class=\"invisible\"&gt;yi/19920822&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;/a&gt; 本人已委托维权骑士（&lt;a href=\"http://www.rightknights.com\" class=\" external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;rightknights.com&lt;/span&gt;&lt;span class=\"invisible\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;）为我的文章进行维权行动。 &lt;/span&gt;",
+        "location": "Gotham",
+        "gender": "男",
+        "profile": "http://www.zhihu.com/people/xiepanda",
+        "ask_num": "33",
+        "answers_num": "317",
+        "posts_num": "71",
+        "attention_num": "284",
+        "followers_num": "297548",
+        "agree_num": "435891",
+        "thank_num": "97946",
+        "skill_topics": [
+            {
+                "name": "美食",
+                "avatar": "https://pic1.zhimg.com/975baaf73fd76f48ce6f05e19b176878_m.jpg",
+                "link": "http://www.zhihu.com/topic/19551137"
+            },
+            {
+                "name": "烹饪",
+                "avatar": "https://pic4.zhimg.com/4f52595ab_m.jpg",
+                "link": "http://www.zhihu.com/topic/19551805"
+            },
+            {
+                "name": "生活",
+                "avatar": "https://pic4.zhimg.com/d5aed1527_m.jpg",
+                "link": "http://www.zhihu.com/topic/19551147"
+            },
+            {
+                "name": "厨房",
+                "avatar": "https://pic3.zhimg.com/80d4329c6_m.jpg",
+                "link": "http://www.zhihu.com/topic/19575374"
+            },
+            {
+                "name": "饮食",
+                "avatar": "https://pic3.zhimg.com/3c4632aba_m.jpg",
+                "link": "http://www.zhihu.com/topic/19552249"
+            },
+            {
+                "name": "食物",
+                "avatar": "https://pic4.zhimg.com/bef6d067f_m.jpg",
+                "link": "http://www.zhihu.com/topic/19552062"
+            }
+        ],
+        "answers": [
+            {
+                "id": "68656411",
+                "agree_num": "170",
+                "question": {
+                    "id": "28080625",
+                    "title": "为什么洗衣服的时候总是丢袜子，而且就只丢一只…？",
+                    "link": "http://www.zhihu.com/question/28080625"
+                }
+            },
+            {
+                "id": "66656844",
+                "agree_num": "1238",
+                "question": {
+                    "id": "34897210",
+                    "title": "有什么英文名是不能取的？",
+                    "link": "http://www.zhihu.com/question/34897210"
+                }
+            },
+            {
+                "id": "65193739",
+                "agree_num": "2985",
+                "question": {
+                    "id": "28796527",
+                    "title": "罗辑思维在知乎上取材，付费了没有？",
+                    "link": "http://www.zhihu.com/question/28796527"
+                }
+            }
+        ],
+        "questions": [
+            {
+                "id": "26767146",
+                "title": "如果没有计划报废（Planned Obsolescence），经济会受到什么影响？",
+                "link": "http://www.zhihu.com/question/26767146"
+            },
+            {
+                "id": "25757621",
+                "title": "孩子要怎么面对直升机父母 (Helicopter Parents)？",
+                "link": "http://www.zhihu.com/question/25757621"
+            },
+            {
+                "id": "24803164",
+                "title": "「不涉及经营的自家露天烧烤也违法」这个说法是否正确？",
+                "link": "http://www.zhihu.com/question/24803164"
+            }
+        ],
+        "actions": [
+            {
+                "operation": "answer",
+                "operate_time": "2015-10-21 09:24:00",
+                "answer": {
+                    "agree_num": "170",
+                    "content": "也会一双一双丢，只是一双的两只都丢了的时候你不会注意到。
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28080625/answer/68656411\"&gt;发布于 09:24&lt;/a&gt;
+&lt;/span&gt;",
+                    "question": {
+                        "id": "28080625",
+                        "title": "为什么洗衣服的时候总是丢袜子，而且就只丢一只…？",
+                        "link": "http://www.zhihu.com/question/28080625"
+                    }
+                }
+            },
+            {
+                "operation": "follow",
+                "operate_time": "2015-10-17 01:15:59",
+                "answer": {
+                    "question": {
+                        "id": "36546592",
+                        "title": "如何看待浙大学生(教育学院)状告铁路部门事件？",
+                        "link": "http://www.zhihu.com/question/36546592"
+                    }
+                }
+            },
+            {
+                "operation": "answer",
+                "operate_time": "2015-10-07 14:08:46",
+                "answer": {
+                    "agree_num": "1238",
+                    "content": "这个问题里面答案很多了，大部分是举出了Dick之类的搞笑名字，也是挺有趣的回答。&lt;br&gt;&lt;br&gt;当然，我还是没看到回答特别到点子上的，我来说几点吧，基本上都是给自己取英文名时要避免的：&lt;br&gt;&lt;blockquote&gt;1）女孩取英文名尽量避免性工作者常用名&lt;br&gt;2）不要使用明显贬义的名字&lt;br&gt;3）不要使用和坏人有关联的名字&lt;br&gt;4）不要过于追求个性化&lt;br&gt;5）如果自己的姓比较普遍，尽量避免太常用的英文名&lt;br&gt;6）实在不知道怎么取名，就选用安全名&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;1）女孩取英文名尽量避免性工作者常用名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;每当见到一个把自己的英文名定为Crystal（水晶）的女孩儿，我都会为对方感到惋惜。取这个名字时通常是为了取水晶的纯净、透明、纯洁的含义，但是不巧的是，Crystal（包括其变种Cristal, Chrystal,以及最恶劣的Krystal），是最常见的脱衣舞者的艺名。&lt;br&gt;&lt;br&gt;这里并不是歧视性工作者或者脱衣舞，也不是说所有叫Crystal的女孩子都是不学好的，只是因为Crystal这个英文名与脱衣舞者的关联太紧密，使得一看到Crystal这个名字，想到的就是一个酗酒的白人脱衣舞从业者的形象。所以保险起见，不要取这类名字。&lt;br&gt;&lt;br&gt;这一类的名字还包括：&lt;br&gt;Amber&lt;br&gt;Angel&lt;br&gt;Candy&lt;br&gt;Cherry&lt;br&gt;Tiffany&lt;br&gt;等等，都是比较常见的stripper name，女孩子请尽量避免。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;2）不要使用明显贬义的名字&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;比如devil，demon，Lucifer这类恶魔属性的词语，或者war，rape，greed这类贬义词，以及shit，piss等等含有污秽之意的词。&lt;br&gt;&lt;br&gt;这些应该不难理解，效果类似张恶魔、李强奸、赵大便这些。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;3）不要使用和坏人有关联的名字&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;这里特指那些家喻户晓的坏人，比如Adolf（希特勒），Osama（拉登），Saddam（萨达姆），Nero（尼禄）这种。&lt;br&gt;&lt;br&gt;这类名字一般是那些有名的坏人用的，而且又不太常见，所以很容易让人联想到名字背后关联的人，也是大忌。&lt;br&gt;&lt;br&gt;当然，有一些人评价也很差，但是因为名字比较常见，所以问题不大，比如Joseph&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;4）不要过于追求个性化&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;虽然理论上任何单词都可以用来做名字，但是实际操作上不是每个都适合的，我记得曾经看过一个台湾人的英文名叫Slime（史莱姆），个性是挺个性，但是总让人觉得怪怪的。你要是面对一个叫朱八戒的人，估计一开始也很难认真起来，而且很容易没见面就脑子里浮现出这个人的长相。&lt;br&gt;&lt;br&gt;类似的还有用品牌做名字的，Adidas，Pepsi之流，其实也不是特别正经，效果类似高洁丝、富严杰，名字本身没有什么贬义的意思，但就是怪怪的。&lt;br&gt;&lt;br&gt;个性要有，但是不要太个性了，不然容易闹笑话。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;5）如果自己的姓比较普遍，尽量避免太常用的英文名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;这条不算大问题，只是我想起以前我那四个都叫Maggie Zheng的女同事有感而发一下，只要取名字时候身边没有和自己去一样名字的，那就没什么问题。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;6）实在不知道怎么取名，就选用安全名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;什么是安全名？你们在别的帖子里也看到了，不管是平民还是将军，都有可能出现搞笑的名字，但是有一个名字列表是绝对安全的——在世的英国王室成员的名字。&lt;br&gt;&lt;br&gt;为什么要强调在世的，因为词义会变化，所以已经去世的人，哪怕是王室成员的名字，也有可能不靠谱。但是在世的英国王室成员的名字肯定是安全的。&lt;br&gt;&lt;br&gt;这里摘录几个安全名给大家参考：&lt;br&gt;Emma&lt;br&gt;Agatha&lt;br&gt;Elizabeth&lt;br&gt;Caroline&lt;br&gt;Sarah&lt;br&gt;Diana&lt;br&gt;Kate&lt;br&gt;Victoria&lt;br&gt;Margaret&lt;br&gt;William&lt;br&gt;John&lt;br&gt;Philip&lt;br&gt;Anthony&lt;br&gt;Andrew&lt;br&gt;Charles&lt;br&gt;Edward&lt;br&gt;Albert&lt;br&gt;等等，请自己在网上检索。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;大概就是这样
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/34897210/answer/66656844\"&gt;发布于 2015-10-07&lt;/a&gt;
+&lt;/span&gt;",
+                    "question": {
+                        "id": "34897210",
+                        "title": "有什么英文名是不能取的？",
+                        "link": "http://www.zhihu.com/question/34897210"
+                    }
+                }
+            },
+            {
+                "operation": "post",
+                "operate_time": "2015-10-07 12:01:15",
+                "article": {
+                    "id": "20255116",
+                    "titile": "2015年谢熊猫君杯国庆航拍摄影比赛参赛作品",
+                    "content": "&lt;img src=\"http://pic3.zhimg.com/a12828035443f244dfa664d5594d1c02_b.jpg\" class=\"content_image\"&gt;&lt;p&gt;编号：01 名字：无锡博物院 摄影师：谢熊猫君&lt;/p&gt;&lt;img src=\"http://pic2.zhimg.com/5f1d67d378d686541a2f272be953f6ed_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic2.zhimg.com/5f1d67d378d686541a2f272be953f6ed_r.jpg\"&gt;&lt;br&gt;&lt;p&gt;编号：02 名字：太湖广场 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic1.zhimg.com/1f83a56c58e80ff9f1aedf56d4fd8084_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic1.zhimg.com/1f83a56c58e80ff9f1aedf56d4fd8084_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：03 名字：清扬公园 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic3.zhimg.com/a6a22469a302a3db043c86f34938960a_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic3.zhimg.com/a6a22469a302a3db043c86f34938960a_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：04 名字：长广溪湿地作品1 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic3.zhimg.com/a12828035443f244dfa664d5594d1c02_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic3.zhimg.com/a12828035443f244dfa664d5594d1c02_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：05 名字：长广溪湿地作品2 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic4.zhimg.com/345e1c12a112d712f06029b01b751e2f_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic4.zhimg.com/345e1c12a112d712f06029b01b751e2f_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：06 名字：长广溪湿地作品3 摄影师：谢熊猫君&lt;br&gt;&lt;/p&gt;&lt;img src=\"http://pic4.zhimg.com/2eb9c57bcb4235db03ebf3ceec08db77_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic4.zhimg.com/2eb9c57bcb4235db03ebf3ceec08db77_r.jpg\"&gt;&lt;p&gt;编号：07 名字：南长街 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic3.zhimg.com/7dd8e7921cd45b38872df41bc5b69f9a_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"720\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic3.zhimg.com/7dd8e7921cd45b38872df41bc5b69f9a_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：08 名字：清明桥 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic1.zhimg.com/2302366240619661324c5cf5e78f4a68_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"720\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic1.zhimg.com/2302366240619661324c5cf5e78f4a68_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：09 名字：梁溪河 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic1.zhimg.com/fb620f8881767f523c1b66a9a18883ac_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic1.zhimg.com/fb620f8881767f523c1b66a9a18883ac_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：10 名字：无锡大剧院 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic3.zhimg.com/1ca0008771749de8077b9a41c8a7e3ea_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"960\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic3.zhimg.com/1ca0008771749de8077b9a41c8a7e3ea_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：11 名字：太湖大堤 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic2.zhimg.com/d2ca20af37c754e37d9445cccb4ff241_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"722\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic2.zhimg.com/d2ca20af37c754e37d9445cccb4ff241_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：12 名字：蠡湖公园 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic4.zhimg.com/b18e5b2254e07fb30df57e6d201e4c0f_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"960\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic4.zhimg.com/b18e5b2254e07fb30df57e6d201e4c0f_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：13 名字：金城湾 摄影师：谢熊猫君&lt;br&gt;&lt;img src=\"http://pic4.zhimg.com/6883ddcc6525a0e139f49c69cc442e77_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"962\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic4.zhimg.com/6883ddcc6525a0e139f49c69cc442e77_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;编号：14 名字：是否每天忙碌只为一顿饭 摄影师：谢熊猫君&lt;/p&gt;&lt;img src=\"http://pic4.zhimg.com/e0ad9857be9bcfa90ebc3eaef7edaa33_b.jpg\" data-rawwidth=\"1280\" data-rawheight=\"960\" class=\"origin_image zh-lightbox-thumb\" width=\"1280\" data-original=\"http://pic4.zhimg.com/e0ad9857be9bcfa90ebc3eaef7edaa33_r.jpg\"&gt;&lt;br&gt;&lt;p&gt;请大家根据自己的喜好，为你喜欢的作品和摄影师投上一票&lt;/p&gt;",
+                    "link": "http://zhuanlan.zhihu.com/xiepanda/20255116",
+                    "agree_num": "554"
+                }
+            },
+            {
+                "operation": "follow",
+                "operate_time": "2015-10-05 21:36:07",
+                "answer": {
+                    "question": {
+                        "id": "20036177",
+                        "title": "《跨太平洋战略经济伙伴关系协定》（TPP）对中国有什么影响？",
+                        "link": "http://www.zhihu.com/question/20036177"
+                    }
+                }
+            },
+            {
+                "operation": "follow",
+                "operate_time": "2015-10-05 20:56:02",
+                "answer": {
+                    "question": {
+                        "id": "36189603",
+                        "title": "如何看待TPP谈判达成协议？",
+                        "link": "http://www.zhihu.com/question/36189603"
+                    }
+                }
+            },
+            {
+                "operation": "post",
+                "operate_time": "2015-09-25 21:17:37",
+                "article": {
+                    "id": "20237774",
+                    "titile": "关于“知乎原创联盟”的发起倡议",
+                    "content": "&lt;p&gt;6月17日，式微的答案被微信公众号“大球小珠”抄袭（此前李暘以及多位知乎用户的答案一直被该公众号抄袭和非法转载），运营者朱峰拒不承认、拒不道歉。（相关链接：&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=\"http://www.zhihu.com/question/31362103\" class=\"internal\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;zhihu.com/question/3136&lt;/span&gt;&lt;span class=\"invisible\"&gt;2103&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;/a&gt;）&lt;/p&gt;&lt;p&gt;7月9日，用户张亮-Leo专栏文章《反向构建的野心》被不计其数的公众号抄袭。&lt;/p&gt;&lt;p&gt;7月14日，用户李小丢被新京报等七家媒体抄袭事件（专栏链接如下：&lt;/p&gt;&lt;p&gt;&lt;a href=\"http://zhuanlan.zhihu.com/doubtsinreading/20110460\" class=\"internal\"&gt;当七家媒体开始联手抄袭，我知道这世界已经属于郭敬明了（最新进展在文末） - 读书有疑 - 知乎专栏&lt;/a&gt;）&lt;/p&gt;&lt;p&gt;9月20日，用户我桃桃渡河而来的答案“如何评价网络剧《盗墓笔记》”在评论区被人公然宣称“已经转载”，直接挑战底线。（问题答案链接如下：&lt;/p&gt;&lt;p&gt;&lt;a href=\"http://www.zhihu.com/question/31242507/answer/51217212\" class=\"internal\"&gt;如何评价网络剧《盗墓笔记》？ - 我桃桃渡河而来的回答&lt;/a&gt;）&lt;/p&gt;&lt;br&gt;&lt;p&gt;三个月的时间里，知乎优秀原创内容被抄袭和非法转载的现象，已经愈演愈烈。我们曾无数次地愤怒、质问、呼吁，但收效甚微。现在，已经到了我们需要做点什么的时候了。&lt;/p&gt;&lt;p&gt;知乎是个天然的自媒体作者聚集地，许多原创作者都有专栏和微信公众号；如果大家联合起来，共同曝光这些抄袭者，就能让更多的人看到抄袭者的丑恶。如果有一万人响应我的倡议，在一亿用户入口的知乎，这样的共同曝光，必然会带来更有力的影响。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;首先&lt;/b&gt;&lt;/p&gt;&lt;p&gt;在这里，知乎用户李暘、谢熊猫君、笑道人、张亮-Leo、邹剑波kant、飞鸟冰河、采铜、藥師、万方中、斌卡、陈柏龄、虎柔、maggie、叶清波、我桃桃渡河而来、luckystar、Li路遥、解放者莫雷尔，向知乎所有被抄袭、被非法转载过的用户发出倡议：&lt;/p&gt;&lt;p&gt;携起手来，共同为自己的原创利益发声。如果投诉、维权不能获得正确的回应和反馈，那么我们起码应当更多的人知道真相。因此——&lt;/p&gt;&lt;p&gt;我们提议成立“知乎原创联盟”。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;其次&lt;/p&gt;&lt;p&gt;这是一个非官方的原创联盟，这些原创内容的作者聚合在一起，是为了集体向抄袭、非法转载者进行针锋相对的回应，只有这样才能保证我们未来能持续输出原创内容。&lt;/p&gt;&lt;p&gt;既然我们不能在现阶段获得更多、更合理的法律支持，从每一次抄袭和非法转载事件当中合理保护自己的权益，那么我们有必要、有权利去曝光每一次的抄袭和非法转载行为，将抄袭者和非法转载者的行为公之于众。并采取集体维权的方式，帮助更多的原创作者，保护自己的利益。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;我们将：&lt;/p&gt;&lt;p&gt;1.建立有效举报渠道，任何被抄袭、非法转载的知乎用户，只要向我们专门设立的公众邮箱发送相关证据，我们都将核实，并在知乎专栏、微信公众号予以曝光。&lt;/p&gt;&lt;p&gt;2.邀请有影响力的知乎用户设立公众专栏，持续曝光抄袭和非法转载现象，帮助更多受害作者获得知乎大众的认可。&lt;/p&gt;&lt;p&gt;3.邀请知乎上的各位法律界人士加入原创联盟，作为见证者进行维权指导，并以低廉的有偿形式，提供律师信等法律程序上的帮助。&lt;/p&gt;&lt;p&gt;4、在抄袭者/非法转载者同意、响应我们的正当诉求——包括合理的赔偿/道歉措施、以及能让公众接受的声明之前，对任何抄袭/非法转载行为，我们会坚持曝光，最后视对方的道歉力度和赔偿力度决定是否完结曝光事件。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;声明：本倡议无知乎方官背景，为用户自发公益行动，欢迎各位知乎用户积极参与。&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;文后注：这三个月，我一直在等待《读读日报》的上线。因为我知道这是一个给所有用户平等传播内容、平等输出内容的优质平台，同时也是向更大的受众面告知原创内容是如何被人不告而拿的出口。对于抄袭和非法转载，目前我的忍耐已经到了极限，无可奈何之下，我只能说一句：你只要抄袭、非法转载我的内容，就别怪我曝光你。&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;我在《读读日报》为知乎原创联盟创立的子报叫&lt;b&gt;“抄袭者的曝光橱窗”&lt;/b&gt;，任何被抄袭和被非法转载的知友都可以把自己受害的经过形成内容（一定要有截图一定要有截图一定要有截图），如果你有专栏，请把内容放到专栏上私信给我，我会推荐到子报当中；如果你没有专栏，那么请给到2103119的QQ邮箱，我负责贴在我的专栏上，然后再推荐到子报当中。另外，恳请不要在曝光内容当中出现粗俗的谩骂词句。&lt;/p&gt;",
+                    "link": "http://zhuanlan.zhihu.com/alan13tdk/20237774",
+                    "agree_num": "4300"
+                }
+            },
+            {
+                "operation": "answer",
+                "operate_time": "2015-09-25 20:43:56",
+                "answer": {
+                    "agree_num": "2985",
+                    "content": "这个问题提的很早了，一开始就有很多人邀请我，我一直没有回答。今天不知道为什么又有好多人邀请我，还有很多人关注。我猜可能是因为 &lt;a data-hash=\"342d47c5da88fb45217f0685d261ce64\" href=\"//www.zhihu.com/people/342d47c5da88fb45217f0685d261ce64\" class=\"member_mention\" data-editable=\"true\" data-title=\"@肥肥猫\" data-tip=\"p$b$342d47c5da88fb45217f0685d261ce64\"&gt;@肥肥猫&lt;/a&gt; 老师的文章被无授权转载的缘故吧。&lt;br&gt;&lt;br&gt;我一直不答的原因是我觉得罗辑思维这玩意儿是很恶心的，具体的我在以前的两篇回答里面都有提到，下面我会再摘录一遍。&lt;br&gt;&lt;br&gt;因为我收入尚可，也不靠赚钱养活自己，所以凡是找我要求转载的我基本都是同意的，也不主动要钱。偶有碰到一些预算不足的有偿转载，对方主动提出给一小点稿费，我都不愿意收的，盖因为我不在乎那点小钱。&lt;br&gt;&lt;br&gt;想是我这样的人比较难伺候，给钱是打发不了我的，还是要给点尊重才好跟我做事。所以但凡简单问我一句转载授权，我基本都会同意，但是不问我的，不管事后给不给补偿，怎么提出，我都是不给好脸色的。&lt;br&gt;&lt;br&gt;=======&lt;br&gt;&lt;b&gt;下面摘录一下之前有关罗辑思维这个恶心玩意儿的两个回答，请大家以后不要再邀请我回答相关的问题，怕恶心。一个思想类的产品/节目，但凡一被人提起，想到的第一件事就是“抄袭”，不知道晚上睡觉是否安宁，子女是否会因此蒙羞。&lt;/b&gt;&lt;br&gt;=======&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a href=\"http://www.zhihu.com/question/29362076/answer/44228095\" class=\"internal\"&gt;如何评价《罗辑思维》第 115 期对谢熊猫君翻译的关于人工智能的文章的重新演绎？ - 谢熊猫君的回答&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;这个事情，实话说是让我很&lt;b&gt;心寒&lt;/b&gt;的。&lt;br&gt;&lt;br&gt;这个问题很多人邀请我回答，也有不少人@我，但是我一直没有出声，因为我之前几天一直在和罗辑思维的工作人员沟通。沟通的结果让我比较失望，所以还是决定来说两句。&lt;br&gt;&lt;br&gt;&lt;b&gt;不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;/b&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;先说一个粗俗的笑话，请大家谅解：&lt;br&gt;学生问老师：“男人和女人做爱做的事的时候，谁更有快感。”&lt;br&gt;老师说：“你挖鼻孔的时候，是手指更舒服还是鼻孔更舒服？”&lt;br&gt;学生又问：“既然女人更有快感，为什么男人强*女人的时候，女人要反抗呢？”&lt;br&gt;老师说：“你走在路上，别人来挖你鼻孔，你愿不愿意？”之所以要说这个粗俗的笑话，就是因为，在这件事情里面，罗辑思维的工作人员向我表达的意思就是——“挖你鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;上个月前，我写了一篇关于怎么识别聪明人的回答《&lt;a class=\"internal\" href=\"http://www.zhihu.com/question/28484672/answer/41115593\"&gt;如何辨认身边的聪明人？&lt;/a&gt;》&lt;br&gt;&lt;br&gt;这篇文章在知乎、微信朋友圈等处都被传播的很广，然后有知友来询问我说罗辑思维使用了我的这篇回答内容，问我有没有授权。对于这个没什么人知道的小事件，知乎上后来也出现了一个相关的提问：&lt;a href=\"http://www.zhihu.com/question/28796527\" class=\"internal\"&gt;罗辑思维在知乎上取材，付费了没有？ &lt;/a&gt;&lt;br&gt;&lt;br&gt;这个问题我没有回答，因为罗辑思维的工作人员S女士是我的微信好友，在那之前她就按着罗振宇先生的意思来联系过我想请我吃饭。所以虽然这篇辨别聪明人的东西事先没有跟我知会一声，我的第一反应大概是这个程序出错了，所以我直接就跟S女士在微信上联系，并且罗方也支付了稿费，这个事情就算过去了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;而且既然S女士和我沟通起来友好而且全无障碍，所以以后需要用我的文章，不管是微信还是知乎联系我一下都是比较方便的——据我所知中文网络上只有我一个谢熊猫君，怕是不会搞错人的。&lt;br&gt;&lt;br&gt;======================&lt;br&gt;&lt;br&gt;然后前几天，不断有知友私信通知我，说罗辑思维的节目使用了我关于人工智能的翻译稿的内容。听到这个事情的时候我有点疑惑，因为罗方的工作人员肯定是没有和我谈过这个事情的，发布前发布后都没有。&lt;br&gt;&lt;br&gt;这里要说一下关于人工智能一文的译文的一些背景：&lt;br&gt;我在知乎发布的翻译稿的链接：&lt;a href=\"http://zhuanlan.zhihu.com/xiepanda/19950456\" class=\"internal\"&gt;为什么最近有很多名人，比如比尔盖茨，马斯克、霍金等，让人们警惕人工智能？ - 谢熊猫出没注意 - 知乎专栏&lt;/a&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;首先，我翻译这篇东西是纯粹出于兴趣的，并不为获利。原作者waitbutwhy的网站上也是鼓励这种分享的。很多联系过我咨询转载的知乎用户和公众号也知道，我对他们的唯一要求就是保留保留原文出处、知乎链接和译者。&lt;/li&gt;&lt;li&gt;其次，因为《读库》想要刊登我的翻译稿，所以联系过我。当时读库的编辑联系我之后我的第一反应就是让读库先去联系原作者再来和我谈翻译稿的使用。之后读库的版权编辑确实联系了原作者，说明了想要使用我的翻译稿情况，并且双方商定了使用细节和费用，这些是有email记录的书面约定。&lt;/li&gt;&lt;li&gt;同时，我和waitbutwhy的原作者以及中文站的站长是有联系。中文站站长Haution也是知乎用户，之前也和我达成了双方的翻译文章在waitbutwhy官方微信号和知乎上互相授权转载的共识的。&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;说完这些背景我再接着讲。虽然这是不到一个月的时间内第二次没有通知我的情况下内容被引用，但是我还是没有来直接来说什么，而是依然联系了S女士。经过S女士的引荐，由罗方的D先生负责和我沟通。&lt;br&gt;&lt;br&gt;D先生一上来就提出要支付翻译费，但是就像我之前的态度一样，我最关系的是罗方是否有联系过原作者。而D先生则是告诉我罗方的做法是非营利的（此处关于是否非营利我没有具体查证），咨询过律师后得出的结论是这种做法是不违法的，是不需要联系作者的。但是不愿意正面回答我的问题，在我的再三询问下才表示确实没有联系过：&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;我的诉求很简单：&lt;br&gt;一是我希望内容使用方能够有对内容创作者的基本尊重，也就是能够事先告知，所以我的第一反应就是询问对方是否联系过原作者。&lt;br&gt;二是如果人工智能一文的内容使用没有受到原作者的授权，而我又收了翻译费的话，相当于我不正当得利，这不是我的初衷也不是我的目的。这对我的名誉是有损的。&lt;br&gt;&lt;br&gt;&lt;br&gt;此后的对话就围绕我强调对于作者的尊重，而D先生就一直强调罗方做法是合法的，同时能够帮助作者宣传是对作者有利的，也就是为什么我会觉得这沟通变成了——“挖你挖鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_r.jpg\"&gt;&lt;br&gt;经过一些考虑，我对D先生提出的解决方案是三点：&lt;br&gt;&lt;ol&gt;&lt;li&gt;主动联系原作者，向原作者说明情况，并且主动支付内容使用费用&lt;/li&gt;&lt;li&gt;将翻译费用按照千字八十的标准捐赠给我指定的慈善机构&lt;/li&gt;&lt;li&gt;以后在使用其他作者的作品的时候，能做到事前主动联系作者这个最基本的尊重&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;对于第一点和第二点，罗方是同意的，但是对于最主要的诉求，也就是联系作者这个事情上D先生还是强调不联系作者这种做法是合法的，而我则是一直坚持不能以法律这个最低标准来自我要求，人要讲礼貌。&lt;br&gt;&lt;br&gt;但是这个最后还是没有谈妥，为了避免不愉快，我决定终止这个方面的讨论。于是我提供了原作者的联系方式，而对于翻译费用捐赠和尊重作者这个，则是搁置不谈了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_r.jpg\"&gt;&lt;br&gt;以上微信沟通记录隐去了相关人士的头像和姓名，其它没有修改和遗漏。&lt;br&gt;========================================&lt;br&gt;&lt;br&gt;至此，我不打算和罗方继续就尊重作者这个诉求讨论下去了。不过我在知乎上确实是发现了王路之前遭遇了类似事情之后的一些情况，看来发生在我身上的事情确实不是个例：《罗辑思维，你讲点职业道德好不好？》&lt;a href=\"http://zhuanlan.zhihu.com/wanglu/19932053\" class=\"internal\"&gt;罗辑思维，你讲点职业道德好不好？ - 王路的粽子铺 - 知乎专栏&lt;/a&gt;&lt;br&gt;&lt;br&gt;但是我和王路不同，我不是靠笔杆子吃饭的，敲敲键盘写几个字，于我是连副业都算不上的，说是一项休闲娱乐也不为过。我和太太两人收入尚可，不需要赚外快也可以过得舒适自在，所以也是不在意别人给的稿费的。跟我约过稿的都知道，如果我不感兴趣的话题，稿费再高我也是不写的，我感兴趣的话题，免费写我也是乐意的。&lt;br&gt;&lt;br&gt;至于写东西，在网络上赢得的虚名，已经借此认识的一些朋友，我是很感恩的。但是如果因为无偿、出于兴趣的写点东西、翻译下文章，而给自己染上污名，我是不乐意的。&lt;br&gt;&lt;br&gt;比如在这个问题下面，就有人在质疑我侵犯了原作者的版权。这也是让我了解了葛巾老师当时离开知乎的感觉，明明不是为了钱，也不差那点钱，就是分享点东西，还要被人污蔑是做营销卖菜刀，这种感觉是不好受的，对于那些想要认真分享些东西的人来说，也是负面的。&lt;br&gt;&lt;br&gt;&lt;b&gt;再次声明，不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;br&gt;&lt;br&gt;&lt;/b&gt;这个事情让我很心寒。&lt;br&gt;&lt;br&gt;就写这么多，算是给各位热心联系我的知友一个交待。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a href=\"http://www.zhihu.com/question/29635673/answer/45093627\" class=\"internal\"&gt;怎样看待《罗辑思维：你因挣钱而伟大》中的金钱价值观？ - 谢熊猫君的回答&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;做生意当然没错，赚钱当然也没错。作为生活在市场经济中的人来说，这种价值观念没什么大问题。&lt;br&gt;&lt;br&gt;但是立牌坊，那就见仁见智了。&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_b.jpg\" data-rawwidth=\"869\" data-rawheight=\"563\" class=\"origin_image zh-lightbox-thumb\" width=\"869\" data-original=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_b.jpg\" data-rawwidth=\"868\" data-rawheight=\"555\" class=\"origin_image zh-lightbox-thumb\" width=\"868\" data-original=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_r.jpg\"&gt;&lt;img src=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_b.jpg\" data-rawwidth=\"863\" data-rawheight=\"566\" class=\"origin_image zh-lightbox-thumb\" width=\"863\" data-original=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_b.jpg\" data-rawwidth=\"583\" data-rawheight=\"782\" class=\"origin_image zh-lightbox-thumb\" width=\"583\" data-original=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_r.jpg\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_b.jpg\" data-rawwidth=\"835\" data-rawheight=\"105\" class=\"origin_image zh-lightbox-thumb\" width=\"835\" data-original=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_b.jpg\" data-rawwidth=\"852\" data-rawheight=\"82\" class=\"origin_image zh-lightbox-thumb\" width=\"852\" data-original=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;&lt;/blockquote&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28796527/answer/65193739\"&gt;发布于 2015-09-25&lt;/a&gt;
+&lt;/span&gt;",
+                    "question": {
+                        "id": "28796527",
+                        "title": "罗辑思维在知乎上取材，付费了没有？",
+                        "link": "http://www.zhihu.com/question/28796527"
+                    }
+                }
+            },
+            {
+                "operation": "post",
+                "operate_time": "2015-09-25 09:47:04",
+                "article": {
+                    "id": "20236757",
+                    "titile": "作为一个良家，我真的受够了",
+                    "content": "&lt;p&gt;我最近有一篇回答 &lt;a href=\"http://www.zhihu.com/question/28311266/answer/61603769\" class=\"internal\"&gt;中国的劝酒文化背后的逻辑是什么？ - 肥肥猫的回答&lt;/a&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;今天在评论里，有人给我来了这么一条：&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;img src=\"http://pic4.zhimg.com/c351f701632fbb50da4364d942c4e95f_b.jpg\" data-rawwidth=\"354\" data-rawheight=\"84\" class=\"content_image\" width=\"354\"&gt;罗辑思维在公众号推送里，没有署名地引述了我的核心观点。&lt;/p&gt;&lt;p&gt;当天就有人告诉我了，我当时想着，算了吧，管不过来。&lt;/p&gt;&lt;br&gt;&lt;p&gt;结果现在就成了我“盗版”了那位每天帮大家读书的胖子。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;这一次，我实在是忍不下去了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;隔三差五，就有人拿着我写的东西来质问我。 &lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;“我昨天好像在XXX看到了一模一样的说法，请问谁是原创？”&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;“XXX也说过一样的话，答主应该注明出处”&lt;/p&gt;&lt;br&gt;&lt;p&gt;更有甚者，有一次有个神经病跑到我回答里大声疾呼：&lt;/p&gt;&lt;p&gt;“大家不要赞了，这是答主从XXX（某个大号）抄来的”。&lt;/p&gt;&lt;p&gt;然后这货居然还一个个去回复评论里其他人，说我是抄的，是剽窃，不要脸。&lt;/p&gt;&lt;p&gt;已经都被我删了，不然真想晒晒。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;我受够了，真的受够了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;你抄，他抄，她抄。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我忍了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;不署名，或者换一个莫名其妙的机构名发在微博、公众号，来涨粉，赚钱。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我发邮件过去，石沉大海。&lt;/p&gt;&lt;br&gt;&lt;p&gt;次数一多，我可能也没时间计较了，毕竟还有更多正事等着我去做。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我忍了。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;可是拿着别人抄我的东西，理直气壮地来质问我本人。&lt;/p&gt;&lt;br&gt;&lt;p&gt;这个是我最后的底线了，再也无法忍。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我相信绝对没有一个靠自己写东西的人，能忍得下这口气。&lt;/p&gt;&lt;br&gt;&lt;p&gt;互联网的原作者，真的太委屈了！&lt;/p&gt;&lt;br&gt;&lt;p&gt;每次交涉，都搞得跟秋菊打官司一样。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;一个良家妇女被强奸了，去评理。&lt;/p&gt;&lt;br&gt;&lt;p&gt;对方扔出100块钱说，好了好了，算我嫖你的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;可是我没想卖啊。&lt;/p&gt;&lt;br&gt;&lt;p&gt;想卖也没规定我必须卖给你啊。&lt;/p&gt;&lt;br&gt;&lt;p&gt;想卖我也没说过我只卖100块钱一次啊。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;当然，他们有他们的逻辑：&lt;/p&gt;&lt;p&gt;“你身材其实也一般，估计也没人追吧，还要收钱？是不是有点唯利是图了？”；&lt;br&gt;&lt;/p&gt;&lt;p&gt;“小巷那个站街女才卖80，给你100块怎么了”&lt;br&gt;&lt;/p&gt;&lt;p&gt;“你出去打听打听爷是谁？搞你那是给你面子，讲出去大家都羡慕你”；&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;给钱的已经还算好了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;大部分人的态度是：就操你了，怎么地？&lt;/p&gt;&lt;br&gt;&lt;p&gt;好吧。&lt;/p&gt;&lt;br&gt;&lt;p&gt;就操我了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;行。你们狠。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我认了，认了。我贱，我活该挨操，还不行吗？&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;可是这种拿着抄袭的东西还有脸跑来质问我原作者的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;等于强奸完了还追来骂我婊子。&lt;/p&gt;&lt;br&gt;&lt;p&gt;我觉得自己还没贱到这个地步。&lt;/p&gt;&lt;br&gt;&lt;p&gt;这我真心没法忍。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;还有，很多人都知道我是个对文字很严格的人，所以经常会修改自己的回答，哪怕一个标点符号。但现在遇到几个公众号胡搅蛮缠，反复用我知乎的修改时间很近这个理由说事。&lt;/p&gt;&lt;p&gt;我本来是不想开公众号的，现在逼得我也去弄了一个：zhihufeifeimao&lt;/p&gt;&lt;p&gt;不为别的，就为了可以证明自己的首发时间。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;恕我直言，一个强奸者友好型社会，只会把越来越多的人变成强奸犯。&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;我重申一遍，我在知乎上所有的东西，每一个字都是我自己原创。&lt;/p&gt;&lt;br&gt;&lt;p&gt;再敢质问我半个字的，全部拉黑。这是我在知乎上见过的最大的侮辱。&lt;/p&gt;",
+                    "link": "http://zhuanlan.zhihu.com/feifeimaozhuanlan/20236757",
+                    "agree_num": "17K"
+                }
+            },
+            {
+                "operation": "follow",
+                "operate_time": "2015-09-23 12:15:42",
+                "answer": {
+                    "question": {
+                        "id": "23665108",
+                        "title": "运维工程师必须掌握的基础技能有哪些？",
+                        "link": "http://www.zhihu.com/question/23665108"
+                    }
+                }
+            }
+        ]
+    }
+}
+
+		</pre>
+<h3 class="page-header">返回字段说明</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <caption>返回正确data结果的字段说明对照表：</caption>
+        <thead>
+        <tr>
+            <th>返回值字段</th>
+            <th>字段类型</th>
+            <th>字段说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>用户的昵称</td>
+        </tr>
+        <tr>
+            <td>bio</td>
+            <td>string</td>
+            <td>用户的一句话介绍</td>
+        </tr>
+        <tr>
+            <td>profile_info</td>
+            <td>string</td>
+            <td>用户的个人简介</td>
+        </tr>
+        <tr>
+            <td>profile_image</td>
+            <td>string</td>
+            <td>用户的头像</td>
+        </tr>
+        <tr>
+            <td>location</td>
+            <td>string</td>
+            <td>用户的居住地</td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td>string</td>
+            <td>用户的性别</td>
+        </tr>
+        <tr>
+            <td>profile</td>
+            <td>string</td>
+            <td>用户的主页链接</td>
+        </tr>
+        <tr>
+            <td>ask_num</td>
+            <td>string</td>
+            <td>用户的提问次数</td>
+        </tr>
+        <tr>
+            <td>answers_num</td>
+            <td>string</td>
+            <td>用户的回答问题的次数</td>
+        </tr>
+        <tr>
+            <td>posts_num</td>
+            <td>string</td>
+            <td>用户的发表文章数</td>
+        </tr>
+        <tr>
+            <td>attention_num</td>
+            <td>string</td>
+            <td>该用户关注其他用户的个数</td>
+        </tr>
+        <tr>
+            <td>followers_num</td>
+            <td>string</td>
+            <td>该用户被关注的总数</td>
+        </tr>
+        <tr>
+            <td>agree_num</td>
+            <td>string</td>
+            <td>该用户获得的赞同数</td>
+        </tr>
+        <tr>
+            <td>thank_num</td>
+            <td>string</td>
+            <td>该用户获得的感谢数</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>skill_topics</td>
+            <td>String[]</td>
+            <td>用户的擅长话题</td>
+        </tr>
+        <tr>
+            <td>skill_topics-->name</td>
+            <td>string</td>
+            <td>擅长话题的名称</td>
+        </tr>
+        <tr>
+            <td>skill_topics-->avatar</td>
+            <td>string</td>
+            <td>擅长话题的图片链接</td>
+        </tr>
+        <tr>
+            <td>skill_topics-->link</td>
+            <td>string</td>
+            <td>用户擅长话题自身的链接</td>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>answers</td>
+            <td>string[]</td>
+            <td>用户的回答【一般不超过3条】</td>
+        </tr>
+        <tr>
+            <td>answers-->id</td>
+            <td>string</td>
+            <td>回答的id编号</td>
+        </tr>
+        <tr>
+            <td>answers-->agree_num</td>
+            <td>string</td>
+            <td>回答被赞同数</td>
+        </tr>
+        <tr>
+            <td>answers-->content</td>
+            <td>string</td>
+            <td>回答的内容</td>
+        </tr>
+        <tr>
+            <td>answers-->question</td>
+            <td>string[]</td>
+            <td>回答本身对应的提问</td>
+        </tr>
+        <tr>
+            <td>answers-->question-->id</td>
+            <td>string</td>
+            <td>提问的id编号</td>
+        </tr>
+        <tr>
+            <td>answers-->question-->title</td>
+            <td>string</td>
+            <td>提问的内容</td>
+        </tr>
+        <tr>
+            <td>answers-->quesion-->link</td>
+            <td>string</td>
+            <td>提问自身的链接</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>questions</td>
+            <td>string[]</td>
+            <td>用户的提问【一般不超过3条】</td>
+        </tr>
+        <tr>
+            <td>questions-->id</td>
+            <td>string</td>
+            <td>提问的id编号</td>
+        </tr>
+        <tr>
+            <td>questions-->title</td>
+            <td>string</td>
+            <td>提问的内容</td>
+        </tr>
+        <tr>
+            <td>questions-->link</td>
+            <td>string</td>
+            <td>提问自身的链接</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>actions</td>
+            <td>String[]</td>
+            <td>用户的最新动态【按照时间倒序排列，越新的动态越靠前】</td>
+        </tr>
+        <tr>
+            <td>actions-->operation</td>
+            <td>String</td>
+            <td>最新动态的类型，目前包括agree（赞同了回答）、follow（关注了问题）、answer（回答了问题）、post（发表了文章）</td>
+        </tr>
+        <tr>
+            <td>actions-->operation_time</td>
+            <td>String</td>
+            <td>动态发出的时间，格式为yyyy-MM-dd HH:mm:ss</td>
+        </tr>
+        <tr>
+            <td>actions-->answer</td>
+            <td>String[]</td>
+            <td>一条动态对应的回答【注意：只有类型是agree、follow和answer的动态才具有answer属性】
+                •agree对应的answer为用户赞同的回答；
+                •follow对应的answer为用户关注问题对应的回答；
+                •answer对应的answer为用户自身的回答
+            </td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->agree_num</td>
+            <td>String</td>
+            <td>回答被赞同数</td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->content</td>
+            <td>String</td>
+            <td>回答的内容</td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->question</td>
+            <td>String[]</td>
+            <td>回答对应的提问</td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->question-->id</td>
+            <td>String</td>
+            <td>提问的id编号</td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->question-->title</td>
+            <td>String</td>
+            <td>提问的问题内容</td>
+        </tr>
+        <tr>
+            <td>actions-->answer-->question-->link</td>
+            <td>String</td>
+            <td>提问对应链接</td>
+        </tr>
+        <tr>
+            <td>actions-->article</td>
+            <td>String[]</td>
+            <td>用户发表的文章【注意：只有类型是post的动态才具有article属性】</td>
+        </tr>
+        <tr>
+            <td>actions-->article-->id</td>
+            <td>String</td>
+            <td>文章的id编号</td>
+        </tr>
+        <tr>
+            <td>actions-->article-->title</td>
+            <td>String</td>
+            <td>文章的标题</td>
+        </tr>
+        <tr>
+            <td>actions-->article-->content</td>
+            <td>String</td>
+            <td>文章的内容</td>
+        </tr>
+        <tr>
+            <td>actions-->article-->link</td>
+            <td>String</td>
+            <td>文章的链接</td>
+        </tr>
+        <tr>
+            <td>actions-->article-->agree_num</td>
+            <td>String</td>
+            <td>文章的被赞同数</td>
+        </tr>
+        </tbody>
+    </table>
+    [注]上述”-->”表示属性的层次关系
+</div>

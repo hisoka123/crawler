@@ -1,0 +1,461 @@
+<h2>查询用户回答</h2><hr/>
+<h3 class="page-header">说明</h3>
+<p>查询用户回答接口是通过用户回答页获取用户的回答问题集合的接口。</p>
+<h3 class="page-header">URL</h3>
+<p>http://&lt;Project&gt;/api/user?q=</p>
+<h3 class="page-header">格式</h3>
+<p>JSON</p>
+<h3 class="page-header">HTTP请求方式</h3>
+<p>GET</p>
+<h3 class="page-header">请求参数</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>必选</th>
+            <th>类型及范围</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>url</td>
+            <td>true</td>
+            <td>string</td>
+            <td>知乎用户回答页的URL</td>
+        </tr>
+        <tr>
+            <td>isDebug</td>
+            <td>false</td>
+            <td>boolean</td>
+            <td>是否启用调试模式</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-header">注意事项：</h3>
+<p>相比于用户详细信息接口，用户回答接口能够提供更多更详细的回答数据，用户详细信息接口提供的answers数据侧重于首页展示，而用户回答接口提供的回答数据侧重于做详细展示。</p>
+<h3 class="page-header">例子</h3>
+<p>非调试模式下，根据用户个性域名为“xiepanda”的用户答过的问题页面“http://www.zhihu.com/people/xiepanda/answers”来查询用户回答的问题概要。</p>
+<p>请求：http://&lt;Project&gt;/api/zhihu/answers?url=http://www.zhihu.com/people/xiepanda/answers</p>
+<p>返回：JSON</p>
+<p style="color:#3da33d;">JSON示例</p>
+<pre class="prettyprint sr-zql-pre-without-border">
+{
+    "data": [
+        {
+            "id": "68656411",
+            "agree_num": "370",
+            "comments_num": "29",
+            "content": "也会一双一双丢，只是一双的两只都丢了的时候你不会注意到。
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28080625/answer/68656411\"&gt;发布于 09:24&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-10-21 09:24:00",
+            "question": {
+                "id": "28080625",
+                "title": "为什么洗衣服的时候总是丢袜子，而且就只丢一只？",
+                "link": "http://www.zhihu.com/question/28080625"
+            }
+        },
+        {
+            "id": "66656844",
+            "agree_num": "1239",
+            "comments_num": "193",
+            "content": "这个问题里面答案很多了，大部分是举出了Dick之类的搞笑名字，也是挺有趣的回答。&lt;br&gt;&lt;br&gt;当然，我还是没看到回答特别到点子上的，我来说几点吧，基本上都是给自己取英文名时要避免的：&lt;br&gt;&lt;blockquote&gt;1）女孩取英文名尽量避免性工作者常用名&lt;br&gt;2）不要使用明显贬义的名字&lt;br&gt;3）不要使用和坏人有关联的名字&lt;br&gt;4）不要过于追求个性化&lt;br&gt;5）如果自己的姓比较普遍，尽量避免太常用的英文名&lt;br&gt;6）实在不知道怎么取名，就选用安全名&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;1）女孩取英文名尽量避免性工作者常用名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;每当见到一个把自己的英文名定为Crystal（水晶）的女孩儿，我都会为对方感到惋惜。取这个名字时通常是为了取水晶的纯净、透明、纯洁的含义，但是不巧的是，Crystal（包括其变种Cristal, Chrystal,以及最恶劣的Krystal），是最常见的脱衣舞者的艺名。&lt;br&gt;&lt;br&gt;这里并不是歧视性工作者或者脱衣舞，也不是说所有叫Crystal的女孩子都是不学好的，只是因为Crystal这个英文名与脱衣舞者的关联太紧密，使得一看到Crystal这个名字，想到的就是一个酗酒的白人脱衣舞从业者的形象。所以保险起见，不要取这类名字。&lt;br&gt;&lt;br&gt;这一类的名字还包括：&lt;br&gt;Amber&lt;br&gt;Angel&lt;br&gt;Candy&lt;br&gt;Cherry&lt;br&gt;Tiffany&lt;br&gt;等等，都是比较常见的stripper name，女孩子请尽量避免。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;2）不要使用明显贬义的名字&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;比如devil，demon，Lucifer这类恶魔属性的词语，或者war，rape，greed这类贬义词，以及shit，piss等等含有污秽之意的词。&lt;br&gt;&lt;br&gt;这些应该不难理解，效果类似张恶魔、李强奸、赵大便这些。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;3）不要使用和坏人有关联的名字&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;这里特指那些家喻户晓的坏人，比如Adolf（希特勒），Osama（拉登），Saddam（萨达姆），Nero（尼禄）这种。&lt;br&gt;&lt;br&gt;这类名字一般是那些有名的坏人用的，而且又不太常见，所以很容易让人联想到名字背后关联的人，也是大忌。&lt;br&gt;&lt;br&gt;当然，有一些人评价也很差，但是因为名字比较常见，所以问题不大，比如Joseph&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;4）不要过于追求个性化&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;虽然理论上任何单词都可以用来做名字，但是实际操作上不是每个都适合的，我记得曾经看过一个台湾人的英文名叫Slime（史莱姆），个性是挺个性，但是总让人觉得怪怪的。你要是面对一个叫朱八戒的人，估计一开始也很难认真起来，而且很容易没见面就脑子里浮现出这个人的长相。&lt;br&gt;&lt;br&gt;类似的还有用品牌做名字的，Adidas，Pepsi之流，其实也不是特别正经，效果类似高洁丝、富严杰，名字本身没有什么贬义的意思，但就是怪怪的。&lt;br&gt;&lt;br&gt;个性要有，但是不要太个性了，不然容易闹笑话。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;5）如果自己的姓比较普遍，尽量避免太常用的英文名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;这条不算大问题，只是我想起以前我那四个都叫Maggie Zheng的女同事有感而发一下，只要取名字时候身边没有和自己去一样名字的，那就没什么问题。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;6）实在不知道怎么取名，就选用安全名&lt;/b&gt;&lt;br&gt;&lt;blockquote&gt;什么是安全名？你们在别的帖子里也看到了，不管是平民还是将军，都有可能出现搞笑的名字，但是有一个名字列表是绝对安全的——在世的英国王室成员的名字。&lt;br&gt;&lt;br&gt;为什么要强调在世的，因为词义会变化，所以已经去世的人，哪怕是王室成员的名字，也有可能不靠谱。但是在世的英国王室成员的名字肯定是安全的。&lt;br&gt;&lt;br&gt;这里摘录几个安全名给大家参考：&lt;br&gt;Emma&lt;br&gt;Agatha&lt;br&gt;Elizabeth&lt;br&gt;Caroline&lt;br&gt;Sarah&lt;br&gt;Diana&lt;br&gt;Kate&lt;br&gt;Victoria&lt;br&gt;Margaret&lt;br&gt;William&lt;br&gt;John&lt;br&gt;Philip&lt;br&gt;Anthony&lt;br&gt;Andrew&lt;br&gt;Charles&lt;br&gt;Edward&lt;br&gt;Albert&lt;br&gt;等等，请自己在网上检索。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;大概就是这样
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/34897210/answer/66656844\"&gt;发布于 2015-10-07&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-10-07 14:08:46",
+            "question": {
+                "id": "34897210",
+                "title": "有什么英文名是不能取的？",
+                "link": "http://www.zhihu.com/question/34897210"
+            }
+        },
+        {
+            "id": "65193739",
+            "agree_num": "2986",
+            "comments_num": "1",
+            "content": "这个问题提的很早了，一开始就有很多人邀请我，我一直没有回答。今天不知道为什么又有好多人邀请我，还有很多人关注。我猜可能是因为 &lt;a data-hash=\"342d47c5da88fb45217f0685d261ce64\" href=\"//www.zhihu.com/people/342d47c5da88fb45217f0685d261ce64\" class=\"member_mention\" data-editable=\"true\" data-title=\"@肥肥猫\" data-tip=\"p$b$342d47c5da88fb45217f0685d261ce64\"&gt;@肥肥猫&lt;/a&gt; 老师的文章被无授权转载的缘故吧。&lt;br&gt;&lt;br&gt;我一直不答的原因是我觉得罗辑思维这玩意儿是很恶心的，具体的我在以前的两篇回答里面都有提到，下面我会再摘录一遍。&lt;br&gt;&lt;br&gt;因为我收入尚可，也不靠赚钱养活自己，所以凡是找我要求转载的我基本都是同意的，也不主动要钱。偶有碰到一些预算不足的有偿转载，对方主动提出给一小点稿费，我都不愿意收的，盖因为我不在乎那点小钱。&lt;br&gt;&lt;br&gt;想是我这样的人比较难伺候，给钱是打发不了我的，还是要给点尊重才好跟我做事。所以但凡简单问我一句转载授权，我基本都会同意，但是不问我的，不管事后给不给补偿，怎么提出，我都是不给好脸色的。&lt;br&gt;&lt;br&gt;=======&lt;br&gt;&lt;b&gt;下面摘录一下之前有关罗辑思维这个恶心玩意儿的两个回答，请大家以后不要再邀请我回答相关的问题，怕恶心。一个思想类的产品/节目，但凡一被人提起，想到的第一件事就是“抄袭”，不知道晚上睡觉是否安宁，子女是否会因此蒙羞。&lt;/b&gt;&lt;br&gt;=======&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a href=\"http://www.zhihu.com/question/29362076/answer/44228095\" class=\"internal\"&gt;如何评价《罗辑思维》第 115 期对谢熊猫君翻译的关于人工智能的文章的重新演绎？ - 谢熊猫君的回答&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;这个事情，实话说是让我很&lt;b&gt;心寒&lt;/b&gt;的。&lt;br&gt;&lt;br&gt;这个问题很多人邀请我回答，也有不少人@我，但是我一直没有出声，因为我之前几天一直在和罗辑思维的工作人员沟通。沟通的结果让我比较失望，所以还是决定来说两句。&lt;br&gt;&lt;br&gt;&lt;b&gt;不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;/b&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;先说一个粗俗的笑话，请大家谅解：&lt;br&gt;学生问老师：“男人和女人做爱做的事的时候，谁更有快感。”&lt;br&gt;老师说：“你挖鼻孔的时候，是手指更舒服还是鼻孔更舒服？”&lt;br&gt;学生又问：“既然女人更有快感，为什么男人强*女人的时候，女人要反抗呢？”&lt;br&gt;老师说：“你走在路上，别人来挖你鼻孔，你愿不愿意？”之所以要说这个粗俗的笑话，就是因为，在这件事情里面，罗辑思维的工作人员向我表达的意思就是——“挖你鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;上个月前，我写了一篇关于怎么识别聪明人的回答《&lt;a class=\"internal\" href=\"http://www.zhihu.com/question/28484672/answer/41115593\"&gt;如何辨认身边的聪明人？&lt;/a&gt;》&lt;br&gt;&lt;br&gt;这篇文章在知乎、微信朋友圈等处都被传播的很广，然后有知友来询问我说罗辑思维使用了我的这篇回答内容，问我有没有授权。对于这个没什么人知道的小事件，知乎上后来也出现了一个相关的提问：&lt;a href=\"http://www.zhihu.com/question/28796527\" class=\"internal\"&gt;罗辑思维在知乎上取材，付费了没有？ &lt;/a&gt;&lt;br&gt;&lt;br&gt;这个问题我没有回答，因为罗辑思维的工作人员S女士是我的微信好友，在那之前她就按着罗振宇先生的意思来联系过我想请我吃饭。所以虽然这篇辨别聪明人的东西事先没有跟我知会一声，我的第一反应大概是这个程序出错了，所以我直接就跟S女士在微信上联系，并且罗方也支付了稿费，这个事情就算过去了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;而且既然S女士和我沟通起来友好而且全无障碍，所以以后需要用我的文章，不管是微信还是知乎联系我一下都是比较方便的——据我所知中文网络上只有我一个谢熊猫君，怕是不会搞错人的。&lt;br&gt;&lt;br&gt;======================&lt;br&gt;&lt;br&gt;然后前几天，不断有知友私信通知我，说罗辑思维的节目使用了我关于人工智能的翻译稿的内容。听到这个事情的时候我有点疑惑，因为罗方的工作人员肯定是没有和我谈过这个事情的，发布前发布后都没有。&lt;br&gt;&lt;br&gt;这里要说一下关于人工智能一文的译文的一些背景：&lt;br&gt;我在知乎发布的翻译稿的链接：&lt;a href=\"http://zhuanlan.zhihu.com/xiepanda/19950456\" class=\"internal\"&gt;为什么最近有很多名人，比如比尔盖茨，马斯克、霍金等，让人们警惕人工智能？ - 谢熊猫出没注意 - 知乎专栏&lt;/a&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;首先，我翻译这篇东西是纯粹出于兴趣的，并不为获利。原作者waitbutwhy的网站上也是鼓励这种分享的。很多联系过我咨询转载的知乎用户和公众号也知道，我对他们的唯一要求就是保留保留原文出处、知乎链接和译者。&lt;/li&gt;&lt;li&gt;其次，因为《读库》想要刊登我的翻译稿，所以联系过我。当时读库的编辑联系我之后我的第一反应就是让读库先去联系原作者再来和我谈翻译稿的使用。之后读库的版权编辑确实联系了原作者，说明了想要使用我的翻译稿情况，并且双方商定了使用细节和费用，这些是有email记录的书面约定。&lt;/li&gt;&lt;li&gt;同时，我和waitbutwhy的原作者以及中文站的站长是有联系。中文站站长Haution也是知乎用户，之前也和我达成了双方的翻译文章在waitbutwhy官方微信号和知乎上互相授权转载的共识的。&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;说完这些背景我再接着讲。虽然这是不到一个月的时间内第二次没有通知我的情况下内容被引用，但是我还是没有来直接来说什么，而是依然联系了S女士。经过S女士的引荐，由罗方的D先生负责和我沟通。&lt;br&gt;&lt;br&gt;D先生一上来就提出要支付翻译费，但是就像我之前的态度一样，我最关系的是罗方是否有联系过原作者。而D先生则是告诉我罗方的做法是非营利的（此处关于是否非营利我没有具体查证），咨询过律师后得出的结论是这种做法是不违法的，是不需要联系作者的。但是不愿意正面回答我的问题，在我的再三询问下才表示确实没有联系过：&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;我的诉求很简单：&lt;br&gt;一是我希望内容使用方能够有对内容创作者的基本尊重，也就是能够事先告知，所以我的第一反应就是询问对方是否联系过原作者。&lt;br&gt;二是如果人工智能一文的内容使用没有受到原作者的授权，而我又收了翻译费的话，相当于我不正当得利，这不是我的初衷也不是我的目的。这对我的名誉是有损的。&lt;br&gt;&lt;br&gt;&lt;br&gt;此后的对话就围绕我强调对于作者的尊重，而D先生就一直强调罗方做法是合法的，同时能够帮助作者宣传是对作者有利的，也就是为什么我会觉得这沟通变成了——“挖你挖鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_r.jpg\"&gt;&lt;br&gt;经过一些考虑，我对D先生提出的解决方案是三点：&lt;br&gt;&lt;ol&gt;&lt;li&gt;主动联系原作者，向原作者说明情况，并且主动支付内容使用费用&lt;/li&gt;&lt;li&gt;将翻译费用按照千字八十的标准捐赠给我指定的慈善机构&lt;/li&gt;&lt;li&gt;以后在使用其他作者的作品的时候，能做到事前主动联系作者这个最基本的尊重&lt;/li&gt;&lt;/ol&gt;&lt;br&gt;对于第一点和第二点，罗方是同意的，但是对于最主要的诉求，也就是联系作者这个事情上D先生还是强调不联系作者这种做法是合法的，而我则是一直坚持不能以法律这个最低标准来自我要求，人要讲礼貌。&lt;br&gt;&lt;br&gt;但是这个最后还是没有谈妥，为了避免不愉快，我决定终止这个方面的讨论。于是我提供了原作者的联系方式，而对于翻译费用捐赠和尊重作者这个，则是搁置不谈了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_r.jpg\"&gt;&lt;br&gt;以上微信沟通记录隐去了相关人士的头像和姓名，其它没有修改和遗漏。&lt;br&gt;========================================&lt;br&gt;&lt;br&gt;至此，我不打算和罗方继续就尊重作者这个诉求讨论下去了。不过我在知乎上确实是发现了王路之前遭遇了类似事情之后的一些情况，看来发生在我身上的事情确实不是个例：《罗辑思维，你讲点职业道德好不好？》&lt;a href=\"http://zhuanlan.zhihu.com/wanglu/19932053\" class=\"internal\"&gt;罗辑思维，你讲点职业道德好不好？ - 王路的粽子铺 - 知乎专栏&lt;/a&gt;&lt;br&gt;&lt;br&gt;但是我和王路不同，我不是靠笔杆子吃饭的，敲敲键盘写几个字，于我是连副业都算不上的，说是一项休闲娱乐也不为过。我和太太两人收入尚可，不需要赚外快也可以过得舒适自在，所以也是不在意别人给的稿费的。跟我约过稿的都知道，如果我不感兴趣的话题，稿费再高我也是不写的，我感兴趣的话题，免费写我也是乐意的。&lt;br&gt;&lt;br&gt;至于写东西，在网络上赢得的虚名，已经借此认识的一些朋友，我是很感恩的。但是如果因为无偿、出于兴趣的写点东西、翻译下文章，而给自己染上污名，我是不乐意的。&lt;br&gt;&lt;br&gt;比如在这个问题下面，就有人在质疑我侵犯了原作者的版权。这也是让我了解了葛巾老师当时离开知乎的感觉，明明不是为了钱，也不差那点钱，就是分享点东西，还要被人污蔑是做营销卖菜刀，这种感觉是不好受的，对于那些想要认真分享些东西的人来说，也是负面的。&lt;br&gt;&lt;br&gt;&lt;b&gt;再次声明，不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;br&gt;&lt;br&gt;&lt;/b&gt;这个事情让我很心寒。&lt;br&gt;&lt;br&gt;就写这么多，算是给各位热心联系我的知友一个交待。&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a href=\"http://www.zhihu.com/question/29635673/answer/45093627\" class=\"internal\"&gt;怎样看待《罗辑思维：你因挣钱而伟大》中的金钱价值观？ - 谢熊猫君的回答&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;做生意当然没错，赚钱当然也没错。作为生活在市场经济中的人来说，这种价值观念没什么大问题。&lt;br&gt;&lt;br&gt;但是立牌坊，那就见仁见智了。&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_b.jpg\" data-rawwidth=\"869\" data-rawheight=\"563\" class=\"origin_image zh-lightbox-thumb\" width=\"869\" data-original=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_b.jpg\" data-rawwidth=\"868\" data-rawheight=\"555\" class=\"origin_image zh-lightbox-thumb\" width=\"868\" data-original=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_r.jpg\"&gt;&lt;img src=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_b.jpg\" data-rawwidth=\"863\" data-rawheight=\"566\" class=\"origin_image zh-lightbox-thumb\" width=\"863\" data-original=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_b.jpg\" data-rawwidth=\"583\" data-rawheight=\"782\" class=\"origin_image zh-lightbox-thumb\" width=\"583\" data-original=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_r.jpg\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_b.jpg\" data-rawwidth=\"835\" data-rawheight=\"105\" class=\"origin_image zh-lightbox-thumb\" width=\"835\" data-original=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_b.jpg\" data-rawwidth=\"852\" data-rawheight=\"82\" class=\"origin_image zh-lightbox-thumb\" width=\"852\" data-original=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;&lt;/blockquote&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28796527/answer/65193739\"&gt;发布于 2015-09-25&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-09-25 20:43:56",
+            "question": {
+                "id": "28796527",
+                "title": "罗辑思维在知乎上取材，付费了没有？",
+                "link": "http://www.zhihu.com/question/28796527"
+            }
+        },
+        {
+            "id": "54303319",
+            "agree_num": "245",
+            "comments_num": "41",
+            "content": "&lt;p&gt;最近的工作中经常牵扯到一些企业战略的事，所以对战略的东西特别敏感，这次看到支付宝的新版本，加上回国以来的所见所闻，还是挺有感触的。&lt;/p&gt;&lt;p&gt;------------------- &lt;/p&gt;&lt;br&gt;&lt;p&gt;假如有人现在对你说：“我这里有一种电子存储方式，你可以用1:1的价值兑换人民币，然后把你的人民币换成我这个存储方式里的一个数字。”你多半会觉得这个人有毛病。&lt;/p&gt;&lt;br&gt;&lt;p&gt;但这就是生活中正在发生并被我们接受的事情&lt;/p&gt;&lt;br&gt;&lt;p&gt;钱的存储方式正在发生变化，花钱的方式也在发生变化。曾几何时，出门必须要带现金，现在哪怕出门只带银行卡也不会觉得哪里不妥，将来的某一天，也许大家只要带一个手机，或者干脆什么都不用带也没关系，线下生活中的支付场景正在被支付宝为代表的线上工具所改变。这种变化是相对静默的，也是这种静默使得这种变化被人舒适的接受。&lt;/p&gt;&lt;p&gt;--------------------&lt;/p&gt;&lt;br&gt;&lt;p&gt;时至今日我还记得我的第一笔淘宝购物，那是要在淘宝上买一本旧的游戏杂志，当时的我心里是很没底的。网购这东西的流程究竟是怎样的？我的钱究竟应该怎么给？我怎么才知道这笔交易是有保障的？&lt;/p&gt;&lt;br&gt;&lt;p&gt;网购的第一笔交易，对每一个经常网购的人来说都很重要，就是这笔交易让大家对网购这个事情有了信心，以至于网购现在变成了大家日常生活的一部分——有时候上班路上堵车，我一边坐车上打发时间，一边就用手机上一下淘宝或者京东，然后付款等等也都顺手完成。做这一切的时候我不用担心我的钱款是否能够安全到账，卖家是否能准时收到我的订单，或者这笔交易是否是安全的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;支付宝、微信等等，通过余额宝类的理财工具，以及过年时候的抢红包，完成了“第一笔交易建立信心”的过程。所以现在我会在微信和支付宝里各存着一些钱，而不会去介意其实这些钱只不过是一个电子存储方式中的数字而已，对我来说，那些其实就是我的钱了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;所以当我第一次用微信扫码在饭店付钱的时候，当我第一次在家附近的沃尔玛用支付宝扫码买零食的时候，是很理所当然的事情，就好像刷卡一样自然。&lt;/p&gt;&lt;p&gt;---------------------&lt;/p&gt;&lt;br&gt;&lt;p&gt;我不想过多的评论酷炫的新功（wei）能（xin）。我觉得，能让我这样的普通用户，把系统里的一个数字理所当然的当成了自己的钱，并且像刷银行卡一样理所当然的把这些钱花出去，并且在很多的支付场景都能顺利支付，本身就是一件无比酷炫的事情。&lt;/p&gt;&lt;br&gt;&lt;p&gt;其实不只是沃尔玛，连我们公司的员工购买公司文化衫都是采用的支付宝扫码的形式了，更不用说进入中国28年都没有装过POS机的肯德基也支持了支付宝扫码付款，之前知乎上有人回答过 《&lt;a href=\"http://www.zhihu.com/question/31782073/answer/53408637\" class=\"internal\"&gt;肯德基进中国 28 年了一直没接 POS 机，为什么却愿意接支付宝？ - 汪惟的回答&lt;/a&gt;》&lt;/p&gt;&lt;br&gt;&lt;p&gt;再仔细一想，还有华润、家乐福、屈臣氏、海底捞、周黑鸭、优步等等等等，日常生活中常见的衣食住行品牌，也都在慢慢的支持支付宝支付。&lt;/p&gt;&lt;br&gt;&lt;p&gt;从2013年左右开始，支付宝都在发力线下，商超、餐饮、交通这些日常生活最常见的消费场景中，支付宝都已经慢慢形成了自己的网络和影响力，也静默地培养了用户的使用习惯。这一次的改版，力推O2O，是要把线下也变成战略级别的功能。之所以说是战略级别，是因为支付宝在日常生活品牌中的应用，是一个大数据的入口，这些消费数据，能帮助商户了解用户的社会属性、年龄性别、消费习惯等等。&lt;/p&gt;&lt;br&gt;&lt;p&gt;也就是说，除了支付手段之外，线下的布局还能给商家提供运营和营销决策等增值服务，这种途径收集的数据价值和准确性肯定要高于传统的会员卡和积分卡。结合马云之前一直在倡导的大数据时代（DT），可以看到，支付宝会是阿里拉动时代转型的重要战略棋子。&lt;/p&gt;&lt;p&gt;---------------------------------&lt;/p&gt;&lt;br&gt;&lt;p&gt;而且有理由相信，这种时代转型有潜力走的更远。虽然还有很多技术安全的事情要去考虑，但是当只带着手机出门变得和现在只带着银行卡出门一样常见并且让人安心的时候，我们离“连移动支付手机都不用带”也就不那么远了，基于生物技术的支付也许将代替数字密码，让支付变得像解锁带指纹识别的苹果手机那么简单——按一下指纹或者做一下面部识别就能完成支付。&lt;/p&gt;&lt;p&gt;全民刷脸支付，想想就很酷炫呢=͟͟͞͞( •̀д•́)&lt;/p&gt;&lt;br&gt;&lt;p&gt;===============&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;最后吐个槽，我还是不愿意用支付宝跟人聊天(●′ω`●)&lt;/p&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/32014930/answer/54303319\"&gt;发布于 2015-07-08&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-07-08 19:33:15",
+            "question": {
+                "id": "32014930",
+                "title": "支付宝 9.0 改版背后的产品逻辑和战略布局是什么？",
+                "link": "http://www.zhihu.com/question/32014930"
+            }
+        },
+        {
+            "id": "51627287",
+            "agree_num": "355",
+            "comments_num": "23",
+            "content": "虽然我侵权，但是我有礼貌啊&lt;br&gt;虽然我不占理，但是我有律师帮我钻漏洞啊&lt;br&gt;虽然我办事不小心恶心到了别人，但是我是弱者啊
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-06-17\" target=\"_blank\" href=\"/question/31362103/answer/51627287\"&gt;编辑于 2015-06-17&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-06-17 08:47:59",
+            "question": {
+                "id": "31362103",
+                "title": "如何评价「大球小珠」在未得到原作者式微授权的情况下，转载引用式微回答的 Hiyachen 的回答？",
+                "link": "http://www.zhihu.com/question/31362103"
+            }
+        },
+        {
+            "id": "51005878",
+            "agree_num": "752",
+            "comments_num": "115",
+            "content": "全世界最有名的off menu菜品大概是&lt;b&gt;麦当劳的McGangBang&lt;/b&gt; （麦乐轮奸堡？）&lt;br&gt;做法是拿一个双层吉士汉堡和一个麦香鸡堡拼起来：&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/17e1e6a147527ece63b58310844d368d_b.jpg\" data-rawwidth=\"1152\" data-rawheight=\"768\" class=\"origin_image zh-lightbox-thumb\" width=\"1152\" data-original=\"https://pic2.zhimg.com/17e1e6a147527ece63b58310844d368d_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;还有很有名的Big McChicken&lt;/b&gt;（麦乐大鸡霸？）&lt;br&gt;做法是先拿一个巨无霸，然后用麦乐鸡堡里面的那个鸡肉代替巨无霸的三块面包&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/6ab8e5fcd8be8e7d1fc808968e75d032_b.jpg\" data-rawwidth=\"500\" data-rawheight=\"375\" class=\"origin_image zh-lightbox-thumb\" width=\"500\" data-original=\"https://pic3.zhimg.com/6ab8e5fcd8be8e7d1fc808968e75d032_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;当然，&lt;b&gt;最残暴的可能是Monster Mac&lt;/b&gt; （怪兽巨无霸？）&lt;br&gt;做法是先拿一个有两块牛肉饼的巨无霸，然后再加六块肉饼，一共八块肉饼&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/13a223c42f9c7403262d6cc5f6b6003f_b.jpg\" data-rawwidth=\"300\" data-rawheight=\"300\" class=\"content_image\" width=\"300\"&gt;&lt;br&gt;&lt;br&gt;还有&lt;b&gt;限时供应的Mc10:35 &lt;/b&gt;（10:35麦满分？）&lt;br&gt;名字的由来是只有在每天早上10:35左右的时间才能点到这款，因为10:30-11:00是麦当劳早餐菜单和普通菜单切换的时间，这个时候去点，你能点到来自两套菜单不同食材组成的Mc10:35，它的做法是结合烟肉蛋麦满分和双层吉士汉堡&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/423f350885d2e0458ad9775cab72b69e_b.jpg\" data-rawwidth=\"344\" data-rawheight=\"344\" class=\"content_image\" width=\"344\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/31204992/answer/51005878\"&gt;发布于 2015-06-11&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-06-11 19:41:09",
+            "question": {
+                "id": "31204992",
+                "title": "「Off menu」在餐厅是怎样一种存在？在什么餐厅或者什么情况下可以吃到？",
+                "link": "http://www.zhihu.com/question/31204992"
+            }
+        },
+        {
+            "id": "49795791",
+            "agree_num": "234",
+            "comments_num": "85",
+            "content": "深圳有家酒店叫回酒店&lt;br&gt;&lt;br&gt;上了出租车&lt;br&gt;“去哪儿？”&lt;br&gt;“回酒店。”&lt;br&gt;“哪个酒店？”&lt;br&gt;“回酒店。”&lt;br&gt;“究竟哪个酒店？”&lt;br&gt;“回！酒！店！”&lt;br&gt;……&lt;br&gt;……&lt;br&gt;……&lt;br&gt;--------------------&lt;br&gt;&lt;br&gt;深圳有所公寓叫壹间公寓&lt;br&gt;&lt;br&gt;“你住哪里？”&lt;br&gt;“壹间公寓。”&lt;br&gt;“哪家公寓呢？”&lt;br&gt;“壹间公寓。”&lt;br&gt;……&lt;br&gt;……&lt;br&gt;……&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/16540705e24032756a35f5a2f09af0e7_b.jpg\" data-rawwidth=\"500\" data-rawheight=\"500\" class=\"origin_image zh-lightbox-thumb\" width=\"500\" data-original=\"https://pic4.zhimg.com/16540705e24032756a35f5a2f09af0e7_r.jpg\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-06-02\" target=\"_blank\" href=\"/question/27092362/answer/49795791\"&gt;编辑于 2015-06-02&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-06-02 12:43:56",
+            "question": {
+                "id": "27092362",
+                "title": "你听过最搞笑的笑话是什么？",
+                "link": "http://www.zhihu.com/question/27092362"
+            }
+        },
+        {
+            "id": "48014772",
+            "agree_num": "1118",
+            "comments_num": "178",
+            "content": "我来分享经验(现宝)了。&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/03d7fb443f84204292fdab44f91c8e92_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/03d7fb443f84204292fdab44f91c8e92_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;身边一些朋友也知道，不久前我离开伦敦，换工作到了深圳。离开大陆十几年，这是第一次回国长居。有过国际搬家经验的人都知道，新家的置办是很繁琐的事情。所幸，公司提前帮我安排了一处住所，所以我只需要采购一些软件就好了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;既然是我，那最注重的采购当然是厨房了，其实我的厨具基本都留在了新加坡家里，只带了几把日本刀匠做的手工菜刀（菜刀的事情回头撰文再说）&lt;/p&gt;&lt;br&gt;&lt;p&gt;下图是新加坡家中部分厨具&lt;/p&gt;&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/31318316fa0f17e803295488338003a8_b.jpg\" data-rawwidth=\"900\" data-rawheight=\"1200\" class=\"origin_image zh-lightbox-thumb\" width=\"900\" data-original=\"https://pic1.zhimg.com/31318316fa0f17e803295488338003a8_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;下图是随身带的几把刀&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/18217c3921d381a96b08208f952891d7_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"898\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/18217c3921d381a96b08208f952891d7_r.jpg\"&gt;&lt;br&gt;&lt;p&gt;一些厨房的基本件，比如烤箱、砧板、晾碗架、洗菜篓等等，不赘述了。这次还下狠心买了一个颇高端的松下电饭煲。其实我在伦敦搭建自己的厨房时候，是没有买电饭煲的，煮米饭基本就是靠我的铸铁珐琅锅，煮出来的效果倒也是不错，新加坡的家里也有飞利浦的智能电饭煲，也都是不错的选择。&lt;/p&gt;&lt;br&gt;&lt;p&gt;不过人在国外，最大的问题是买不到好的米，国外的超市更多的是各种长粒米，比如最常见的泰国香米。小时候在家里，家人偶尔开洋荤，也会买点泰国香米，但是&lt;b&gt;在国外吃了十几年长粒米，实在觉得还是东北的短粒米好吃&lt;/b&gt;，口感和香气上都要好过长粒米很多，在对吃食很讲究的日本，也是短粒米居多。基于这长期海外生活的经验，这次回到大陆，因为能够很容易的买到各种高质量的短粒米，所以就下了血本买了个日本的感应加热的电饭煲。价格小贵，买的时候还犹豫了一下。&lt;/p&gt;&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/8b7d0bcfef141759180711de10a63b01_b.jpg\" data-rawwidth=\"798\" data-rawheight=\"1200\" class=\"origin_image zh-lightbox-thumb\" width=\"798\" data-original=\"https://pic2.zhimg.com/8b7d0bcfef141759180711de10a63b01_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;新买的电饭煲，配置豪华，功能也很多，为了做出合自己口味的饭，我专门做了次小实验，用电饭煲的几种不同模式煮了饭，然后进行口感的对比。我对生活的态度一向是细节体现逼格，为了做出真正“自己喜欢”的米饭，虽然耗费了我不少时间也是值得的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;首先说下一些煮米饭的基本操作，其实很基本，大家应该都知道，我在这里啰嗦两句：&lt;/p&gt;&lt;br&gt;&lt;p&gt;1.
+选购短粒米，这个上面已经说了。&lt;/p&gt;&lt;br&gt;&lt;p&gt;2.
+用电饭煲附赠的米罐量米，因为现在的电饭煲内部都会有对应米量的刻度，所以为了保证水米比的准确，还是要用原装的米罐。&lt;/p&gt;&lt;br&gt;&lt;p&gt;3.
+淘米。这一步除了洗去米粒表面的杀虫剂、灰尘等，更主要是洗去表面的淀粉，为了防止煮出来的米饭全部粘成一坨。&lt;/p&gt;&lt;br&gt;
+
+加水。这一步也是尽量参考电饭煲内部的刻度来为宜，比较好的电饭煲内部，甚至会有针对不同米的不同刻度。&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/9d8fd61ff98013e3f58692cd2377681f_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/9d8fd61ff98013e3f58692cd2377681f_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;5.
+然后就是选择自己喜欢的模式来煮米了，也就是我这次实验主要的测试部分。&lt;/p&gt;&lt;p&gt;我从电饭煲的五种短粒米模式中选择了三种做实验，从时间排由短到长分别是超快速、标准和精煮模式。从表面来推测，三种对应的结果应该分别是偏硬、正常和偏软三种。&lt;/p&gt;&lt;p&gt;首先是超快速模式，首先倒入两罐淘好的米，加水到两罐的刻度位置，然后打开开关：&lt;/p&gt;&lt;img src=\"https://pic2.zhimg.com/0c9a08184a1f6583091552aae83d8301_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/0c9a08184a1f6583091552aae83d8301_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;耗时25分钟。&lt;/p&gt;&lt;p&gt;煮完后，作为一个第一次用高级电饭煲的土包子，我还是很惊喜的，原来用过的煮饭方式，不管是铸铁珐琅锅还是智能电饭煲，多少都会有底部米粒微焦或者粘锅的情况，但是这次煮出来却没有粘锅，也就是说加热比较均匀。&lt;/p&gt;&lt;img src=\"https://pic4.zhimg.com/7a121cdefaa98f1ed421e5e84804c2db_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/7a121cdefaa98f1ed421e5e84804c2db_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;米饭粒粒分开，口感比较接近意大利面中的al
+dente，每粒米的最中间有一点点的硬，细细体会才能感觉到，我虽然不偏好硬米饭，但是这种口感真的是相当好，我一下没忍住直接吃了半碗白饭。可能因为多年没吃短粒米的缘故，吃起来真的有点淀粉的甜味。&lt;/p&gt;&lt;img src=\"https://pic4.zhimg.com/35ba08f708a495ece37ecf7012d1d3bf_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/35ba08f708a495ece37ecf7012d1d3bf_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;然后是标准模式，同样是两罐米，一样水量，一样的操作&lt;/p&gt;&lt;img src=\"https://pic2.zhimg.com/48a4682475053902a40ee450ab6cd50d_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/48a4682475053902a40ee450ab6cd50d_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;耗时39分钟。&lt;/p&gt;&lt;p&gt;同样的是粒粒分开，口感上是刚刚好完全熟透了的米，不硬不软，甜味似乎比前面的硬米更多一点。像我这种对米饭偏好不硬不软的人来说，这个标准模式是最好的。&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/d66fe3aa601b377fa9fe15ddd1e82e16_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/d66fe3aa601b377fa9fe15ddd1e82e16_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;最后是精煮模式，也是时间最长的模式，一样的两罐米和水量，煮了将近50分钟。这次有另一点让我听惊讶的，就是之前用珐琅锅或者飞利浦的电饭煲煮饭，总是会有米汤从蒸汽口出来，但是这一趟虽然煮了将近50分钟，也是没有米汤溢出来（我又土包子了&lt;/p&gt;&lt;img src=\"https://pic1.zhimg.com/adc78874b3de5596610e46533acf5c10_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/adc78874b3de5596610e46533acf5c10_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;意料之中的，这一次的米是最软的，米粒虽然还是颗粒分明，但是已经比前面两次有了更多的粘连，甜味也是最明显的。&lt;/p&gt;&lt;img src=\"https://pic2.zhimg.com/f9e268926019c43c7dbed4d89a1a73a9_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/f9e268926019c43c7dbed4d89a1a73a9_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;最后，这三份米饭，超快速(硬)那份被我做成了蛋炒饭，标准那份作为米饭主食吃了，精煮（软）那份我第二天一早煮了青菜泡饭。&lt;/p&gt;&lt;br&gt;&lt;p&gt;做出自己喜欢的味道，需要的是这样看似很无厘头的和工具的磨合；活出自己想要的生活，也同样需要同样在生活中探索种种细节。&lt;/p&gt;&lt;br&gt;&lt;p&gt;============&lt;/p&gt;&lt;p&gt;后来我发现还可以用电饭煲做煲仔饭，正巧有朋友给我寄了些逼格很高的肉，比如这个一斤好几百的腊肠，我就拿来做煲仔饭了。&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/03d7fb443f84204292fdab44f91c8e92_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/03d7fb443f84204292fdab44f91c8e92_r.jpg\"&gt;&lt;br&gt;&lt;p&gt;这个不会把米煮焦的电饭煲，用煲仔饭功能也是可以做出锅巴的效果的。&lt;/p&gt;&lt;img src=\"https://pic1.zhimg.com/ace6baf01203595d9c24d3a110373d8c_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/ace6baf01203595d9c24d3a110373d8c_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/583de7152a8ae2498217c09ef82bea59_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/583de7152a8ae2498217c09ef82bea59_r.jpg\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-05-16\" target=\"_blank\" href=\"/question/30275294/answer/48014772\"&gt;编辑于 2015-05-16&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-05-16 21:51:54",
+            "question": {
+                "id": "30275294",
+                "title": "怎样才能用电饭煲做出好吃的米饭？",
+                "link": "http://www.zhihu.com/question/30275294"
+            }
+        },
+        {
+            "id": "45733400",
+            "agree_num": "580",
+            "comments_num": "76",
+            "content": "毁约归根结底是法律和道德问题，但是道德批判、法律问题这些别人说了很多，我就说下操作性好了。&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;说实话，我在新加坡这么多年，见过的想违约不赔钱的人这不是第一个，更不是最后一个。花了纳税人的钱，不按照合同履行义务，&lt;b&gt;看似占了大便宜，实则是捡了芝麻，丢了西瓜&lt;/b&gt;。&lt;br&gt;&lt;br&gt;真正付诸行动毁约的人也是有，过得舒坦的我一个都不知道。全球信息系统越来越发达，世界各地连接越来越紧密，地球村越来越小，从前一封信从美国到中国要个把月的远洋货运，现在无非就是敲敲键盘几秒钟。&lt;br&gt;&lt;br&gt;毁约的人自然都是怀着“以后不回新加坡”的打算，和“去了别的地方不会被查到”的侥幸心理，但是眼看着信息交流日渐便捷，信用系统越加全球化，科技发展速度越来越快，世界在加速发展，未来的世界谁又说得准？即使真的侥幸一开始没被查到，但是又怎能保证这辈子剩下来的几十年不被查到？&lt;br&gt;&lt;br&gt;于是乎毁约的人不但要放弃原本的朋友圈和社交圈，还要一辈子都提心吊胆的。题主还是大学生，工作入职的背景调查怕是没有做过，不知道背着这样一个毁约的纪录找工作是什么感觉？怕是也没跟银行贷过款，没做过信用调查？怕是之前也没去过美国，不知道在美国要查一个人的dossier是多么简单？更不要说以后任何的出现在学术、商业、公共等任何圈子的场合，甚至是普通的朋友圈，都要时刻提放着不被人扒出来。而这一切的大前提，还是你还要在一个加速发展的世界生活一辈子。&lt;br&gt;&lt;br&gt;总之，一辈子夹着尾巴做人，总是不好受的。&lt;br&gt;&lt;br&gt;其实被查出来倒也好，怕就怕一辈子都没人把你查出来，结果就是干什么事情都要缩手缩脚，给自己戴上了一幅无形的镣铐——这样一个契约和信用的世界，你背着一个毁约纪录，试问你敢放开手脚做事吗？&lt;b&gt;相比区区一点毁约的钱，一辈子做事都要缩手缩脚的成本太高了。&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;有人在别的回答下留言评说题主这样的叫“精致的利己主义者”，这种说法是不对的，因为这种做法一点都不精致，而且也不利己。一个真正的利己主义者，绝对不是在每一步上都占尽便宜，而是在长远的时间线上，一步一步为自己铺好路。&lt;br&gt;&lt;br&gt;&lt;b&gt;人生是一场长跑，唯一的捷径就是不要抄近道。&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/c018940fc4a87b90c675da614662096f_b.jpg\" data-rawwidth=\"300\" data-rawheight=\"180\" class=\"content_image\" width=\"300\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-04-24\" target=\"_blank\" href=\"/question/29329993/answer/45733400\"&gt;编辑于 2015-04-24&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-04-24 09:21:39",
+            "question": {
+                "id": "29329993",
+                "title": "新加坡 SM2 违约前往美国会怎样？",
+                "link": "http://www.zhihu.com/question/29329993"
+            }
+        },
+        {
+            "id": "45093627",
+            "agree_num": "1874",
+            "comments_num": "277",
+            "content": "做生意当然没错，赚钱当然也没错。作为生活在市场经济中的人来说，这种价值观念没什么大问题。&lt;br&gt;----------&lt;br&gt;&lt;br&gt;但是立牌坊，那就见仁见智了。&lt;br&gt;&lt;a class=\"internal\" href=\"http://www.zhihu.com/question/29362076/answer/44228095\"&gt;如何评价《罗辑思维》第 115 期对谢熊猫君翻译的关于人工智能的文章的重新演绎？ - 谢熊猫君的回答&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_b.jpg\" data-rawwidth=\"869\" data-rawheight=\"563\" class=\"origin_image zh-lightbox-thumb\" width=\"869\" data-original=\"https://pic3.zhimg.com/a1e77fc30e69940763d436c2397465da_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_b.jpg\" data-rawwidth=\"868\" data-rawheight=\"555\" class=\"origin_image zh-lightbox-thumb\" width=\"868\" data-original=\"https://pic1.zhimg.com/3b1e9d93f61dae29fad1055399275dcc_r.jpg\"&gt;&lt;img src=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_b.jpg\" data-rawwidth=\"863\" data-rawheight=\"566\" class=\"origin_image zh-lightbox-thumb\" width=\"863\" data-original=\"https://pic1.zhimg.com/6430afdd648e66376aca5e72f5da1664_r.jpg\"&gt;&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_b.jpg\" data-rawwidth=\"583\" data-rawheight=\"782\" class=\"origin_image zh-lightbox-thumb\" width=\"583\" data-original=\"https://pic2.zhimg.com/81e22c94fe07b18314f889f9b70d8a91_r.jpg\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_b.jpg\" data-rawwidth=\"835\" data-rawheight=\"105\" class=\"origin_image zh-lightbox-thumb\" width=\"835\" data-original=\"https://pic3.zhimg.com/e632a939ee027cc9b3cbb04fc9886f3a_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;&lt;br&gt;╮(╯_╰)╭&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_b.jpg\" data-rawwidth=\"852\" data-rawheight=\"82\" class=\"origin_image zh-lightbox-thumb\" width=\"852\" data-original=\"https://pic2.zhimg.com/e3c18277f29263244f06325f91e5dc25_r.jpg\"&gt;&lt;img src=\"https://pic4.zhimg.com/2502d88981feceb22e832d4029e7b1db_b.jpg\" data-rawwidth=\"363\" data-rawheight=\"65\" class=\"content_image\" width=\"363\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/29635673/answer/45093627\"&gt;发布于 2015-04-17&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-04-17 20:26:33",
+            "question": {
+                "id": "29635673",
+                "title": "怎样看待《罗辑思维：你因挣钱而伟大》中的金钱价值观？",
+                "link": "http://www.zhihu.com/question/29635673"
+            }
+        },
+        {
+            "id": "44868481",
+            "agree_num": "268",
+            "comments_num": "40",
+            "content": "之前在伦敦有一架精灵2，Phantom 2 Vision +，就是带DJI自己云台和摄像头的版本，在离开伦敦前试飞和拍摄了好几次。&lt;br&gt;&lt;br&gt;和同事午间休息时候在公司楼下的草地拍的，同事用ipad操作摄像头，我用遥控器操纵精灵2&lt;br&gt;&lt;img data-rawheight=\"592\" data-rawwidth=\"1053\" src=\"https://pic2.zhimg.com/a494b43e3e8a6b30ea40d8bf3496adf1_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1053\" data-original=\"https://pic2.zhimg.com/a494b43e3e8a6b30ea40d8bf3496adf1_r.jpg\"&gt;&lt;br&gt;拉升到50米左右&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic4.zhimg.com/fc211cc672f982e38d6c0cb33d7f7b13_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic4.zhimg.com/fc211cc672f982e38d6c0cb33d7f7b13_r.jpg\"&gt;&lt;br&gt;拉升到100左右。飞到120米左右系统会温馨提示高度，因为太靠近希斯罗机场的航道了。&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic4.zhimg.com/3bde5fc1a1a1d362d787c6b38e2a36ff_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic4.zhimg.com/3bde5fc1a1a1d362d787c6b38e2a36ff_r.jpg\"&gt;&lt;br&gt;多云天气，去海德公园，拍了一下英国资本家聚集的South Kensington地区&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic1.zhimg.com/f2889b677102ec1e1ecadeddc9c15920_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic1.zhimg.com/f2889b677102ec1e1ecadeddc9c15920_r.jpg\"&gt;&lt;br&gt;同一天的海德公园一角。&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic4.zhimg.com/727b2ba053c64b89431d1df953286d57_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic4.zhimg.com/727b2ba053c64b89431d1df953286d57_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;飞的时候有两个小朋友来围观，不小心拍进去了。&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic3.zhimg.com/86ba793b78d4410cf1b9ea2a9b4f7622_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic3.zhimg.com/86ba793b78d4410cf1b9ea2a9b4f7622_r.jpg\"&gt;&lt;br&gt;升到很高后可以拍出这样的效果&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic4.zhimg.com/c6f9163d00957ee788e06b7e9a412423_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic4.zhimg.com/c6f9163d00957ee788e06b7e9a412423_r.jpg\"&gt;&lt;br&gt;聚会拍集体合照再也不用喊路人帮忙了&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic1.zhimg.com/7633232eba72534f097665a9afde61dc_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic1.zhimg.com/7633232eba72534f097665a9afde61dc_r.jpg\"&gt;&lt;br&gt;挑了一天天气好，拍了下自己家附近，西伦敦。&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic2.zhimg.com/f774b134ea429db65fb1a80c8267267d_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic2.zhimg.com/f774b134ea429db65fb1a80c8267267d_r.jpg\"&gt;&lt;br&gt;自己家附近的百米俯拍&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic2.zhimg.com/be593a1a75affea231c514a6f3a910c5_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic2.zhimg.com/be593a1a75affea231c514a6f3a910c5_r.jpg\"&gt;&lt;br&gt;和同事们玩自拍&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic2.zhimg.com/d1f42cb766146d371cbfa512ee9e0ab1_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic2.zhimg.com/d1f42cb766146d371cbfa512ee9e0ab1_r.jpg\"&gt;&lt;br&gt;在东伦敦傍晚拍，可以看到远处的shard塔&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic2.zhimg.com/4615bfd95f3f9d4346433031d49505c9_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic2.zhimg.com/4615bfd95f3f9d4346433031d49505c9_r.jpg\"&gt;&lt;br&gt;还是喜欢俯拍朋友家屋顶&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic4.zhimg.com/1750f0f7fb1f427ad3b29b275fca1583_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic4.zhimg.com/1750f0f7fb1f427ad3b29b275fca1583_r.jpg\"&gt;&lt;br&gt;聚会留念&lt;br&gt;&lt;img data-rawheight=\"617\" data-rawwidth=\"1096\" src=\"https://pic2.zhimg.com/3f43854a303722f87dea9a2f37a5cc71_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"1096\" data-original=\"https://pic2.zhimg.com/3f43854a303722f87dea9a2f37a5cc71_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;总的来说拍摄体验是很好的，看过我拍的视频的人第一反应通常就是“怎么这么稳？”&lt;br&gt;其实因为云台的缘故，即使在大风天气，拍出来的视频还是很稳。&lt;br&gt;&lt;br&gt;飞行器和相机的操作上手都很简单，基本上和我一起试飞的朋友，我讲解两分钟就能上手了。&lt;br&gt;&lt;br&gt;当然作为上一代的产品，精灵2的摄像头有鱼眼畸变效果，在上面的图片中能很明显看出来，这个问题在新一代的精灵3的升级版摄像头中已经没有了。而且精灵3各方面的配置都比精灵2更好，新的app还支持高清视画同传，加上升级版的4K摄像头，飞行和拍摄效果应该比精灵2好很多，回头准备去弄一个精灵3玩一下。
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-04-15\" target=\"_blank\" href=\"/question/28175811/answer/44868481\"&gt;编辑于 2015-04-15&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-04-15 16:15:05",
+            "question": {
+                "id": "28175811",
+                "title": "用 DJI 无人机拍照是一种怎么样的体验？",
+                "link": "http://www.zhihu.com/question/28175811"
+            }
+        },
+        {
+            "id": "44587610",
+            "agree_num": "1796",
+            "comments_num": "136",
+            "content": "谢邀&lt;br&gt;&lt;br&gt;一开始这个问题我是拒绝回答的，因为答案很明显嘛，就是我们罗斯柴尔……&lt;br&gt;&lt;br&gt;好像不小心泄露了重要的个人信息( ͡° ͜ʖ ͡°)&lt;br&gt;&lt;br&gt;划掉重写&lt;br&gt;&lt;br&gt;-------------------------&lt;br&gt;谢邀&lt;br&gt;&lt;br&gt;一开始这个问题我是拒绝回答的，因为答案很明显嘛，牛逼的公司大家一般都知道的，比如微软、苹果这种科技巨擘，或者高盛、花旗这种金融大鳄嘛。&lt;br&gt;&lt;br&gt;后来我发现我的这个想法太天真了。每个行业背后都有很多很低调的大腕，比如金融业里，高盛、花旗是大名鼎鼎，但是同样很牛逼的Vanguard和Fidelity可能知道的就不多了，还有些逼格很高的各种prop house、FoF什么的，我也大多叫不上名字。&lt;br&gt;&lt;br&gt;于是我就去微信群里找一群好基友们讨论这种低调牛逼大公司去了。好基友们一开始也是提出出微软、苹果这些，但是经过讨论发现朝这种大型上市公司的路线想很可能不靠谱。聊着聊着下一个思路就是主权财富基金，比如新加坡的淡马锡这些，还有就是大型国企/央企，比如你懂的。但是因为你懂的原因，这种事情不能说太细。于是我和好基友们就决定从那些没有上市的私人企业（非国企/央企）上聊聊。&lt;br&gt;&lt;br&gt;好基友们一下就想到了国人的骄傲——华为。我一想也有道理，我过去一年去过很多国家，所到之处几乎都能看到华为的身影。作为国人自有核心技术，而且赚大钱的企业，华为是相当令人敬佩的。我专门去查了下华为2013年的营业额，也是达到了惊人的394.6亿美元，心服口服。&lt;br&gt;&lt;br&gt;华为建立了不到30年，和很多知乎用户可以说是同龄“人”。从最开始做交换机的小公司，到现在遍布全世界的通讯和互联网基建业务，三十年河东三十年河西一点不夸张。第一次互联网泡沫爆炸时候死了那么多IT企业，华为却是存活了下来，而且越活越好，技术、产品、战略眼光要什么有什么。&lt;br&gt;&lt;br&gt;但是华为虽然牛逼，光从营业额上，和那些大型的汽车、石油、科技、大型央企比起来，还是差了一个数量级的。和基友们的讨论，已经让我想到了考虑这个问题的方向——那些低调又牛逼的非上市私人企业。&lt;br&gt;&lt;br&gt;有了这么个思考方向，思考起来就方便多了。第一个进入我脑中的这样的公司就是科氏兄弟的科氏工业(Koch Industries)了。根据百度百科的说法，科氏工业&lt;br&gt;&lt;br&gt;&lt;blockquote&gt;“业务遍及多个领域：典型的如原油开采、炼化、贸易、管道运输、农业和畜牧业、金融服务、道路沥青等。科氏还拥有北美最大的液化石油气加工集团，占北美市场总量的25%。大约拥有60000员工。在原油贸易领域，科氏年贸易量超过七亿吨。科氏还是美国第六大电力供应商，供电业务遍及全美五十个州。”&lt;br&gt;&lt;/blockquote&gt;&lt;br&gt;科氏工业算是相当牛逼了也相当低调了，我最早听说他们还是在奥巴马竞选总统时候科氏工业的老大科氏兄弟(Koch brothers）试图支持奥巴马的对手呢。当时媒体是闹得风波阵阵，直到后来美国茶党(tea party)作为一股新兴政（dou）治（bi）势力崛起，依然传言是科氏兄弟在后面做金主的。按照科氏兄弟的量级，即使这些传言都是真的，也一点都不意外，毕竟科氏两兄弟的个人财富，每个人都超过半个比尔盖茨左右，并列全世界第六最有钱人。 &lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"221\" data-rawwidth=\"565\" src=\"https://pic3.zhimg.com/e456d0078c5768aeef36d06d6851ee56_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"565\" data-original=\"https://pic3.zhimg.com/e456d0078c5768aeef36d06d6851ee56_r.jpg\"&gt;&lt;br&gt;也就难怪《福布斯》要把这哥俩列入全世界最有权势的50人了——两人并列第24位，介于布隆伯格（彭博）和提姆.库克之间，排在他们后面的还有28位的李先生，所以你们自己感受下：&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"216\" data-rawwidth=\"550\" src=\"https://pic1.zhimg.com/c06db6d5a74e3e246860a212e4136fc8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"550\" data-original=\"https://pic1.zhimg.com/c06db6d5a74e3e246860a212e4136fc8_r.jpg\"&gt;&lt;br&gt;按照网上能搜到的彭博社的数据，1960年到2012年，标普500指数成分股资产平均增长了约70倍，而科氏工业的资产增长了超过2200倍。任何公司，短时间内跑赢标普500不算什么，但是在长达半个世纪的时间线上跑赢标普500，还是超过了30多倍，想想都是很可怕的。根据科氏工业官网的数据，其2012年的营业额达到了1150亿美元，是华为的好几倍。如果和上市公司比，是和汽车巨头菲亚特一个级别的。这大概就是正解了( ^ิ౪^ิ)&lt;br&gt;&lt;br&gt;科氏工业就是最后的大boss了么？&lt;br&gt;&lt;br&gt;我原本也是这么以为的，直到我手贱了，又搜了一下美国最大的非上市公司排名，眼睛终于又被闪瞎了。在《福布斯》的排名上，科氏工业居然是排第二的，第一名那个公司实在是低调，低调到我之前都没听说过——这个叫Cargill的是哪位啊(ง •̀_•́)ง┻━┻掀桌&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"322\" data-rawwidth=\"576\" src=\"https://pic3.zhimg.com/e88b8db520c623a94611450ef781a942_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"576\" data-original=\"https://pic3.zhimg.com/e88b8db520c623a94611450ef781a942_r.jpg\"&gt;&lt;br&gt;根据嘉吉官网公布的数据，2014财年他们持续经营业务的盈利为18.4亿美元，但是总收入和雇员数量，都明显超过科氏工业，还甩开了后面的戴尔、PwC一个数量级。哪怕你把谷歌、亚马逊这些科技巨头拉出来，也是要比嘉吉差了一大截。&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"211\" data-rawwidth=\"572\" src=\"https://pic4.zhimg.com/a86e9064e8fe6c1217bd2d54b677b21b_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"572\" data-original=\"https://pic4.zhimg.com/a86e9064e8fe6c1217bd2d54b677b21b_r.jpg\"&gt;&lt;br&gt;介于我对于农粮行业不了解，所以还是去找了些资料研究了一下。&lt;br&gt;然后我发现了这个&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"368\" data-rawwidth=\"572\" src=\"https://pic4.zhimg.com/1c7560d995c54fe5537cd6a9d8f93a67_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"572\" data-original=\"https://pic4.zhimg.com/1c7560d995c54fe5537cd6a9d8f93a67_r.jpg\"&gt;&lt;br&gt;嘉吉这个家族企业，自1995年最后一位家族成员惠特尼•麦克米伦（Whitney MacMillan）卸任CEO后，就已经是职业经理人制度了。也就是说这个1865年创建的家族企业，到1995年家族完全退出管理层（依然占有公司绝大部分股份），所累积的财富被嘉吉家族的后人分啊分的，居然还能分出14位资产十亿美元以上的富翁，是这个世界上十亿美元富翁数量最多的家族。&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"534\" data-rawwidth=\"577\" src=\"https://pic1.zhimg.com/2ac26244d240b6768d9bbe1578e33afc_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"577\" data-original=\"https://pic1.zhimg.com/2ac26244d240b6768d9bbe1578e33afc_r.jpg\"&gt;搜索的时候还顺便搜到了农粮业的所谓ABCD四大巨头，分别是ADM，邦吉（Bunge），嘉吉（Cargill）,和路易达孚（Louis Dreyfus），这四大巨头掌握了全世界80%的粮食交易，也就是说，你吃的任何东西，其中几乎肯定有原料或者成分是经过了这四巨头之手的。甚至一些日用品，比如造纸用的工业淀粉，各种家用品中的玉米纤维，各种护肤/口腔健康产品里的保湿剂，都可能来自嘉吉或者旗下公司。再比如麦当劳和肯德基这些快餐店的肉类食材，几乎全部来自于嘉吉的肉类。&lt;br&gt;&lt;br&gt;什么鬼( ͡° ͜ʖ ͡°)&lt;br&gt;&lt;br&gt;网络百科上能找到的关于嘉吉的都是非常基础的信息，谷歌新闻也都是些普通的行业信息，平常广告都没见过几个，真是低调至极。要不是前两天和基友们讨论起这个，作为一个非农粮行业人士，怕是听都不会听说。&lt;br&gt;&lt;br&gt;闷声发大财，我也算是见识了。&lt;br&gt;&lt;br&gt;======&lt;br&gt;相关链接：&lt;br&gt;&lt;a href=\"http://www.huawei.com/en/about-huawei/corporate-info/annual-report/2013/index.htm\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;Annual Report 2013&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://baike.baidu.com/view/2421167.htm\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;美国科氏工业集团&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.kochind.com/files/kochfacts.pdf\" class=\" external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;kochind.com/files/kochf&lt;/span&gt;&lt;span class=\"invisible\"&gt;acts.pdf&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.forbes.com/largest-private-companies/list/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;America's Largest Private Companies List&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://uk.businessinsider.com/cargill-family-has-14-billionaires-2015-3\" class=\" external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://&lt;/span&gt;&lt;span class=\"visible\"&gt;uk.businessinsider.com/&lt;/span&gt;&lt;span class=\"invisible\"&gt;cargill-family-has-14-billionaires-2015-3&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.bloomberg.com/research/stocks/private/person.asp?personId=505217&privcapId=103540\" class=\" external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;bloomberg.com/research/&lt;/span&gt;&lt;span class=\"invisible\"&gt;stocks/private/person.asp?personId=505217&privcapId=103540&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.forbes.com/profile/david-maclennan/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;David MacLennan&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.forbes.com/billionaires/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;The World's Billionaires&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.forbes.com/powerful-people/\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;The World's Most Powerful People&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=\"http://www.cargill.com\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;Cargill: Provider of food, agriculture, financial and industrial products and services to the world.&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/29195352/answer/44587610\"&gt;发布于 2015-04-12&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-04-12 16:46:50",
+            "question": {
+                "id": "29195352",
+                "title": "世界上有哪些非常厉害但鲜为人知的公司？",
+                "link": "http://www.zhihu.com/question/29195352"
+            }
+        },
+        {
+            "id": "44228095",
+            "agree_num": "11K",
+            "comments_num": "960",
+            "content": "这个事情，实话说是让我很&lt;b&gt;心寒&lt;/b&gt;的。&lt;br&gt;&lt;br&gt;这个问题很多人邀请我回答，也有不少人@我，但是我一直没有出声，因为我之前几天一直在和罗辑思维的工作人员沟通。沟通的结果让我比较失望，所以还是决定来说两句。&lt;br&gt;&lt;br&gt;&lt;b&gt;不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;/b&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;先说一个粗俗的笑话，请大家谅解：&lt;br&gt;&lt;blockquote&gt;学生问老师：“男人和女人做爱做的事的时候，谁更有快感。”&lt;br&gt;老师说：“你挖鼻孔的时候，是手指更舒服还是鼻孔更舒服？”&lt;br&gt;学生又问：“既然女人更有快感，为什么男人强*女人的时候，女人要反抗呢？”&lt;br&gt;老师说：“你走在路上，别人来挖你鼻孔，你愿不愿意？”&lt;/blockquote&gt;之所以要说这个粗俗的笑话，就是因为，在这件事情里面，罗辑思维的工作人员向我表达的意思就是——“挖你鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;br&gt;&lt;br&gt;================&lt;br&gt;上个月前，我写了一篇关于怎么识别聪明人的回答《&lt;a class=\"internal\" href=\"http://www.zhihu.com/question/28484672/answer/41115593\"&gt;如何辨认身边的聪明人？&lt;/a&gt;》&lt;br&gt;&lt;br&gt;这篇文章在知乎、微信朋友圈等处都被传播的很广，然后有知友来询问我说罗辑思维使用了我的这篇回答内容，问我有没有授权。对于这个没什么人知道的小事件，知乎上后来也出现了一个相关的提问：&lt;a href=\"http://www.zhihu.com/question/28796527\" class=\"internal\"&gt;罗辑思维在知乎上取材，付费了没有？ &lt;/a&gt;&lt;br&gt;&lt;br&gt;这个问题我没有回答，因为罗辑思维的工作人员S女士是我的微信好友，在那之前她就按着罗振宇先生的意思来联系过我想请我吃饭。所以虽然这篇辨别聪明人的东西事先没有跟我知会一声，我的第一反应大概是这个程序出错了，所以我直接就跟S女士在微信上联系，并且罗方也支付了稿费，这个事情就算过去了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/2c7e363f8cb0a6430551da3c11ad182a_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/c1dfc8d03523cd820ded8ff65473afba_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/47d77ebf3d75a6fbbe9047abf6095bca_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;而且既然S女士和我沟通起来友好而且全无障碍，所以以后需要用我的文章，不管是微信还是知乎联系我一下都是比较方便的——据我所知中文网络上只有我一个谢熊猫君，怕是不会搞错人的。&lt;br&gt;&lt;br&gt;======================&lt;br&gt;&lt;br&gt;然后前几天，不断有知友私信通知我，说罗辑思维的节目使用了我关于人工智能的翻译稿的内容。听到这个事情的时候我有点疑惑，因为罗方的工作人员肯定是没有和我谈过这个事情的，发布前发布后都没有。&lt;br&gt;&lt;br&gt;这里要说一下关于人工智能一文的译文的一些背景：&lt;br&gt;我在知乎发布的翻译稿的链接：&lt;a href=\"http://zhuanlan.zhihu.com/xiepanda/19950456\" class=\"internal\"&gt;为什么最近有很多名人，比如比尔盖茨，马斯克、霍金等，让人们警惕人工智能？ - 谢熊猫出没注意 - 知乎专栏&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;&lt;ol&gt;&lt;li&gt;首先，我翻译这篇东西是纯粹出于兴趣的，并不为获利。原作者waitbutwhy的网站上也是鼓励这种分享的。很多联系过我咨询转载的知乎用户和公众号也知道，我对他们的唯一要求就是保留保留原文出处、知乎链接和译者。&lt;/li&gt;&lt;li&gt;其次，因为《读库》想要刊登我的翻译稿，所以联系过我。当时读库的编辑联系我之后我的第一反应就是让读库先去联系原作者再来和我谈翻译稿的使用。之后读库的版权编辑确实联系了原作者，说明了想要使用我的翻译稿情况，并且双方商定了使用细节和费用，这些是有email记录的书面约定。&lt;/li&gt;&lt;li&gt;同时，我和waitbutwhy的原作者以及中文站的站长是有联系。中文站站长Haution也是知乎用户，之前也和我达成了双方的翻译文章在waitbutwhy官方微信号和知乎上互相授权转载的共识的。&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;&lt;br&gt;说完这些背景我再接着讲。虽然这是不到一个月的时间内第二次没有通知我的情况下内容被引用，但是我还是没有来直接来说什么，而是依然联系了S女士。经过S女士的引荐，由罗方的D先生负责和我沟通。&lt;br&gt;&lt;br&gt;D先生一上来就提出要支付翻译费，但是就像我之前的态度一样，我最关系的是罗方是否有联系过原作者。而D先生则是告诉我罗方的做法是非营利的（此处关于是否非营利我没有具体查证），咨询过律师后得出的结论是这种做法是不违法的，是不需要联系作者的。但是不愿意正面回答我的问题，在我的再三询问下才表示确实没有联系过：&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/8770ae8ba57499be1801ce837abfe9bb_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/8cf3fc92261d9685341d3c68eeb529f0_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/e2df05e107d171bfcaf31f629c8259e8_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;我的诉求很简单：&lt;br&gt;一是我希望内容使用方能够有对内容创作者的基本尊重，也就是能够事先告知，所以我的第一反应就是询问对方是否联系过原作者。&lt;br&gt;二是如果人工智能一文的内容使用没有受到原作者的授权，而我又收了翻译费的话，相当于我不正当得利，这不是我的初衷也不是我的目的。这对我的名誉是有损的。&lt;br&gt;&lt;br&gt;&lt;br&gt;此后的对话就围绕我强调对于作者的尊重，而D先生就一直强调罗方做法是合法的，同时能够帮助作者宣传是对作者有利的，也就是为什么我会觉得这沟通变成了——“挖你挖鼻孔这么舒服的事情，你为什么会有意见？”&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/facb7d3b0aff77c691fe91608283d159_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0b23e2110ff74da019f4d3b9b12bebe8_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/7d3ff3aa7adb846cf813e29d3c90f356_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic1.zhimg.com/0808d4a42831b30f9438fab1f64ffd6c_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/fad52b3b7fa0ff20f5326ae3e82a448e_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/df43696c0f13eacebffacce9e8758485_r.jpg\"&gt;&lt;br&gt;经过一些考虑，我对D先生提出的解决方案是三点：&lt;br&gt;&lt;blockquote&gt;&lt;ol&gt;&lt;li&gt;主动联系原作者，向原作者说明情况，并且主动支付内容使用费用&lt;/li&gt;&lt;li&gt;将翻译费用按照千字八十的标准捐赠给我指定的慈善机构&lt;/li&gt;&lt;li&gt;以后在使用其他作者的作品的时候，能做到事前主动联系作者这个最基本的尊重&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;&lt;br&gt;对于第一点和第二点，罗方是同意的，但是对于最主要的诉求，也就是联系作者这个事情上D先生还是强调不联系作者这种做法是合法的，而我则是一直坚持不能以法律这个最低标准来自我要求，人要讲礼貌。&lt;br&gt;&lt;br&gt;但是这个最后还是没有谈妥，为了避免不愉快，我决定终止这个方面的讨论。于是我提供了原作者的联系方式，而对于翻译费用捐赠和尊重作者这个，则是搁置不谈了。&lt;br&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic3.zhimg.com/d32ac403c4da957ebfca9b036e7dd8fa_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic2.zhimg.com/26021857eebcefcea1d07eac5c242afd_r.jpg\"&gt;&lt;img data-rawheight=\"1280\" data-rawwidth=\"960\" src=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"960\" data-original=\"https://pic4.zhimg.com/c17b23d04ee717b8df9e40c1860eff87_r.jpg\"&gt;&lt;br&gt;以上微信沟通记录隐去了相关人士的头像和姓名，其它没有修改和遗漏。&lt;br&gt;========================================&lt;br&gt;&lt;br&gt;至此，我不打算和罗方继续就尊重作者这个诉求讨论下去了。不过我在知乎上确实是发现了王路之前遭遇了类似事情之后的一些情况，看来发生在我身上的事情确实不是个例：《罗辑思维，你讲点职业道德好不好？》&lt;a href=\"http://zhuanlan.zhihu.com/wanglu/19932053\" class=\"internal\"&gt;&lt;span class=\"invisible\"&gt;http://&lt;/span&gt;&lt;span class=\"visible\"&gt;zhuanlan.zhihu.com/wang&lt;/span&gt;&lt;span class=\"invisible\"&gt;lu/19932053&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;但是我和王路不同，我不是靠笔杆子吃饭的，敲敲键盘写几个字，于我是连副业都算不上的，说是一项休闲娱乐也不为过。我和太太两人收入尚可，不需要赚外快也可以过得舒适自在，所以也是不在意别人给的稿费的。跟我约过稿的都知道，如果我不感兴趣的话题，稿费再高我也是不写的，我感兴趣的话题，免费写我也是乐意的。&lt;br&gt;&lt;br&gt;至于写东西，在网络上赢得的虚名，已经借此认识的一些朋友，我是很感恩的。但是如果因为无偿、出于兴趣的写点东西、翻译下文章，而给自己染上污名，我是不乐意的。&lt;br&gt;&lt;br&gt;比如在这个问题下面，就有人在质疑我侵犯了原作者的版权。这也是让我了解了葛巾老师当时离开知乎的感觉，明明不是为了钱，也不差那点钱，就是分享点东西，还要被人污蔑是做营销卖菜刀，这种感觉是不好受的，对于那些想要认真分享些东西的人来说，也是负面的。&lt;br&gt;&lt;br&gt;&lt;b&gt;再次声明，不是维权，不是要道歉，更不是索要稿费/翻译费，纯粹是表达一下这个事情给我带来的一些想法。&lt;br&gt;&lt;br&gt;&lt;/b&gt;这个事情让我很心寒。&lt;br&gt;&lt;br&gt;就写这么多，算是给各位热心联系我的知友一个交待。
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-04-08\" target=\"_blank\" href=\"/question/29362076/answer/44228095\"&gt;编辑于 2015-04-08&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-04-08 18:43:02",
+            "question": {
+                "id": "29362076",
+                "title": "如何评价《罗辑思维》第 115 期对谢熊猫君翻译的关于人工智能的文章的重新演绎？",
+                "link": "http://www.zhihu.com/question/29362076"
+            }
+        },
+        {
+            "id": "42346570",
+            "agree_num": "620",
+            "comments_num": "45",
+            "content": "在胡志明的烹饪班学的三个菜，学费交了95万（越南盾）&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;第一道菜是越南春卷&lt;/b&gt;&lt;/p&gt;&lt;p&gt;首先要调蘸酱：两勺水，一勺海鲜酱，一勺花生酱，搅匀&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/591cdfceb06378e63678f3c3a9f6c8ca_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/591cdfceb06378e63678f3c3a9f6c8ca_r.jpg\"&gt;&lt;p&gt;搅到下图这个程度，然后放碎花生、蒜末、甜椒丁（不辣，配色用）&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/e940c2a7db1ffe079deb6e9d42ef1759_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/e940c2a7db1ffe079deb6e9d42ef1759_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;喜欢辣的可以自己再加辣椒&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/ee8ae12439d749fdcbcf4e7e92a7c468_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/ee8ae12439d749fdcbcf4e7e92a7c468_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;生菜卷起来切一下&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/169bd0acfb4cf80edfe1841536b0f08d_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/169bd0acfb4cf80edfe1841536b0f08d_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;韭菜切成手指长&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/637cd73e8462018538a03216f17b38eb_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/637cd73e8462018538a03216f17b38eb_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;开始卷了，把米饼稍微沾湿&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/af5010c474be4266e97f0c8d63cbd75e_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/af5010c474be4266e97f0c8d63cbd75e_r.jpg\"&gt;&lt;p&gt;放生菜、罗勒、薄荷叶、米粉面&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/1232a94743f4595da64609aa5da8fc4c_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/1232a94743f4595da64609aa5da8fc4c_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;这样包起来，然后放肉片、煮好的虾仁切半（切口朝上）、韭菜&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/9aa97edb82a56fd5a79b9693ed26de21_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/9aa97edb82a56fd5a79b9693ed26de21_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;卷起来就好了。沾过水的饼有粘性，很容易包起来。&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/f3609f9e96cfb34de57b20cbac2cea40_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/f3609f9e96cfb34de57b20cbac2cea40_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;然后蘸着吃就好了&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/e0a4623ca5d7c420d2cf6f6e1d329f15_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/e0a4623ca5d7c420d2cf6f6e1d329f15_r.jpg\"&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;第二道菜：水晶面乌贼沙拉&lt;/b&gt;&lt;/p&gt;&lt;img src=\"https://pic4.zhimg.com/2b3e51d7553e3b1e1e1e130b27121e4f_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/2b3e51d7553e3b1e1e1e130b27121e4f_r.jpg\"&gt;&lt;p&gt;沙拉酱的调法：一茶勺柠檬草、一茶勺蒜末，10g罗望子酱，四勺糖，四勺鱼露，两勺青柠汁。然后可以按自己口味加辣椒调味。&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/538f01a328931d2844b5b8b3d6196ebe_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/538f01a328931d2844b5b8b3d6196ebe_r.jpg\"&gt;&lt;p&gt;用这个很神奇的东西把空心菜切丝&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/5258d19e637d73bd8b9ea792fe6eaf58_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/5258d19e637d73bd8b9ea792fe6eaf58_r.jpg\"&gt;&lt;img src=\"https://pic2.zhimg.com/3db49843b65f5be696dac42fc30ad751_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/3db49843b65f5be696dac42fc30ad751_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;西红柿去根去籽切条，胡萝卜切丝、青椒去籽切丝、黄瓜切段，豆芽。这些一起和之前准备的沙拉酱拌匀。&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/cde84841307ab149c0823aea87f8d4a9_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/cde84841307ab149c0823aea87f8d4a9_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;沸水两分钟煮水晶面&lt;/p&gt;&lt;img src=\"https://pic1.zhimg.com/9661b57deca25b0414231b7e851ef77c_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic1.zhimg.com/9661b57deca25b0414231b7e851ef77c_r.jpg\"&gt;&lt;p&gt;水晶面和沙拉拌匀&lt;/p&gt;&lt;img src=\"https://pic4.zhimg.com/f5acfede782318777d4d9015f2eb904b_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/f5acfede782318777d4d9015f2eb904b_r.jpg\"&gt;&lt;p&gt;装盘&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/cd315c6d58131bdc59338ecf4cb6e26f_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/cd315c6d58131bdc59338ecf4cb6e26f_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;乌贼涂上辣油用烤架烤熟切碎，撒在沙拉上，撒芝麻，切几朵黄瓜做装饰。就能吃了。&lt;br&gt;&lt;img src=\"https://pic1.zhimg.com/5ec2b0484e1b4b98e81f17eb7b11bbac_b.jpg\" data-rawwidth=\"983\" data-rawheight=\"653\" class=\"origin_image zh-lightbox-thumb\" width=\"983\" data-original=\"https://pic1.zhimg.com/5ec2b0484e1b4b98e81f17eb7b11bbac_r.jpg\"&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;第三道：砂锅椰子水炖鸡腿肉&lt;/b&gt;&lt;/p&gt;&lt;p&gt;鸡腿肉切块，也可以用其它部位的肉&lt;/p&gt;&lt;img src=\"https://pic4.zhimg.com/9dd561b0c227f2c6b4307ac60642fdc3_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/9dd561b0c227f2c6b4307ac60642fdc3_r.jpg\"&gt;&lt;p&gt;生姜去皮切丝。看自己口味决定多少。烹饪课给的菜刀非常的炖，我也是尽力切了。一勺糖，一勺鱼露，红木种子油(annatto seed oil)两勺，买不到这个油应该可以用别的油代替。&lt;br&gt;&lt;/p&gt;&lt;img src=\"https://pic3.zhimg.com/24a46d76ed39b790f35088960200bcea_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic3.zhimg.com/24a46d76ed39b790f35088960200bcea_r.jpg\"&gt;&lt;p&gt;拌匀腌制十分钟。&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/0ec4a3859b49356c29c966c5e78c6111_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/0ec4a3859b49356c29c966c5e78c6111_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;砂锅开大火，倒油，放红甜椒末和蒜末&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/7ebf52587abdb3d65ec56a60a7869399_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic2.zhimg.com/7ebf52587abdb3d65ec56a60a7869399_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;放腌好的鸡肉进去，炒到表面变色，然后倒椰子水，椰子水到鸡肉高度一多半&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/55e5185dd84424d18641743595da640f_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/55e5185dd84424d18641743595da640f_r.jpg\"&gt;&lt;/p&gt;&lt;p&gt;一直烧到椰子水快被烧干，关火，放罗勒叶，现磨点黑胡椒。就可以吃了。&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/be3c1195c5890d6beba66b9731030be3_b.jpg\" data-rawwidth=\"1200\" data-rawheight=\"798\" class=\"origin_image zh-lightbox-thumb\" width=\"1200\" data-original=\"https://pic4.zhimg.com/be3c1195c5890d6beba66b9731030be3_r.jpg\"&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;=======================&lt;br&gt;以上是节选，其它内容请点击知乎专栏完整版：&lt;a href=\"http://zhuanlan.zhihu.com/xiepanda/19980064\" class=\"internal\"&gt;花了95万学来的越南菜 - 谢熊猫出没注意 - 知乎专栏&lt;/a&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/23516907/answer/42346570\"&gt;发布于 2015-03-18&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-03-18 17:21:12",
+            "question": {
+                "id": "23516907",
+                "title": "哪些越南菜容易做？",
+                "link": "http://www.zhihu.com/question/23516907"
+            }
+        },
+        {
+            "id": "41368623",
+            "agree_num": "4245",
+            "comments_num": "155",
+            "content": "娇小、安静、文弱，有时做事萌萌哒，笑起来有酒窝，还露个虎牙，这样的小姑娘看起来就是讨人喜欢的，也很容易让人产生保护的欲望。&lt;br&gt;&lt;br&gt;但是这种保护的欲望往往在新鲜期过了之后就快速变淡了。&lt;br&gt;&lt;br&gt;&lt;br&gt;真正能让我想要保护一辈子的，绝对不是一瞬间的表现，而是长期交往中体现出善良、睿智、自立和坚强等特点的女性。&lt;br&gt;&lt;br&gt;因为这个人将陪伴我几十年，所以她必须是一个能在我失落时候支持我的好朋友。&lt;br&gt;&lt;br&gt;因为这个人将和我一起生养和教育孩子，所以她必须有潜力成为一个伟大的母亲。&lt;br&gt;&lt;br&gt;因为万一我先走一步，这个人将是我和全世界最重要的联系，我留下的财产、事业、未完成的心愿，都要靠这个好伙伴来继续打理。&lt;br&gt;&lt;br&gt;&lt;b&gt;一个好朋友，一个伟大的母亲，一个可靠的伙伴，这才是值得我花一辈子时间保护的人。&lt;/b&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28513788/answer/41368623\"&gt;发布于 2015-03-07&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-03-07 17:44:02",
+            "question": {
+                "id": "28513788",
+                "title": "女朋友哪个瞬间让你觉得想保护她一辈子？",
+                "link": "http://www.zhihu.com/question/28513788"
+            }
+        },
+        {
+            "id": "41115593",
+            "agree_num": "17K",
+            "comments_num": "565",
+            "content": "&lt;p&gt;谢邀。&lt;/p&gt;&lt;p&gt;我来谈一下个人分辨周围聪明人的一些主要标准。&lt;/p&gt;&lt;br&gt;&lt;p&gt;首先要明确的是一些基本原则。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;首先，具有特定领域的专业知识不代表聪明&lt;/b&gt;。比如一个下水道工人和一个挖掘机工人，各自都是各自职业领域的老手，哪个更聪明？这就不好说了。所以分辨的标准不应该是针对特定领域的，而应该是普适的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;再比如看学历，也不一定靠谱&lt;/b&gt;。我们抛开盖茨、乔布斯这些辍学的不谈，一个本科生和一个博士生哪个聪明？这也不好说，说不定本科生本科期间就做出了不错的科研成果，但是本科毕业没有继续做科研而直接去工作了，那他一定比博士生笨或者聪明吗？说不准的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;还有比如看出身，也不靠谱&lt;/b&gt;。因为个人经历和交友圈的关系，我周围的很多朋友都是名校出身，北清复交牛剑HYPS什么的很多，很多聚会上名校学生的数量远比非名校的多，那这种情况下出身本身就不具有太大的分辨性。虽然名校出来的普遍会让人觉得聪明点（具体原因可以参考下文），但是即使是同一个学校出来的人，也会有很容易被识别出来的聪明程度的差别。&lt;/p&gt;&lt;br&gt;&lt;p&gt;那么我会通过什么来辨别聪明人呢？我有&lt;b&gt;六个标准，两两一组分为基础指标，现实指标，和高层指标三个类别。基础、现实、高层的分类不是想说明轻重和高低，只是为了方便大家理解。&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;基础指标的第一个标准，是元认知（Metacognition）能力。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;元认知能力，就是“对于认知的认知”和“关于知识的知识”，简单来说就是对于自我的认知过程的思考。关于元认知，网上有不少资料，大家可以通过搜索引擎找一下通俗的材料，感兴趣的也可以找相关的心理学文献读一下。&lt;/p&gt;&lt;br&gt;&lt;p&gt;具有强元认知能力的人，通常表现是学习能力很强，因为他们对于自己的认知和学习过程很了解，能够在快速的自我思考和自省后产生出优化过的学习策略。&lt;/p&gt;&lt;br&gt;&lt;p&gt;他们对自己的认知能力有较强的管控能力，懂得利用自己的认知能力的优势和已有知识框架来调节和评估新知识的摄入，这些人能够很快的把新知识融入到已有的知识当中。&lt;b&gt;用乔布斯的话说，就是把已经划出的点连起来，而元认知能力高的人连得特别快。&lt;/b&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;基础指标的第二个标准，是有具有逻辑性的思维跳跃能力。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;一般的交谈过程，通常就是先讲A，再讲B，再讲C，再讲D……&lt;/p&gt;&lt;br&gt;&lt;p&gt;但是我发觉，当和一些比较聪明的人聊天的时候，或者看其他的聪明人聊天的时候，通常不是一步一步走，而是跨着大步跳的，也就是先讲A，再讲D，再讲F，再讲J……这样。&lt;b&gt;这种&lt;/b&gt;&lt;b&gt;ADFJ的交谈方式，和前面的ABCD的交谈方式在逻辑上是一样的，并不是随机的思维跳跃，而是一些中间的逻辑步骤，因为交谈的双方都已经提前想到，并且一个眼神一个动作就心照不宣了，所以不需要每一步都讲一遍，直接说下一步就好了。&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;比如之前有个我觉得比我聪明好多的做医生的朋友来我家做客，我在厨房做饭，客人们在闲聊，中间聊到癌症的事情。我就想到个段子，然后说“骑摩托车戴安全帽也能增加得癌症的概率。”这个段子其实说的还是蛮直接的，我也觉得对方肯定听得懂，所以就没有补充或者继续讲，而那位医生朋友就直接回了一句“是啊，上次和主任一起去查房，主任就说其中一位老太太比其他病人更可能得癌症，因为she
+has the syndrome of having too many birthdays。”然后大家就会心一笑。&lt;/p&gt;&lt;br&gt;&lt;p&gt;跟聪明程度相仿的人交谈起来跳跃的节奏是很舒适的，逻辑上也能很自然的过渡。但是如果两个人节奏差别过大，一方要经常说完A后补充说B和C才能继续说D，甚至中间还要加个B1、B2，那就是另外一种情况了。&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;========================&lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;现实指标的第一个标准，是好奇心。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;其实，前面提到的元认知和思维跳跃，都属于聪明的下层建筑，而最能直观体现一个人是否聪明的标准是好奇心。&lt;/p&gt;&lt;br&gt;&lt;p&gt;一个聪明人，通常是对生活中各种事情充满了广泛的好奇的，也正是这种好奇，让他有更多的机会获得新的知识。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;好奇心和聪明程度是个鸡和蛋的情况&lt;/b&gt;。一个人的学习能力再强，如果好奇心不够，那他也不会去了解各种新东西；而如果一个人缺乏对事物的广泛了解，他就很难看到那些自己不理解的东西，也就不容易产生较强的好奇心。&lt;/p&gt;&lt;br&gt;&lt;p&gt;用苏格拉底的话说，“我唯一知道的事，就是我一无所知。”&lt;/p&gt;&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;现实指标的第二个标准，是用简单的语言解释复杂的问题的能力。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;经常能在包括知乎等网络社区，看到一些专业人士解释专业的或者技术性的问题，他们会很热心的花很多时间讲问题背后的原理，列出各种外行人很难看懂的公式、推导过程和专业术语，自己解答的很辛苦，读者大多没看懂，双方都不开心——“我都花了这么多功夫讲了你们怎么还是听不懂”和“你讲了这么一大堆不明觉厉，我还是不懂。”&lt;/p&gt;&lt;br&gt;&lt;p&gt;而我接触到的一些很聪明的人，很多都在自己的专业领域有深入的研究，而这些聪明人的共同特点是在解释专业问题时会刻意避免使用别人可能听不懂的大词、黑话和专业用语。&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;刻意的选用简单的语言，至少说明两个问题，一是说话的人懂得换位思考，能够从对方角度分析和评价自己的表达，是对于知识的学习具有评估能力的体现&lt;/b&gt;；其次，很多专业用语和大词其实是专家直接沟通的工具，&lt;b&gt;当你面对的听众不是专家的时候，你就不能用这些工具“偷懒”，这样对于说话者的要求就更高了，对于知识掌握程度的要求也更高&lt;/b&gt;。知乎上的一些比较有名的心理学、统计学、健身等等专业领域的用户，解答问题时通常都有这样的特点。&lt;/p&gt;&lt;br&gt;&lt;p&gt;有个很有意思的年度科普活动叫作火焰挑战（flame challenge），组织方每年会出一个题目，然后要求参赛者制作一个视频，把这个题目用一个11岁小孩能听懂的话解释清楚。听起来很有趣，但是做起来还是很难的，历年的题目有“火焰是什么”、“颜色是什么”等。各位可以试试自己解释下“火焰是什么”这个题目，然后想一下你的解释能不能让一个11岁的小孩听懂。知乎上就有类似的题目，各位可以去看看那些题目下的回答是不是用简单的语言说清楚了的。&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;======================&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;高层指标的第一个标准，是对于观点的态度。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;具体表现在几个方面，比如对于自己不了解的领域少发表观点，这其实是上面说到的懂得越多越有好奇心的一种侧面体现；还有就是能够容纳不同的观点，甚至完全相反的观点，这其实是上面提到的换位思考能力的一种侧面体现；还有就是不迷信、不执迷不悟，当新的信息和证据证明自己原来的观点是错误的时候，能够改变自己的观点。&lt;/p&gt;&lt;br&gt;&lt;p&gt;这几点说起来不难，其实大家都会说，但是自身做起来的时候真的蛮难的，因为这还要涉及到情商、面子等社交属性。&lt;/p&gt;&lt;/blockquote&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;&lt;u&gt;&lt;b&gt;高层指标的第二个标准，是对于别人的态度。&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;一个人是不是善良，是很重要的一个标准。当然，准确的来说，善良并不代表聪明，聪明的坏人多了去了，事实上，想要做一个成功的坏人，也是需要聪明的，不够聪明的话坏事都做不到太大。&lt;/p&gt;&lt;br&gt;&lt;p&gt;但是“好人”和“坏人”是很主观的判断。通常情况下，每个人在自己心中都是好人，连恐怖份子都不把自己当坏人的，他们在自己眼中是自由斗士和真理的捍卫者，是非常“高尚”的。&lt;/p&gt;&lt;br&gt;&lt;p&gt;所以&lt;b&gt;我说的善良，其实是对于别人的态度，就是说他是否能够通过分享、辅导、以身作则等方式帮助别人改善和提高，达成共赢的局面&lt;/b&gt;。帮助别人提高，想想都是极难的，大概是要把前面的五个标准都完成的差不多才能做到。&lt;/p&gt;&lt;br&gt;&lt;p&gt;当然不能排除存在那些很聪明，但是坚持“不但我要成功，而且我要别人都失败”的人，不过这种人我还真是不感兴趣，这样的人是不是聪明无所谓，我总是会尽量避免的。&lt;/p&gt;&lt;/blockquote&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-03-04\" target=\"_blank\" href=\"/question/28484672/answer/41115593\"&gt;编辑于 2015-03-04&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-03-04 18:13:32",
+            "question": {
+                "id": "28484672",
+                "title": "如何辨认身边的聪明人？",
+                "link": "http://www.zhihu.com/question/28484672"
+            }
+        },
+        {
+            "id": "40662717",
+            "agree_num": "2190",
+            "comments_num": "266",
+            "content": "吮指原味鸡&lt;br&gt;&lt;br&gt;看到上面这四个字之前你心里在想什么？可能在想新年假期怎么过得怎么快、微信红包怎么抢不到、今天公司前台小妹妹的裙子真好看、今天午饭吃点啥等等等等。11:11&lt;br&gt;&lt;br&gt;但是你恐怕没有在想肯德基吮指原味鸡对吧？11:11&lt;br&gt;&lt;br&gt;也许你不喜欢吃原味鸡，也许你午餐已经约了同事去吃煎饼果子，但也有可能，你因为看到了这四个字，所以觉得午餐去吃原味鸡。11:11&lt;br&gt;&lt;br&gt;这只是简单的四个字，就已经让你从原本没有想原味鸡这个产品，变成了至少想了一下，也许你想了一下之后还是决定去吃煎饼果子，但是这没关系，只要看到这句话的人够多，自然就有人会去消费。11:11&lt;br&gt;&lt;br&gt;那如果是精心设计过的广告，效果就更好了不是吗？11:11&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"412\" data-rawwidth=\"519\" src=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"519\" data-original=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;==========================&lt;br&gt;&lt;br&gt;&lt;br&gt;上面这种是提醒大家去消费，还有一种广告，可以用来让已经消费的人不后悔。11:11&lt;br&gt;&lt;br&gt;比如说同样家喻户晓的宝马。有多少人是看到宝马的电视广告后去买宝马车的？怕是不多，但是宝马还是要在电视上打广告，而这些广告有一部分其实是给宝马车主们看的。11:11&lt;br&gt;&lt;br&gt;也许你花了大钱买了辆宝马，这个时候你老婆可能责怪你买车花太多钱，甚至你自己也可能会觉得如果买辆大众，能省不少钱，想着想着就觉得自己花大钱买宝马是不是太冲动了？11:11&lt;br&gt;&lt;br&gt;这个时候电视上、杂志上看到了一条高大上的宝马广告，立马自己也感觉高大上了，从一个站在后悔边缘的消费者，变成一个忠实的宝马粉丝了，说不定还会跟朋友分享、吹嘘。11:11&lt;br&gt;&lt;br&gt;这同样也是广告的一种效果。11:11&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"412\" data-rawwidth=\"519\" src=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"519\" data-original=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;==========================&lt;br&gt;&lt;br&gt;制造热点，也是一种效果。11:11&lt;br&gt;&lt;br&gt;比如有些人看到我在前面把“吮指原味鸡”说成四个字，大概会迫不及待想要留言说你数错了，是五个字吧？11:11&lt;br&gt;&lt;br&gt;这就是制造讨论热点的小伎俩，故意露个破绽、槽点，大家才能讨论的起来对吧？11:11&lt;br&gt;&lt;br&gt;这也是广告的一种效果11:11&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"412\" data-rawwidth=\"519\" src=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"519\" data-original=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;==========================&lt;br&gt;&lt;br&gt;类似的小伎俩很多的，比如你读到这边，应该会发现我每段后面都添加了11:11的字样，一共出现了28次。&lt;br&gt;&lt;br&gt;&lt;img data-rawheight=\"412\" data-rawwidth=\"519\" src=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"519\" data-original=\"https://pic4.zhimg.com/4e6332e17573b0c9688438536444ccdb_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;这其实就是我给你种了28次草，&lt;b&gt;这样下次你看到11:11的字样的时候，不管是时间、还是日期、还是网络购物节，你都会一直想起谢熊猫君&lt;/b&gt;。
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28201616/answer/40662717\"&gt;发布于 2015-02-27&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-02-27 11:49:55",
+            "question": {
+                "id": "28201616",
+                "title": "已经家喻户晓的品牌为何还要铺天盖地地投放广告？",
+                "link": "http://www.zhihu.com/question/28201616"
+            }
+        },
+        {
+            "id": "40529694",
+            "agree_num": "78",
+            "comments_num": "14",
+            "content": "在我印象中，温室气体排放的最大来源就是化石能源发电，以及其它化石能源的使用，比如交通、运输等。但是&lt;b&gt;如果按照这个纪录片的说法，畜牧业产生的温室气体占到全球的51%，也就是说畜牧业产生的温室气体超过发电、交通运输、航运海运、制造业、能源开采、农业（非畜牧业）、商用建筑、居住建筑等等这些全部加起来——你是在逗我吗？&lt;/b&gt;&lt;br&gt;&lt;br&gt;查一下数据，很容易发现远没有51%这么高。根据美国环保局（EPA）的2012年数据，在美国的温室气体排放中，整个农业占到10%，也就是说作为农业的一个分支的畜牧业，所产生的美国的温室气体排放应该是低于10%的（&lt;a href=\"http://www.epa.gov/climatechange/ghgemissions/sources.html\" class=\" wrap external\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;Sources | Climate Change&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;
+
+）&lt;br&gt;&lt;img data-rawheight=\"522\" data-rawwidth=\"356\" src=\"https://pic4.zhimg.com/5d9579253a02c7f256809f10a7c4f063_b.jpg\" class=\"content_image\" width=\"356\"&gt;&lt;br&gt;&lt;br&gt;那么在全球范围内究竟是多少呢？按照联合国粮食和农业组织（FAO）的数据（&lt;a class=\" external\" href=\"http://www.fao.org/docrep/018/i3437e/i3437e.pdf\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;fao.org/docrep/018/i343&lt;/span&gt;&lt;span class=\"invisible\"&gt;7e/i3437e.pdf&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;
+
+），畜牧业整个产业链2005年产生的温室气体等价于71亿吨二氧化碳，而根据政府间气候变化专门委员会（IPCC）的数据，2004年人为因素共产生的温室气体等价于490亿吨二氧化碳，所以畜牧业整个产业链造成的温室气体贡献应该是14.5%左右。如果算上整个供应链（比如食品的运输等等严格来说不应当归类于畜牧业的数据），这个数据也就是20%左右。&lt;br&gt;&lt;br&gt;&lt;br&gt;那么，这个纪录片里51%这个吓人的数据是怎么来的呢？还真让我找到了这个数据的出处了。&lt;br&gt;这部纪录片有个网站，上面有个信息可视化的图（&lt;a class=\" wrap external\" href=\"http://www.cowspiracy.com/infographic\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;COWSPIRACY: The Sustainability Secret&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;），里面标出了他们的一些数据来源，而51%这个数据出自一个叫World Watch的智库（&lt;a class=\" external\" href=\"http://www.worldwatch.org/files/pdf/Livestock%20and%20Climate%20Change.pdf\" target=\"_blank\" rel=\"nofollow noreferrer\"&gt;&lt;span class=\"invisible\"&gt;http://www.&lt;/span&gt;&lt;span class=\"visible\"&gt;worldwatch.org/files/pd&lt;/span&gt;&lt;span class=\"invisible\"&gt;f/Livestock%20and%20Climate%20Change.pdf&lt;/span&gt;&lt;span class=\"ellipsis\"&gt;&lt;/span&gt;&lt;i class=\"icon-external\"&gt;&lt;/i&gt;&lt;/a&gt;），这个51%的数据是这么算出来的：&lt;br&gt;&lt;img data-rawheight=\"412\" data-rawwidth=\"519\" src=\"https://pic1.zhimg.com/b4a7b3772f67082492708c41874d1f84_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"519\" data-original=\"https://pic1.zhimg.com/b4a7b3772f67082492708c41874d1f84_r.jpg\"&gt;&lt;br&gt;这个图的意思就是说，FAO的数据不准确，虽然FAO给出的数据只有百分之十几，但是有很多部分没有算进去，比如说牲口呼出的二氧化碳、土地使用、统计时候没统计进去的甲烷、没有统计进去的数据、应该算作畜牧业但是没算的等等，而这些数据分别占到FAO温室气体总排放量的13.7%、4.2%、7.9%、8.7%、4.7%，你把这些百分比加起来就是51%了。&lt;br&gt;&lt;br&gt;这种算法是什么意思呢？我用简单的数字和情况给你们举个例子：&lt;br&gt;&lt;blockquote&gt;&lt;u&gt;&lt;b&gt;幼儿园老师把10个苹果分给小明、小红和小胖吃，其中小明吃了1个苹果，请问小明吃掉的苹果占老师分出苹果的百分之多少？&lt;/b&gt;&lt;/u&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;其它机构的算法：&lt;/b&gt;&lt;br&gt;1/10=10%，小明吃掉的苹果占老师分出苹果的10%&lt;br&gt;&lt;br&gt;&lt;b&gt;World Watch的算法：&lt;/b&gt;&lt;br&gt;1/10=10%&lt;br&gt;小红吃完1个苹果后没有把苹果核丢进垃圾桶，小明帮忙把那个苹果核丢进了垃圾桶，1/10=10%&lt;br&gt;回家后小明爸爸又给了他2个苹果，2/10=20%&lt;br&gt;10%+10%+20%=40%，小明吃掉的苹果占老师分出苹果的40%&lt;/blockquote&gt;&lt;br&gt;在上面的例子中World Watch算苹果的方法错在哪里呢？&lt;br&gt;&lt;blockquote&gt;小红吃完1个苹果后没有把苹果核丢进垃圾桶，小明帮忙把那个苹果核丢进了垃圾桶，1/10=10%&lt;br&gt;&lt;/blockquote&gt;小红吃的就是小红吃的，不能因为这个苹果核最后是小明丢进垃圾桶的就算小明吃的。同样的，温室气体的排放，畜牧业的上游和下游都有责任，这些责任有些是可以分到畜牧业头上的，有些是不可以的，比如畜牧业运营需要能源，能源来自于化石燃料，那么石油的开采过程产生的温室气体要不要算到畜牧业头上？再比如畜牧业产生的肉制品最后的烹饪阶段会产生温室气体，厨房产生的温室气体要不要算到畜牧业头上？范围要划清，不然按照world watch的算法，全世界100%的温室气体都能怪罪到卖汉堡包的人头上。&lt;br&gt;&lt;br&gt;&lt;blockquote&gt;回家后小明爸爸又给了他2个苹果，2/10=20%&lt;br&gt;&lt;/blockquote&gt;爸爸给小明的苹果并不算在老师分出的苹果中间，所以爸爸给小明的苹果不能算进去。即使要算进去，苹果的总量也变成了12个，这时候的分母就是12个而不是10个了。并且，既然小明爸爸给的2个苹果也算进去了，那小红爸爸给小红的20个苹果是不是也要算进去？同样的，world watch用一些原本没有算进FAO数据的量，进行简单粗暴的除法，而后把这些除法的结果加起来，这是很不靠谱的。&lt;br&gt;&lt;br&gt;举例来说，FAO的数据里面是明确的不把动物的呼吸算进二氧化碳排放的，因为动物的呼吸时一个快速的生物循环系统，植物吸收二氧化碳转化成有机物，动物把这些有机物吃进肚子转化成肉类纤维，同时动物呼吸也会排出部分二氧化碳，所以这一出一进，产生和吸收的二氧化碳是被视作等量的，这也是为什么在著名的京都条约里面是不把动物呼吸算作温室气体来源的。&lt;br&gt;&lt;br&gt;当然，如果一定要计较动物呼吸产生的二氧化碳也是可以的，那么你是不是应该把除了畜牧业以外的动物的呼吸也算上去，同时70亿人口的人类的呼吸是不是也应该算上去？如果这些都不算，就拿个牲口呼吸的数据除以没有包括呼吸的温室气体排放，然后加起来，这个算法数学上真的靠的住？&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;畜牧业对地球的生态和人类的生存环境有没有负面的影响？肯定有。&lt;br&gt;我们需不需要用长远的可持续发展的眼光来看待畜牧业？肯定要。&lt;br&gt;但是玩弄数据误导人肯定不是正确的途径，我这里扒了温室气体排放的数据，其它还有一些耸人听闻的数据，我不一个一个扒了，你们自己体会一下，在玩弄数据上用的是类似的伎俩：畜牧业对亚马逊丛林消失的91%附有责任、牲口占据了地球45%的土地等等。&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;畜牧行业，以及其它任何行业，对生态和环境的影响都应该受到积极的应对，但是这部纪录片给出的解决方案居然是吃素。&lt;br&gt;当然，合理的饮食，避免对肉类的过量食用，对于个人的身体健康和生态环境都是有利的。但是吃素并不是适用于所有人的，需要有专业辅导，不然容易营养不良。如果光从单位蛋白质摄入来看的话，肉类的温室气体产生和植物是差不多的。个人饮食的改变很困难，而且发展中国家新近城市化的人口和一些贫困国家的人还要靠着畜牧业来提供营养，所以与其宣传吃素这种可行性低又不适合所有人的途径，还不如重视技术的发展和改进。&lt;br&gt;=====================&lt;br&gt;&lt;br&gt;&lt;br&gt;以上认真说点话说完了，下面我要吐个槽&lt;br&gt;&lt;br&gt;我在读world watch的报告时看到这么一个图：&lt;br&gt;&lt;img data-rawheight=\"444\" data-rawwidth=\"619\" src=\"https://pic4.zhimg.com/9f3fb05085e108e9776cd7b637640a27_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"619\" data-original=\"https://pic4.zhimg.com/9f3fb05085e108e9776cd7b637640a27_r.jpg\"&gt;这张图是说猪农为了让猪更加凉爽，给养猪场加装了电风扇，而电风扇会造成温室气体的排放。这么一想养猪真是不容易，让猪凉爽要被人骂破坏环境，不让猪凉爽要被人骂虐待动物，反正养猪是有原罪是吧？
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/28354824/answer/40529694\"&gt;发布于 2015-02-25&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-02-25 19:34:44",
+            "question": {
+                "id": "28354824",
+                "title": "如何看待纪录片《Cowspiracy》中的观点？",
+                "link": "http://www.zhihu.com/question/28354824"
+            }
+        },
+        {
+            "id": "40444848",
+            "agree_num": "1113",
+            "comments_num": "37",
+            "content": "下面这个东西是莫扎特8岁时候写出来的&lt;br&gt;&lt;img data-rawheight=\"645\" data-rawwidth=\"500\" src=\"https://pic3.zhimg.com/e94994fe1aee0e3058931e129601a9ea_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"500\" data-original=\"https://pic3.zhimg.com/e94994fe1aee0e3058931e129601a9ea_r.jpg\"&gt;&lt;br&gt;下面这幅画是毕加索14岁时候画出来的&lt;br&gt;&lt;img src=\"https://pic2.zhimg.com/cdc8a67d6d5a59394a5dbf1b72db2bcd_b.jpg\" data-rawwidth=\"757\" data-rawheight=\"1088\" class=\"origin_image zh-lightbox-thumb\" width=\"757\" data-original=\"https://pic2.zhimg.com/cdc8a67d6d5a59394a5dbf1b72db2bcd_r.jpg\"&gt;&lt;br&gt;&lt;br&gt;下面这位是有史以来国际象棋棋力最强的Magnus Carlsen，他是在13岁时候成为国际象棋特级大师的&lt;br&gt;&lt;img data-rawheight=\"265\" data-rawwidth=\"220\" src=\"https://pic1.zhimg.com/090e4dd2273ea5aa161ed1cda857654c_b.jpg\" class=\"content_image\" width=\"220\"&gt;&lt;br&gt;下面这本书是Mary Shelley在18岁的时候写的&lt;br&gt;&lt;img data-rawheight=\"598\" data-rawwidth=\"348\" src=\"https://pic2.zhimg.com/42c500103f6212cf980029f515aa1a65_b.jpg\" class=\"content_image\" width=\"348\"&gt;&lt;br&gt;&lt;br&gt;下面这部电影是导演Orson Welles在26岁时候拍的&lt;img data-rawheight=\"859\" data-rawwidth=\"580\" src=\"https://pic1.zhimg.com/489eb2f431e16e00893511df8b4ddab0_b.jpg\" class=\"origin_image zh-lightbox-thumb\" width=\"580\" data-original=\"https://pic1.zhimg.com/489eb2f431e16e00893511df8b4ddab0_r.jpg\"&gt;&lt;br&gt;下面这个雕像是米开朗琪罗26岁时候接到的活。你可能觉得一个26岁的雕刻家没什么了不起，但要记住，他当时的竞争对手是达芬奇。&lt;br&gt;&lt;img data-rawheight=\"600\" data-rawwidth=\"314\" src=\"https://pic3.zhimg.com/1b29c13d8d0d549b290b15b82d271956_b.jpg\" class=\"content_image\" width=\"314\"&gt;&lt;br&gt;&lt;br&gt;在任何年龄秀任何方面的学问都是没有问题的，如果一个人能在比通常情况下更年轻的时候就掌握某些方面的学问，更是会获得大家的追捧的。&lt;br&gt;&lt;br&gt;&lt;b&gt;但是学问这个东西，不是你自己说懂就算懂的。&lt;/b&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link last_updated meta-item\" data-tip=\"s$t$发布于 2015-02-24\" target=\"_blank\" href=\"/question/28333579/answer/40444848\"&gt;编辑于 2015-02-24&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-02-24 19:31:41",
+            "question": {
+                "id": "28333579",
+                "title": "怎样看待中学生秀学问？",
+                "link": "http://www.zhihu.com/question/28333579"
+            }
+        },
+        {
+            "id": "39830510",
+            "agree_num": "461",
+            "comments_num": "64",
+            "content": "不喜欢常见钻戒的可以考虑一下克拉达戒指(Claddagh Ring)&lt;br&gt;&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/c3e078b845a5f315daa44a4d3869ee03_b.jpg\" data-rawwidth=\"400\" data-rawheight=\"352\" class=\"content_image\" width=\"400\"&gt;&lt;br&gt;&lt;br&gt;克拉达戒指是爱尔兰的传统戒指，多用于订婚、结婚用，主体部分由两个手捧着一个心，心上方有一个皇冠，分别象征爱情（心）、友谊（双手）和忠贞（皇冠）。&lt;br&gt;&lt;br&gt;戒指的寓意也比较美好&lt;br&gt;&lt;blockquote&gt;&lt;b&gt;双手奉上我的心，并冠以我的爱 &lt;/b&gt;&lt;/blockquote&gt;&lt;br&gt;克拉达戒指重在象征意义，各种材质都可以。当然，如果一定要加入宝石元素的话，其实也是可以的。&lt;br&gt;&lt;br&gt;&lt;img src=\"https://pic4.zhimg.com/ecaa542dbee68f4d2e836da69835b89f_b.jpg\" data-rawwidth=\"776\" data-rawheight=\"760\" class=\"origin_image zh-lightbox-thumb\" width=\"776\" data-original=\"https://pic4.zhimg.com/ecaa542dbee68f4d2e836da69835b89f_r.jpg\"&gt;
+
+
+&lt;span class=\"answer-date-link-wrap\"&gt;
+&lt;a class=\"answer-date-link meta-item\" target=\"_blank\" href=\"/question/23841493/answer/39830510\"&gt;发布于 2015-02-15&lt;/a&gt;
+&lt;/span&gt;",
+            "created_time": "2015-02-15 18:07:07",
+            "question": {
+                "id": "23841493",
+                "title": "用什么可以替代求婚钻戒？",
+                "link": "http://www.zhihu.com/question/23841493"
+            }
+        }
+    ]
+}
+		</pre>
+<h3 class="page-header">返回字段说明</h3>
+<div style="padding-right: 30%;">
+    <table class="table table-bordered table-hover">
+        <caption>返回正确data结果的字段说明对照表：</caption>
+        <thead>
+        <tr>
+            <th>返回值字段</th>
+            <th>字段类型</th>
+            <th>字段说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>string</td>
+            <td>用户回答id编号</td>
+        </tr>
+        <tr>
+            <td>agree_num</td>
+            <td>string</td>
+            <td>用户回答的赞同数</td>
+        </tr>
+        <tr>
+            <td>commnets_num</td>
+            <td>string</td>
+            <td>用户回答的评论数</td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>string</td>
+            <td>用户回答的内容</td>
+        </tr>
+        <tr>
+            <td>created_time</td>
+            <td>string</td>
+            <td>回答的时间</td>
+        </tr>
+        <tr>
+            <td>question</td>
+            <td>string</td>
+            <td>用户回答对应的提问</td>
+        </tr>
+        <tr>
+            <td>question-->id</td>
+            <td>string</td>
+            <td>提问的id编号</td>
+        </tr>
+        <tr>
+            <td>question-->title</td>
+            <td>string</td>
+            <td>提问问题的内容</td>
+        </tr>
+        <tr>
+            <td>question-->link</td>
+            <td>string</td>
+            <td>提问对应的链接</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
