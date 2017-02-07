@@ -74,8 +74,10 @@ parent ：maven主pom管理包
 
 mvn clean install;
 
-2.将得到的data.war;ocr-service.war部署到tomcat
-data.war: 爬虫项目管理的web工程
+2.将得到的data.war;ocr-service.war 部署到
+
+tomcatdata.war: 爬虫项目管理的web工程
+
 ocr-service.war: 超级鹰图片识别的接口服务
 
 3. 将common-storm-0.0.1-SNAPSHOT.jar发布到storm的nimbus节点
