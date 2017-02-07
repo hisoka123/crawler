@@ -3,26 +3,47 @@ a common crawler
 爬虫项目
 --------------------------工程介绍------------------------------------
 common-crawler-comb :各站点爬虫规则包
+
 common-module-aws ：调用亚马逊动态IP接口
+
 common-module-dao ：数据库底层包
+
 common-module-drpc ：storm调用爬虫中间包
+
 common-module-htmlunit ：htmlunit的接口封装
+
 common-module-log ：日志设置包
+
 common-module-mail ：邮件服务包
+
 common-module-ocr ：图片识别接口包（超级鹰）
+
 common-module-redis ：redis封装
+
 common-module-rss ：新闻接口封装
+
 common-module-security-shiro ：shiro权限认证包
+
 common-module-service ：业务逻辑处理包
+
 common-module-timetask ：定时任务封装包
+
 common-module-unit ：工具包
+
 common-sns-oauth ：社交网站认证包
+
 common-sns-weibo ：微博数据接口封装
+
 common-storm    :storm工作节点执行包
-cookies-extension ：cookies 的js插件（手动将浏览器端的cookies注入后台程序） 
+
+cookies-extension ：cookies 的js插件（手动将浏览器端的cookies注入后台程序）
+
 crawler-manage-web ：爬虫项目管理的web工程
+
 data-service-web ：爬虫内容展示工程
+
 ocr-service-web ：超级鹰这种ocr做成了restful接口服务
+
 parent ：maven主pom管理包
 
 -----------------------下载代码后需修改成自己的服务------------------------
