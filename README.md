@@ -82,3 +82,9 @@ ocr-service.war: 超级鹰图片识别的接口服务
 
 3.将common-storm-0.0.1-SNAPSHOT.jar发布到storm的nimbus节点
 
+推荐使用 阿里云的maven库，并添加
+ <mirror>
+    <id>clojars</id>
+    <mirrorOf>clojars</mirrorOf>
+    <url>http://clojars.org/repo/</url>
+</mirror> 
