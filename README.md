@@ -80,5 +80,5 @@ tomcatdata.war: 爬虫项目管理的web工程
 
 ocr-service.war: 超级鹰图片识别的接口服务
 
-3. 将common-storm-0.0.1-SNAPSHOT.jar发布到storm的nimbus节点
+3.将common-storm-0.0.1-SNAPSHOT.jar发布到storm的nimbus节点
 
