@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<listeners>
-	<crawlertaskListener>
-		<className>com.crawlermanage.service.linkedin.task.CrawlerTaskListener</className>
-		<number>1</number>
-	</crawlertaskListener>
-</listeners>

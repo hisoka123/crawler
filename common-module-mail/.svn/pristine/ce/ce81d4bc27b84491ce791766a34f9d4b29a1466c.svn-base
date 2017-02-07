@@ -1,4 +1,0 @@
-#Mail Setting
-mail.host=${mail.host}
-mail.username=${mail.username}
-mail.password=${mail.password}

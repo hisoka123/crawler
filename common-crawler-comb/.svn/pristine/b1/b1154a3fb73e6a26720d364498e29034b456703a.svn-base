@@ -1,3 +1,0 @@
-nfs.nginx.server=${nfs.nginx.server}
-nfs.filepath=${nfs.filepath}
-ocr.server=${ocr.server}

@@ -1,9 +1,0 @@
-workernum=${storm.topology.workernum}
-crawlerbolt_parallelismnum=${storm.topology.crawlerbolt_parallelismnum}
-crawlerenginetopology=${storm.topology.crawlerenginetopology}
-redis.host=${redis.host}
-redis.port=${redis.port}
-
-#nfs_server
-nfs.nginx.server=${nfs.nginx.server}
-nfs.filepath=${nfs.filepath}
