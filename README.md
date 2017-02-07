@@ -48,23 +48,35 @@ parent ：maven主pom管理包
 
 -----------------------下载代码后需修改成自己的服务------------------------
 1.	修改数据库：parent项目中pom.xml文件中 jdbc.url
+
 2.	修改邮件服务：parent项目中pom.xml文件中mail.host，mail.username，mail.password
+
 3.	修改redis服务：parent项目中pom.xml文件中：redis.host，redis.port
+
 4.	修改storm服务：parent项目中pom.xml文件中storm.drpc.host, storm.drpc.port, storm.topology.workernum
+
 5.	修改nfs的nginx配置：parent项目中pom.xml文件中nfs.nginx.server, nfs.filepath
-6.	修改ocr的配置：parent项目中pom.xml文件中ocr.server和
-AbstractChaoJiYingHandler.java
+
+6.	修改ocr的配置：parent项目中pom.xml文件中ocr.server和AbstractChaoJiYingHandler.java
+
 7.	修改aws：parent项目中pom.xml文件中
+
 <aws.endpoint>xxx</aws.endpoint>//aws服务器在那个区（中国区）的那个机房里
+
 <aws.accessKey>xxx</aws.accessKey>//账户id(aws s3的用户验证方式是一种对称加密方式)
+
 <aws.secretKey>xxx</aws.secretKey>//账户密钥
-	<aws.eipalloc>eipalloc-fd930fc7</aws.eipalloc>//aws 弹性IP容器
-	<aws.crawlers>xxx,xxx</aws.crawlers>//需要改变ip工作节点id			<aws.securityGroup.name>JavaSecurityGroup</aws.securityGroup.name>//安全组名
+<aws.eipalloc>eipalloc-fd930fc7</aws.eipalloc>//aws 弹性IP容器
+<aws.crawlers>xxx,xxx</aws.crawlers>//需要改变ip工作节点id
+<aws.securityGroup.name>JavaSecurityGroup</aws.securityGroup.name>//安全组名
 ------------------------------------编译--------------------------------------
 1.	进入parent项目 编译pom文件
+
 mvn clean install;
+
 2.将得到的data.war;ocr-service.war部署到tomcat
-  data.war: 爬虫项目管理的web工程
-  ocr-service.war: 超级鹰图片识别的接口服务
+data.war: 爬虫项目管理的web工程
+ocr-service.war: 超级鹰图片识别的接口服务
+
 3. 将common-storm-0.0.1-SNAPSHOT.jar发布到storm的nimbus节点
 
